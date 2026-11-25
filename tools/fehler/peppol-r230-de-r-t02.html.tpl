@@ -386,6 +386,16 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <li><a href="../br-co-16/"><span class="regel">BR-CO-16</span> Zahlbetrag weicht ab</a></li>
 <li><a href="../br-s-08/"><span class="regel">BR-S-08</span> Bemessungsgrundlage je Steuersatz falsch</a></li>
 <li><a href="../br-06-br-08/"><span class="regel">BR-06 / BR-08</span> Name oder Anschrift des Verkäufers fehlt</a></li>
+<li><a href="../br-de-2/"><span class="regel">BR-DE-2</span> Kontaktdaten des Verkäufers (BG-6) fehlen</a></li>
+<li><a href="../br-de-3-br-de-4/"><span class="regel">BR-DE-3 / BR-DE-4</span> Ort oder Postleitzahl des Verkäufers fehlt</a></li>
+<li><a href="../br-de-5-br-de-6-br-de-7/"><span class="regel">BR-DE-5 / BR-DE-6 / BR-DE-7</span> Ansprechpartner, Telefon oder E-Mail fehlt</a></li>
+<li><a href="../br-de-14/"><span class="regel">BR-DE-14</span> Steuersatz (BT-119) fehlt</a></li>
+<li><a href="../br-de-26/"><span class="regel">BR-DE-26</span> Korrekturrechnung ohne Verweis auf die Rechnung</a></li>
+<li><a href="../br-de-19/"><span class="regel">BR-DE-19</span> IBAN ist ungültig</a></li>
+<li><a href="../br-de-25-a/"><span class="regel">BR-DE-25-a</span> Lastschrift ohne Mandatsangaben</a></li>
+<li><a href="../br-16/"><span class="regel">BR-16</span> Die Rechnung enthält keine Position</a></li>
+<li><a href="../br-co-09/"><span class="regel">BR-CO-09</span> USt-IdNr. ohne Länderkürzel</a></li>
+<li><a href="../br-62-br-63/"><span class="regel">BR-62 / BR-63</span> Elektronische Adresse ohne Schema</a></li>
 </ul>
   </div>
 </section>

@@ -2,20 +2,20 @@
 
 The support page, privacy policies, terms of service and legal notice for
 three Jira apps (Desk Tools MCP, E-Invoice Kit for Jira and Team Load Radar
-for Jira), and a free invoice checker in German, E-Rechnung prüfen, with twenty-five
+for Jira), and a free invoice checker in German, E-Rechnung prüfen, with thirty-five
 pages that each explain one validation error.
 
 Served with GitHub Pages at <https://evaoffice.github.io/eva-technology/>.
 
 ## E-Rechnung prüfen
 
-Ein kostenloses Prüfwerkzeug für XRechnungen im UBL-Format: [evaoffice.github.io/eva-technology/e-rechnung-pruefen/](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/). Sie ziehen die XML-Datei in das Fenster, und das Werkzeug prüft sie direkt im Browser. Die Datei wird nicht hochgeladen; die Seite stellt dabei keine Netzwerkanfragen. Geprüft werden 88 einzelne Regeln der EN 16931 und der XRechnung, 14 Regeln zu Dezimalstellen und 6 Regelfamilien für 9 Umsatzsteuerkategorien. Zu jedem Fehler zeigt das Werkzeug die Regel-ID (zum Beispiel BR-CO-14) und eine Erklärung, wie man ihn behebt. Es ersetzt nicht den offiziellen KoSIT-Validator und prüft weder ZUGFeRD noch CII.
+Ein kostenloses Prüfwerkzeug für XRechnungen im UBL-Format: [evaoffice.github.io/eva-technology/e-rechnung-pruefen/](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/). Sie ziehen die XML-Datei in das Fenster, und das Werkzeug prüft sie direkt im Browser. Die Datei wird nicht hochgeladen; die Seite stellt dabei keine Netzwerkanfragen. Geprüft werden 87 einzelne Regeln der EN 16931 und der XRechnung, 14 Regeln zu Dezimalstellen und 6 Regelfamilien für 9 Umsatzsteuerkategorien. Zu jedem Fehler zeigt das Werkzeug die Regel-ID (zum Beispiel BR-CO-14) und eine Erklärung, wie man ihn behebt. Es ersetzt nicht den offiziellen KoSIT-Validator und prüft weder ZUGFeRD noch CII.
 
 Diese Seite und der Service werden von einer KI (Claude von Anthropic) betrieben. Rechtlich verantwortlich und Ihr Vertragspartner ist die im Impressum genannte Person; sie stellt auch die Rechnung.
 
 ## E-Rechnung prüfen (XRechnung checker)
 
-A free checker for XRechnung invoices in UBL syntax: [evaoffice.github.io/eva-technology/e-rechnung-pruefen/](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/). Drop the XML file into the page and it is checked in your browser. The file is not uploaded, and the page makes no network requests while checking. It covers 88 individual EN 16931 and XRechnung rules, 14 decimal-place rules and 6 rule families across 9 VAT categories. Each finding shows the rule ID (for example BR-CO-14) and how to fix it. It does not replace the official KoSIT validator and does not check ZUGFeRD or CII.
+A free checker for XRechnung invoices in UBL syntax: [evaoffice.github.io/eva-technology/e-rechnung-pruefen/](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/). Drop the XML file into the page and it is checked in your browser. The file is not uploaded, and the page makes no network requests while checking. It covers 87 individual EN 16931 and XRechnung rules, 14 decimal-place rules and 6 rule families across 9 VAT categories. Each finding shows the rule ID (for example BR-CO-14) and how to fix it. It does not replace the official KoSIT validator and does not check ZUGFeRD or CII.
 
 Support is provided by an AI (Claude by Anthropic). The legally responsible party is the publisher named on the support page.
 
@@ -33,7 +33,7 @@ Plain HTML and one stylesheet. No cookies, analytics or external requests
 anywhere.
 
 - `content/*.md` holds the text of each English page.
-- `content/fehler/*.md` holds the twenty-five German error pages of the checker
+- `content/fehler/*.md` holds the thirty-five German error pages of the checker
   (title, description, a German heading, the validator's literal message and
   the explanation). They take their stylesheet from the checker page, so run
   `tools/build.py` again whenever `tools/e-rechnung-pruefen.html.tpl` changes.
@@ -73,7 +73,7 @@ and not as a page.
 - the committed pages, copied as they are;
 - with `IMPRESSUM_NIF` set: the number in the legal notice (`legal/`), the
   checker at `e-rechnung-pruefen/` with the number in its Impressum, its
-  twenty-five error pages under `e-rechnung-pruefen/fehler/`, and a link to the checker
+  thirty-five error pages under `e-rechnung-pruefen/fehler/`, and a link to the checker
   on the home page;
 - without it: the legal notice without that line, no checker, no error pages
   and no link. An incomplete Impressum is never published;
