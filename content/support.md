@@ -66,11 +66,17 @@ No. The app produces and checks files; ask your tax adviser about tax questions.
 
 ## Questions about Team Load Radar
 
+### Where do the numbers come from?
+In-progress, open and stale counts come from Jira searches each time you load the page, so they match what Jira shows. Team members come from Atlassian's Teamwork Graph.
+
 ### What does the "Open" column count?
 Every work item assigned to the person that is not done, counted by Jira. A dash means Jira did not return the count for that person.
 
 ### How do I block work over the limit?
 In the workflow editor, select the transition that leads to an "In Progress" status, add a rule of type "Validate details" and choose "Personal WIP limit (Team Load Radar)". The limit applies only on the workflows where you add it. If the app cannot check, the transition is allowed.
+
+### Will the Load Coach agent reassign work on its own?
+No. It shows one confirmation card naming the new assignee and only reassigns after you confirm. It refuses if the new assignee would go over their own limit.
 
 ### Why can't I see some people's work?
 The page counts work with your Jira permissions. Work items you cannot see in Jira are not counted for you.
@@ -82,4 +88,4 @@ They are folded under "Show N people with no open work" below the table, so the 
 No. Workload is calculated each time you open the page and is not kept. The app stores only its two settings and a short log without names.
 
 ### Why does the page take a while on large projects?
-It counts each person's work across all projects. On our test site the page loads in under 9 seconds for a team of 10 people.
+It counts each person's work across all projects. On a project of about 16 people it loads in under 9 seconds.

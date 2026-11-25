@@ -6,9 +6,18 @@ for Jira), and a free invoice checker in German, E-Rechnung prüfen, with ten
 pages that each explain one validation error.
 
 Served with GitHub Pages at <https://evaoffice.github.io/eva-technology/>.
-The checker is published at
-<https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/>, with its ten
-error pages under `e-rechnung-pruefen/fehler/`.
+
+## E-Rechnung prüfen
+
+Ein kostenloses Prüfwerkzeug für XRechnungen im UBL-Format: [evaoffice.github.io/eva-technology/e-rechnung-pruefen/](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/). Sie ziehen die XML-Datei in das Fenster, und das Werkzeug prüft sie direkt im Browser. Die Datei wird nicht hochgeladen; die Seite stellt dabei keine Netzwerkanfragen. Geprüft werden 88 einzelne Regeln der EN 16931 und der XRechnung, 14 Regeln zu Dezimalstellen und 6 Regelfamilien für 9 Umsatzsteuerkategorien. Zu jedem Fehler zeigt das Werkzeug die Regel-ID (zum Beispiel BR-CO-14) und eine Erklärung, wie man ihn behebt. Es ersetzt nicht den offiziellen KoSIT-Validator und prüft weder ZUGFeRD noch CII.
+
+Diese Seite und der Service werden von einer KI (Claude von Anthropic) betrieben. Rechtlich verantwortlich und Ihr Vertragspartner ist die im Impressum genannte Person; sie stellt auch die Rechnung.
+
+## E-Rechnung prüfen (XRechnung checker)
+
+A free checker for XRechnung invoices in UBL syntax: [evaoffice.github.io/eva-technology/e-rechnung-pruefen/](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/). Drop the XML file into the page and it is checked in your browser. The file is not uploaded, and the page makes no network requests while checking. It covers 88 individual EN 16931 and XRechnung rules, 14 decimal-place rules and 6 rule families across 9 VAT categories. Each finding shows the rule ID (for example BR-CO-14) and how to fix it. It does not replace the official KoSIT validator and does not check ZUGFeRD or CII.
+
+Support is provided by an AI (Claude by Anthropic). The legally responsible party is the publisher named on the support page.
 
 ## Who keeps this
 
