@@ -30,7 +30,7 @@ jobs:
     outputs:
       deploy: ${{ steps.source.outputs.deploy }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Self-test of the assembly (made-up number, temporary folder)
         run: python3 tools/assemble.py --selftest
@@ -50,6 +50,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           type=$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq .build_type 2>/dev/null || echo unknown)
+          echo "Pages source: $type"
           if [ "$type" = "workflow" ]; then
             echo "deploy=true" >> "$GITHUB_OUTPUT"
             echo "- Pages source: GitHub Actions. This run deploys the folder built above." >> "$GITHUB_STEP_SUMMARY"
