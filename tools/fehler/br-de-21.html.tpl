@@ -330,6 +330,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <li>Die Datei ist als Peppol BIS Billing gekennzeichnet (<code>…urn:fdc:peppol.eu:2017:poacc:billing:3.0</code>), wird aber gegen XRechnung geprüft.</li>
 <li>Leerzeichen oder ein Zeilenumbruch in der Kennung.</li>
 </ul>
+<p>Unser Prüfwerkzeug meldet diese Warnung, wenn die Kennung zu einer älteren XRechnung-Version gehört. Steht dort nur die Kennung der EN 16931 oder von Peppol BIS, prüft es die Datei als EN-16931-Rechnung und zeigt diese Warnung nicht.</p>
 <h2>So beheben Sie es</h2>
 <ol>
 <li>Prüfen Sie, welche XRechnung-Version Ihr Empfänger verlangt. Seit dem 1. Februar 2024 ist 3.0 die gültige Hauptversion.</li>

@@ -270,6 +270,14 @@ def selftest():
         # The checker reports BR-S-08 at one cent, the official rule only from 1.00 on: the page must say whose report counts.
         s08 = (folder / "with" / TOOL_DIR / ERROR_DIR / "br-s-08" / "index.html").read_text(encoding="utf-8")
         assert "Maßgeblich ist der Bericht des Validators, den Sie oder Ihr Empfänger verwenden." in s08
+        # Both rules have an official tolerance below 1.00; the checker shows a note inside it and an error from 1.00 on.
+        co17 = (folder / "with" / TOOL_DIR / ERROR_DIR / "br-co-17" / "index.html").read_text(encoding="utf-8")
+        for tolerant in (s08, co17):
+            assert (
+                "Unser Prüfwerkzeug meldet einen Fehler, wenn die Abweichung 1,00 oder mehr beträgt. Liegt sie darunter, "
+                "zeigt es einen Hinweis und empfiehlt, den Betrag zu korrigieren. Maßgeblich ist der Bericht des Validators, "
+                "den Sie oder Ihr Empfänger verwenden."
+            ) in tolerant
         assert set(NOT_CHECKED) <= set(result["errors"])
         robots = (folder / "with" / "robots.txt").read_text(encoding="utf-8")
         assert f"Sitemap: {SITE_URL}sitemap.xml" in robots
