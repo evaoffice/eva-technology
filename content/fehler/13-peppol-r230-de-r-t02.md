@@ -5,6 +5,7 @@ description: R230/DE-R-T02: Ein externer Anhang braucht genau eine URI; bei Rech
 h1: PEPPOL-EN16931-R230 / DE-R-T02: Link zum Anhang (BT-124) fehlt oder falsch
 meldung: [PEPPOL-EN16931-R230]-ubl-invoice:Invoice/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference MUST contain exactly one cbc:URI. · [DE-R-T02]-If both supplier and customer are located in Germany, BT-124 "External document location" MUST contain an absolute URL with valid scheme.
 detects: link-only
+vorzeile: Peppol BIS · Fehlermeldung erklärt
 
 *Deutsch (unsere Übersetzung, kein Originaltext):* Ein externer Anhang braucht genau einen Link (R230). Sitzen Verkäufer und Käufer in Deutschland, muss der Link eine vollständige Adresse mit Schema sein, zum Beispiel `https://` (DE-R-T02).
 
@@ -24,7 +25,7 @@ detects: link-only
 
 1. Tragen Sie die vollständige Adresse ein, beginnend mit `https://`.
 2. Ohne Link lassen Sie `cac:ExternalReference` ganz weg.
-3. Soll das Dokument mitreisen, betten Sie es stattdessen ein (`cbc:EmbeddedDocumentBinaryObject`).
+3. Soll das Dokument mitgeschickt werden, betten Sie es stattdessen ein (`cbc:EmbeddedDocumentBinaryObject`).
 
 **Vorher (ab 24.02.2027 abgelehnt)**
 
@@ -51,6 +52,6 @@ detects: link-only
 ## Häufige Fragen
 
 - *Gilt DE-R-T02 auch für Rechnungen ins Ausland?* Nein, nur wenn Verkäufer und Käufer in Deutschland sitzen. R230 gilt immer.
-- *Reicht ein Link auf einen internen Server?* Für die Regel ja, solange er ein Schema hat. Ob Ihr Empfänger ihn öffnen kann, ist eine andere Frage.
+- *Reicht ein Link auf einen internen Server?* Für die Regel ja, solange er ein Schema hat. Ob Ihr Empfänger ihn öffnen kann, prüft die Regel nicht.
 
 Hinweis: Unser Prüfwerkzeug prüft diese Regeln derzeit nicht.

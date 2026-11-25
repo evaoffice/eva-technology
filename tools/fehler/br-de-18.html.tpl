@@ -351,7 +351,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <li><em>Wofür ist BASISBETRAG?</em> Nur wenn Skonto nicht auf den ganzen Zahlbetrag gilt.</li>
 </ul>
 <p>Hinweis: Unser Prüfwerkzeug prüft das Skonto-Format (BR-DE-18) derzeit nicht.</p>
-<p class="artikel__pruefen">Alle anderen Regeln prüfen Sie kostenlos im Browser.</p>
+<p class="artikel__pruefen">Viele andere Regeln prüfen Sie kostenlos im Browser.</p>
 <p class="artikel__knopf"><a class="knopf knopf--haupt" href="../../">Datei kostenlos prüfen</a></p>
 <p class="hinweisfeld">Der Fehler kommt immer wieder? Wir finden heraus, warum Ihre Software oder Ihr Export ihn erzeugt, und liefern die Korrektur: 149 € netto, einmalig, Lieferung in 3 Werktagen ab Eingang vollständiger Daten (Angebot nur für Unternehmer). <a href="../../#angebot">Ursache beheben lassen</a> oder per E-Mail an <span class="adresse">eva.office.app@gmail.com</span>.</p>
 </article>

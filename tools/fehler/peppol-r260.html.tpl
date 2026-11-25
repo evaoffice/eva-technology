@@ -313,12 +313,12 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 
 <main id="inhalt">
 <article class="artikel rahmen">
-<p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
+<p class="vorzeile">Peppol BIS · Fehlermeldung erklärt</p>
 <h1>PEPPOL-EN16931-R260: Zahlungsbedingungen brauchen genau ein cbc:Note</h1>
 <p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[PEPPOL-EN16931-R260]-ubl-invoice:Invoice/cac:PaymentTerms MUST contain exactly one cbc:Note.</span></p>
 <p><em>Deutsch (unsere Übersetzung, kein Originaltext):</em> Die Zahlungsbedingungen müssen genau ein Textelement <code>cbc:Note</code> enthalten.</p>
 <p><strong>Kurz erklärt.</strong> Die Zahlungsbedingungen (BT-20) stehen im UBL-Format in <code>cac:PaymentTerms/cbc:Note</code>. Ab dem 24. Februar 2027 lehnt die Peppol-Prüfung eine Rechnung ab, wenn dort kein <code>cbc:Note</code> steht oder wenn es mehrere gibt. Mehrere Zeilen sind erlaubt, sie müssen aber im selben Element stehen.</p>
-<p><strong>Woher die Regel kommt.</strong> Die Regel gehört zur November-Release 2026 von Peppol BIS Billing 3.0 (in den Release Notes als Version 3.1.0 geführt, verbindlich ab 24. Februar 2027). Sie gilt nur für das UBL-Format, nicht für CII. Sie greift, wenn Ihre Rechnung über das Peppol-Netz als Peppol-BIS-Rechnung geprüft wird. Ob der KoSIT-Validator für XRechnung sie übernimmt, war im November 2026 nicht bekannt. Grundlage dieser Seite ist der Release-Zweig im offiziellen OpenPeppol-Repository (Stand 6. November 2026); maßgeblich sind die veröffentlichten Release Notes von Peppol. Stand: November 2026.</p>
+<p><strong>Woher die Regel kommt.</strong> Die Regel gehört zur November-Release 2026 von Peppol BIS Billing 3.0 (in den Release Notes als Version 3.1.0 geführt, verbindlich ab 24. Februar 2027). Sie gilt nur für das UBL-Format, nicht für CII. Sie greift, wenn Ihre Rechnung über das Peppol-Netz als Peppol-BIS-Rechnung geprüft wird. Ob der KoSIT-Validator für XRechnung sie übernimmt, war im November 2026 nicht bekannt. Grundlage dieser Seite sind die offiziellen <a href="https://docs.peppol.eu/poacc/billing/3.0/2026-Q4/release-notes/">Release Notes von Peppol BIS Billing 3.0 (November-Release 2026, Version 3.1.0)</a>, veröffentlicht am 23. November 2026. Stand: November 2026.</p>
 <p><strong>Was die Regel genau prüft.</strong> Für jedes <code>cac:PaymentTerms</code> der Rechnung zählt die Regel die <code>cbc:Note</code>. Erlaubt ist genau eins. Was darin steht, prüft diese Regel nicht.</p>
 <h2>Typische Ursachen</h2>
 <ul>

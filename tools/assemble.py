@@ -255,6 +255,16 @@ def selftest():
                 assert "Unser Prüfwerkzeug zeigt diesen Fehler" not in error_page, slug
                 assert "<strong>Woher die Regel kommt.</strong> Die Regel gehört zur November-Release 2026" in error_page, slug
                 assert "{{" not in error_page and "&lt;cac:" in error_page and "<cac:" not in error_page, slug
+                assert '<p class="vorzeile">Peppol BIS · Fehlermeldung erklärt</p>' in error_page, slug
+                assert (
+                    'Grundlage dieser Seite sind die offiziellen <a href="https://docs.peppol.eu/poacc/billing/3.0/2026-Q4/release-notes/">'
+                    "Release Notes von Peppol BIS Billing 3.0 (November-Release 2026, Version 3.1.0)</a>, veröffentlicht am 23. November 2026."
+                ) in error_page, slug
+                assert "Release-Zweig" not in error_page, slug
+            else:
+                assert '<p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>' in error_page, slug
+                assert "docs.peppol.eu" not in error_page, slug
+            assert "Alle anderen Regeln" not in error_page, slug
         assert set(NOT_CHECKED) <= set(result["errors"])
         robots = (folder / "with" / "robots.txt").read_text(encoding="utf-8")
         assert f"Sitemap: {SITE_URL}sitemap.xml" in robots

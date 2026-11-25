@@ -5,6 +5,7 @@ description: R231 (Peppol BIS, ab 24.02.2027): Jeder Nachlass oder Zuschlag auf 
 h1: PEPPOL-EN16931-R231: Nachlass oder Zuschlag ohne genau eine Steuerkategorie
 meldung: [PEPPOL-EN16931-R231]-ubl-invoice:Invoice/cac:AllowanceCharge MUST contain exactly one cac:TaxCategory.
 detects: link-only
+vorzeile: Peppol BIS · Fehlermeldung erklärt
 
 *Deutsch (unsere Übersetzung, kein Originaltext):* Jeder Nachlass oder Zuschlag auf Belegebene braucht genau eine Steuerkategorie.
 

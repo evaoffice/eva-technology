@@ -313,18 +313,18 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 
 <main id="inhalt">
 <article class="artikel rahmen">
-<p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
+<p class="vorzeile">Peppol BIS · Fehlermeldung erklärt</p>
 <h1>PEPPOL-EN16931-R219 / R229: Genau eine elektronische Adresse (EndpointID)</h1>
 <p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[PEPPOL-EN16931-R219]-ubl-invoice:Invoice/cac:AccountingCustomerParty/cac:Party MUST contain exactly one cbc:EndpointID. · [PEPPOL-EN16931-R229]-ubl-invoice:Invoice/cac:AccountingSupplierParty/cac:Party MUST contain exactly one cbc:EndpointID.</span></p>
 <p><em>Deutsch (unsere Übersetzung, kein Originaltext):</em> Käufer (R219) und Verkäufer (R229) brauchen genau eine elektronische Adresse.</p>
 <p><strong>Kurz erklärt.</strong> Diese beiden Regeln sind neu. Fehlt die elektronische Adresse (BT-49 beim Käufer, BT-34 beim Verkäufer), meldet der Peppol-Bericht ab 24. Februar 2027 zusätzlich zu R010 bzw. R020 auch R219 bzw. R229. Ursache und Lösung sind dieselben.</p>
-<p><strong>Woher die Regel kommt.</strong> Die Regel gehört zur November-Release 2026 von Peppol BIS Billing 3.0 (in den Release Notes als Version 3.1.0 geführt, verbindlich ab 24. Februar 2027). Sie gilt nur für das UBL-Format, nicht für CII. Sie greift, wenn Ihre Rechnung über das Peppol-Netz als Peppol-BIS-Rechnung geprüft wird. Ob der KoSIT-Validator für XRechnung sie übernimmt, war im November 2026 nicht bekannt. Grundlage dieser Seite ist der Release-Zweig im offiziellen OpenPeppol-Repository (Stand 6. November 2026); maßgeblich sind die veröffentlichten Release Notes von Peppol. Stand: November 2026.</p>
+<p><strong>Woher die Regel kommt.</strong> Die Regel gehört zur November-Release 2026 von Peppol BIS Billing 3.0 (in den Release Notes als Version 3.1.0 geführt, verbindlich ab 24. Februar 2027). Sie gilt nur für das UBL-Format, nicht für CII. Sie greift, wenn Ihre Rechnung über das Peppol-Netz als Peppol-BIS-Rechnung geprüft wird. Ob der KoSIT-Validator für XRechnung sie übernimmt, war im November 2026 nicht bekannt. Grundlage dieser Seite sind die offiziellen <a href="https://docs.peppol.eu/poacc/billing/3.0/2026-Q4/release-notes/">Release Notes von Peppol BIS Billing 3.0 (November-Release 2026, Version 3.1.0)</a>, veröffentlicht am 23. November 2026. Stand: November 2026.</p>
 <p><strong>Was die Regel genau prüft.</strong> In <code>cac:Party</code> von Käufer und Verkäufer muss genau ein <code>cbc:EndpointID</code> stehen. Das Schema (<code>schemeID</code>) prüfen andere Regeln (BR-62, BR-63).</p>
 <h2>Typische Ursachen</h2>
 <ul>
 <li>In Ihren Firmendaten ist keine Rechnungs-E-Mail-Adresse und keine Peppol-ID hinterlegt.</li>
 <li>Beim Kunden fehlt die Adresse, an die er E-Rechnungen erhält; bei Behörden die Leitweg-ID.</li>
-<li>Das Programm schreibt die E-Mail in den Kontaktblock (BT-43) statt als <code>EndpointID</code>.</li>
+<li>Das Programm schreibt die E-Mail in den Kontaktblock (BT-43 beim Verkäufer, BT-58 beim Käufer) statt als <code>EndpointID</code>.</li>
 </ul>
 <h2>So beheben Sie es</h2>
 <ol>

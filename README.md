@@ -39,7 +39,8 @@ anywhere.
   `tools/build.py` again whenever `tools/e-rechnung-pruefen.html.tpl` changes.
   The line `detects:` says what the page may claim: `yes` (the checker shows
   this error), `no`, or `link-only` for a rule the checker does not check,
-  where the page only links to the checker. Files 11 to 15 are of that kind:
+  where the page only links to the checker. An optional line `vorzeile:` sets
+  the small line above the heading. Files 11 to 15 are of that kind:
   five rules of the November 2026 release of Peppol BIS Billing (R260,
   R257/R258, R230/DE-R-T02, R219/R229 and R231). Their shared paragraph on
   where the rules come from is kept once, in `tools/build.py`

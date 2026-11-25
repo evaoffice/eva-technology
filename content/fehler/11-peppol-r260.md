@@ -5,6 +5,7 @@ description: R260 (Peppol BIS, ab 24.02.2027): PaymentTerms braucht genau ein cb
 h1: PEPPOL-EN16931-R260: Zahlungsbedingungen brauchen genau ein cbc:Note
 meldung: [PEPPOL-EN16931-R260]-ubl-invoice:Invoice/cac:PaymentTerms MUST contain exactly one cbc:Note.
 detects: link-only
+vorzeile: Peppol BIS · Fehlermeldung erklärt
 
 *Deutsch (unsere Übersetzung, kein Originaltext):* Die Zahlungsbedingungen müssen genau ein Textelement `cbc:Note` enthalten.
 

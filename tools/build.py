@@ -292,16 +292,18 @@ KI_HINWEIS = (
     "Impressum genannte Person; sie stellt auch die Rechnung."
 )
 LINK_ZEIGT = ("Unser Prüfwerkzeug zeigt diesen Fehler mit Erklärung an.", "Datei jetzt prüfen")
-LINK_ALLGEMEIN = ("Alle anderen Regeln prüfen Sie kostenlos im Browser.", "Datei kostenlos prüfen")
+LINK_ALLGEMEIN = ("Viele andere Regeln prüfen Sie kostenlos im Browser.", "Datei kostenlos prüfen")
 # "detects: link-only": the checker does not check the rule, and the page does
 # not say what else it checks. It only links to the checker.
 LINK_NUR = (None, "Datei kostenlos prüfen")
 LINKS = {"yes": LINK_ZEIGT, "no": LINK_ALLGEMEIN, "link-only": LINK_NUR}
+# The small line above the heading. A page can set its own with "vorzeile:".
+VORZEILE = "XRechnung · Fehlermeldung erklärt"
 
 # Paragraphs shared by several error pages. A page takes one with {{NAME}}.
 BAUSTEINE = {
     "PEPPOL-2026-11": (
-        "**Woher die Regel kommt.** " + 'Die Regel gehört zur November-Release 2026 von Peppol BIS Billing 3.0 (in den Release Notes als Version 3.1.0 geführt, verbindlich ab 24. Februar 2027). Sie gilt nur für das UBL-Format, nicht für CII. Sie greift, wenn Ihre Rechnung über das Peppol-Netz als Peppol-BIS-Rechnung geprüft wird. Ob der KoSIT-Validator für XRechnung sie übernimmt, war im November 2026 nicht bekannt. Grundlage dieser Seite ist der Release-Zweig im offiziellen OpenPeppol-Repository (Stand 6. November 2026); maßgeblich sind die veröffentlichten Release Notes von Peppol. Stand: November 2026.'
+        "**Woher die Regel kommt.** " + 'Die Regel gehört zur November-Release 2026 von Peppol BIS Billing 3.0 (in den Release Notes als Version 3.1.0 geführt, verbindlich ab 24. Februar 2027). Sie gilt nur für das UBL-Format, nicht für CII. Sie greift, wenn Ihre Rechnung über das Peppol-Netz als Peppol-BIS-Rechnung geprüft wird. Ob der KoSIT-Validator für XRechnung sie übernimmt, war im November 2026 nicht bekannt. Grundlage dieser Seite sind die offiziellen <a href="https://docs.peppol.eu/poacc/billing/3.0/2026-Q4/release-notes/">Release Notes von Peppol BIS Billing 3.0 (November-Release 2026, Version 3.1.0)</a>, veröffentlicht am 23. November 2026. Stand: November 2026.'
     ),
 }
 
@@ -405,7 +407,7 @@ def render_fehler(pages, meta, text, stil):
 
 <main id="inhalt">
 <article class="artikel rahmen">
-<p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
+<p class="vorzeile">{esc(meta.get("vorzeile") or VORZEILE)}</p>
 <h1>{esc(meta["h1"])}</h1>
 <p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="{sprache}">{esc(meta["meldung"])}</span></p>
 {body}

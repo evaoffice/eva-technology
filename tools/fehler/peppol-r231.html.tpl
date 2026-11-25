@@ -313,12 +313,12 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 
 <main id="inhalt">
 <article class="artikel rahmen">
-<p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
+<p class="vorzeile">Peppol BIS · Fehlermeldung erklärt</p>
 <h1>PEPPOL-EN16931-R231: Nachlass oder Zuschlag ohne genau eine Steuerkategorie</h1>
 <p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[PEPPOL-EN16931-R231]-ubl-invoice:Invoice/cac:AllowanceCharge MUST contain exactly one cac:TaxCategory.</span></p>
 <p><em>Deutsch (unsere Übersetzung, kein Originaltext):</em> Jeder Nachlass oder Zuschlag auf Belegebene braucht genau eine Steuerkategorie.</p>
 <p><strong>Kurz erklärt.</strong> Ein Rabatt oder Zuschlag auf die ganze Rechnung (<code>cac:AllowanceCharge</code> direkt unter der Rechnung) muss einer Steuerkategorie zugeordnet sein, zum Beispiel <code>S</code> mit 19 %. Ab dem 24. Februar 2027 lehnt die Peppol-Prüfung die Rechnung ab, wenn die Kategorie fehlt oder wenn dort zwei stehen.</p>
-<p><strong>Woher die Regel kommt.</strong> Die Regel gehört zur November-Release 2026 von Peppol BIS Billing 3.0 (in den Release Notes als Version 3.1.0 geführt, verbindlich ab 24. Februar 2027). Sie gilt nur für das UBL-Format, nicht für CII. Sie greift, wenn Ihre Rechnung über das Peppol-Netz als Peppol-BIS-Rechnung geprüft wird. Ob der KoSIT-Validator für XRechnung sie übernimmt, war im November 2026 nicht bekannt. Grundlage dieser Seite ist der Release-Zweig im offiziellen OpenPeppol-Repository (Stand 6. November 2026); maßgeblich sind die veröffentlichten Release Notes von Peppol. Stand: November 2026.</p>
+<p><strong>Woher die Regel kommt.</strong> Die Regel gehört zur November-Release 2026 von Peppol BIS Billing 3.0 (in den Release Notes als Version 3.1.0 geführt, verbindlich ab 24. Februar 2027). Sie gilt nur für das UBL-Format, nicht für CII. Sie greift, wenn Ihre Rechnung über das Peppol-Netz als Peppol-BIS-Rechnung geprüft wird. Ob der KoSIT-Validator für XRechnung sie übernimmt, war im November 2026 nicht bekannt. Grundlage dieser Seite sind die offiziellen <a href="https://docs.peppol.eu/poacc/billing/3.0/2026-Q4/release-notes/">Release Notes von Peppol BIS Billing 3.0 (November-Release 2026, Version 3.1.0)</a>, veröffentlicht am 23. November 2026. Stand: November 2026.</p>
 <p><strong>Was die Regel genau prüft.</strong> Für jedes <code>cac:AllowanceCharge</code> auf Belegebene zählt die Regel <code>cac:TaxCategory</code>: genau eins. Ob Kategorie und Satz passen, prüfen andere Regeln (zum Beispiel BR-S-08 für die Bemessungsgrundlage).</p>
 <h2>Typische Ursachen</h2>
 <ul>
