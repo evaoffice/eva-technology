@@ -1,0 +1,80 @@
+# Builds the folder that GitHub Pages serves and, when Pages is set to deploy
+# from GitHub Actions, publishes it.
+#
+# The German invoice checker (e-rechnung-pruefen/) is published only when the
+# repository variable IMPRESSUM_NIF exists: its legal notice must show the
+# publisher's tax number, and that number is not stored in this repository.
+# Without the variable the rest of the site is published and the checker is
+# left out. The run summary says which of the two happened.
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build and check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    outputs:
+      deploy: ${{ steps.source.outputs.deploy }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Self-test of the assembly (made-up number, temporary folder)
+        run: python3 tools/assemble.py --selftest
+
+      - name: Assemble the site
+        env:
+          # A repository secret of the same name also works and keeps the value out of this log.
+          IMPRESSUM_NIF: ${{ vars.IMPRESSUM_NIF || secrets.IMPRESSUM_NIF }}
+        run: python3 tools/assemble.py --out _site
+
+      - name: Check local links
+        run: python3 tools/check_links.py _site
+
+      - name: Find out where Pages deploys from
+        id: source
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          type=$(gh api "repos/${GITHUB_REPOSITORY}/pages" --jq .build_type 2>/dev/null || echo unknown)
+          if [ "$type" = "workflow" ]; then
+            echo "deploy=true" >> "$GITHUB_OUTPUT"
+            echo "- Pages source: GitHub Actions. This run deploys the folder built above." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "deploy=false" >> "$GITHUB_OUTPUT"
+            echo "- Pages source: \`$type\`. **Nothing was deployed by this run.** The site is still served from the branch. To deploy from here, set Settings, Pages, Source to \"GitHub Actions\" and run this workflow again." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload the folder for Pages
+        if: steps.source.outputs.deploy == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    if: needs.build.outputs.deploy == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

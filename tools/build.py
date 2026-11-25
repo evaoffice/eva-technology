@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Builds the static pages from content/*.md. Run: python3 tools/build.py
 
-The output (index.html, support/, privacy/, terms/, 404.html) is committed,
-because GitHub Pages serves the repository as it is.
+The output (index.html, support/, privacy/, terms/, 404.html) is committed.
+tools/assemble.py copies it into the folder that GitHub Pages serves and
+fills the slot comment on the home page.
 """
 import html
 import pathlib
@@ -54,8 +55,7 @@ APPS = [
     (
         "Team Load Radar for Jira",
         "Shows how much work each person has in progress across all Jira "
-        "projects and can check a personal limit when work moves to "
-        "In Progress.",
+        "projects, measured against a personal limit.",
         "privacy/team-load-radar/",
     ),
 ]
@@ -217,6 +217,7 @@ def home():
 <ul class="apps">
 {apps}
 </ul>
+<!-- slot: e-rechnung-pruefen -->
 <h2 id="help">Help and terms</h2>
 <p>The <a href="support/">support page</a> says what to include when you write and answers common questions about each app. The same <a href="terms/">terms of service</a> cover all three.</p>"""
     out = ROOT / "index.html"

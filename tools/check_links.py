@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 """Checks that every local href and stylesheet link in the built pages exists.
-Run: python3 tools/check_links.py"""
+Run: python3 tools/check_links.py [folder]   (default: the repository; in the
+workflow: _site)"""
 import pathlib
 import re
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parent.parent
+REPO = pathlib.Path(__file__).resolve().parent.parent
+ROOT = pathlib.Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else REPO
 BASE = "/eva-technology/"
 bad = 0
 count = 0
 for page in sorted(ROOT.rglob("*.html")):
+    if ROOT == REPO and "_site" in page.relative_to(ROOT).parts:
+        continue  # a local build of the served folder; check it by passing it as the folder
     text = page.read_text(encoding="utf-8")
     ids = set(re.findall(r'id="([^"]+)"', text))
     for href in re.findall(r'href="([^"]+)"', text):
