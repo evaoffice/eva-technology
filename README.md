@@ -22,7 +22,9 @@ anywhere.
 
 - `content/*.md` holds the text of each English page.
 - `content/fehler/*.md` holds the ten German error pages of the checker
-  (title, description, the validator's message and the explanation).
+  (title, description, a German heading, the validator's literal message and
+  the explanation). They take their stylesheet from the checker page, so run
+  `tools/build.py` again whenever `tools/e-rechnung-pruefen.html.tpl` changes.
 - `python3 tools/build.py` turns both into HTML (needs the `markdown`
   package). The English pages are committed where they are served; the error
   pages go to `tools/fehler/*.html.tpl`, because they are published only

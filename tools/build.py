@@ -291,41 +291,79 @@ KI_HINWEIS = (
     "betrieben. Rechtlich verantwortlich und Ihr Vertragspartner ist die im "
     "Impressum genannte Person; sie stellt auch die Rechnung."
 )
-LINK_ZEIGT = "Unser Prüfwerkzeug zeigt diesen Fehler mit Erklärung an. Datei jetzt prüfen"
-LINK_ALLGEMEIN = "Prüfen Sie Ihre Datei kostenlos im Browser"
+LINK_ZEIGT = ("Unser Prüfwerkzeug zeigt diesen Fehler mit Erklärung an.", "Datei jetzt prüfen")
+LINK_ALLGEMEIN = ("Alle anderen Regeln prüfen Sie kostenlos im Browser.", "Datei kostenlos prüfen")
 
 
 def fehler_seiten():
     pages = []
     for md in sorted((ROOT / "content" / "fehler").glob("*.md")):
         meta, text = parse(md)
-        for key in ("slug", "nav", "title", "description", "h1", "detects"):
+        for key in ("slug", "nav", "title", "description", "h1", "meldung", "detects"):
             if not meta.get(key):
                 raise SystemExit(f"{md.name}: '{key}' is missing")
         if meta["detects"] not in ("yes", "no"):
             raise SystemExit(f"{md.name}: detects must be yes or no")
+        if not meta["h1"].startswith(meta["nav"].split(" ")[0]) and meta["nav"].split(" ")[0] not in meta["h1"]:
+            raise SystemExit(f"{md.name}: the heading must name the rule")
         pages.append((meta, text))
     return pages
 
 
-def fehler_rail(pages, current):
-    items = ['<li><a href="../../">XRechnung kostenlos prüfen</a></li>', '<li class="group">Häufige Fehler</li>']
+def werkzeug_stil():
+    """The stylesheet of the checker, so that its error pages look like it."""
+    source = (ROOT / "tools" / "e-rechnung-pruefen.html.tpl").read_text(encoding="utf-8")
+    match = re.search(r"<style>(.*?)</style>", source, re.S)
+    if not match:
+        raise SystemExit("tools/e-rechnung-pruefen.html.tpl: no <style> block found")
+    return match.group(1).strip()
+
+
+# Only what an article needs on top of the checker's own stylesheet.
+FEHLER_STIL = """
+.kopf__name a { color: inherit; text-decoration: none; }
+.kopf__name a:hover { text-decoration: underline; }
+.artikel { padding-block: clamp(2rem, 6vw, 3.5rem); }
+.artikel > * { max-width: 46rem; }
+.artikel h1 { max-width: 46rem; font-size: clamp(1.75rem, 4vw, 2.5rem); overflow-wrap: anywhere; text-wrap: balance; }
+.artikel h2 { margin: 2.2rem 0 0.2rem; }
+.artikel p { margin-top: 0.8rem; }
+.artikel ul, .artikel ol { margin: 0.8rem 0 0; padding-left: 1.4rem; display: grid; gap: 0.4rem; }
+.artikel ul { list-style: disc; }
+.artikel code { font-family: var(--code); font-size: 0.9em; overflow-wrap: anywhere; }
+.artikel pre { margin: 0.8rem 0 0; padding: 0.9rem 1rem; background: var(--blatt); border: 1px solid var(--linie-stark); border-radius: 4px; overflow-x: auto; }
+.artikel pre code { font-size: 0.85rem; overflow-wrap: normal; }
+.validator { margin-top: 1.1rem; padding: 0.8rem 1rem; border-left: 4px solid var(--tinte); background: var(--blatt); }
+.validator__name { display: block; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grau); }
+.validator__text { font-family: var(--code); font-size: 0.85rem; overflow-wrap: anywhere; }
+.artikel__pruefen { margin-top: 2rem; font-weight: 600; }
+.artikel__knopf { margin-top: 0.6rem; }
+.artikel table { display: block; max-width: 100%; overflow-x: auto; margin-top: 0.8rem; border-collapse: collapse; font-size: 0.95rem; }
+.artikel th, .artikel td { padding: 0.4rem 1rem 0.4rem 0; border-bottom: 1px solid var(--linie); text-align: left; vertical-align: top; }
+.artikel th { font-size: 0.8125rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--grau); }
+.artikel .hinweisfeld { margin-top: 1.25rem; }
+.weitere .fehlerliste a[aria-current] { color: var(--tinte); font-weight: 600; text-decoration: none; }
+@media print { .weitere, .artikel__pruefen, .artikel__knopf { display: none; } }
+""".strip()
+
+
+def fehler_liste(pages, current):
+    items = []
     for meta, _ in pages:
+        label = meta["h1"].split(": ", 1)[1] if ": " in meta["h1"] else meta["h1"]
         cur = ' aria-current="page"' if meta["slug"] == current else ""
-        items.append(f'<li><a href="../{meta["slug"]}/"{cur}>{esc(meta["nav"])}</a></li>')
-    items.append('<li class="group" aria-hidden="true"></li>')
-    items.append('<li><a href="../../#angebot">Korrektur anfragen</a></li>')
-    return (
-        '<nav class="rail" aria-label="E-Rechnung prüfen">\n'
-        '<p class="name"><a href="../../">E-Rechnung prüfen</a></p>\n'
-        "<ul>\n" + "\n".join(items) + "\n</ul>\n</nav>"
-    )
+        items.append(
+            f'<li><a href="../{meta["slug"]}/"{cur}><span class="regel">{esc(meta["nav"])}</span> {esc(label)}</a></li>'
+        )
+    return '<ul class="fehlerliste">\n' + "\n".join(items) + "\n</ul>"
 
 
-def render_fehler(pages, meta, text):
+def render_fehler(pages, meta, text, stil):
     slug_ = meta["slug"]
     body = markdown.markdown(text, extensions=["fenced_code", "tables", "sane_lists"], output_format="html5")
     link = LINK_ZEIGT if meta["detects"] == "yes" else LINK_ALLGEMEIN
+    adresse = f'<span class="adresse">{esc(EMAIL)}</span>'
+    sprache = "de" if slug_.startswith("br-de-") else "en"
     html_ = f"""<!doctype html>
 <html lang="de">
 <head>
@@ -334,27 +372,47 @@ def render_fehler(pages, meta, text):
 <title>{esc(meta["title"])}</title>
 <meta name="description" content="{esc(meta["description"])}">
 <link rel="canonical" href="{SITE_URL}e-rechnung-pruefen/fehler/{slug_}/">
-<link rel="stylesheet" href="../../../assets/site.css">
+<link rel="icon" href="data:,">
+<style>{stil}
+{FEHLER_STIL}</style>
 </head>
-<body class="fehler">
-<a class="skip" href="#content">Zum Inhalt</a>
-<div class="frame">
-{fehler_rail(pages, slug_)}
-<div>
-<main id="content">
-<p class="kicker">XRechnung · Fehlermeldung erklärt</p>
+<body>
+<a class="sprung" href="#inhalt">Zum Inhalt</a>
+
+<header class="kopf">
+  <div class="rahmen kopf__zeile">
+    <p class="kopf__name"><a href="../../">E-Rechnung prüfen</a></p>
+    <p class="kopf__merkmale">Kostenlos · ohne Anmeldung · ohne Upload</p>
+    <p class="kopf__dienst"><a href="../../#angebot">Korrektur ab 49 € netto</a> · Kontakt: {adresse}</p>
+  </div>
+</header>
+
+<main id="inhalt">
+<article class="artikel rahmen">
+<p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>{esc(meta["h1"])}</h1>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="{sprache}">{esc(meta["meldung"])}</span></p>
 {body}
-<p class="cta"><a href="../../">{esc(link)}</a></p>
-<p class="offer">Sie möchten den Fehler nicht selbst beheben? Wir korrigieren bis zu 5 XRechnungen für 49 € netto (Angebot nur für Unternehmer). <a href="../../#angebot">Korrektur anfragen</a> oder per E-Mail an {mail()}.</p>
+<p class="artikel__pruefen">{esc(link[0])}</p>
+<p class="artikel__knopf"><a class="knopf knopf--haupt" href="../../">{esc(link[1])}</a></p>
+<p class="hinweisfeld">Sie möchten den Fehler nicht selbst beheben? Wir korrigieren bis zu 5 XRechnungen für 49 € netto, Lieferung in 1 Werktag ab Eingang vollständiger Daten (Angebot nur für Unternehmer). <a href="../../#angebot">Korrektur anfragen</a> oder per E-Mail an {adresse}.</p>
+</article>
+
+<section class="abschnitt abschnitt--band weitere" aria-labelledby="weitere-titel">
+  <div class="rahmen">
+    <h2 id="weitere-titel">Weitere häufige Fehler</h2>
+{fehler_liste(pages, slug_)}
+  </div>
+</section>
 </main>
-<footer class="foot">
-<p>{esc(KI_HINWEIS)}</p>
-<p>Technische Erläuterung, keine Steuer- oder Rechtsberatung. Alle Beispiele sind erfunden.</p>
-<p><a href="../../#impressum">Impressum</a> · <a href="../../#datenschutz">Datenschutz</a> · Kontakt: {mail()}</p>
+
+<footer class="fuss">
+  <div class="rahmen">
+    <p class="fuss__hinweis">{esc(KI_HINWEIS)}</p>
+    <p class="fuss__links"><a href="../../#impressum">Impressum</a> · <a href="../../#datenschutz">Datenschutz</a> · Kontakt: {adresse}</p>
+    <p class="klein">Technische Erläuterung, keine Steuer- oder Rechtsberatung. Alle Beispiele auf dieser Seite sind erfunden. Stand der Regeln: XRechnung 3.0.</p>
+  </div>
 </footer>
-</div>
-</div>
 </body>
 </html>
 """
@@ -371,8 +429,9 @@ def main():
     pages = fehler_seiten()
     for old in FEHLER_OUT.glob("*.html.tpl") if FEHLER_OUT.is_dir() else []:
         old.unlink()
+    stil = werkzeug_stil()
     for meta, text in pages:
-        written.append(render_fehler(pages, meta, text))
+        written.append(render_fehler(pages, meta, text, stil))
     (ROOT / ".nojekyll").write_text("", encoding="utf-8")
     for path in written:
         print(path.relative_to(ROOT))

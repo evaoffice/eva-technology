@@ -375,28 +375,6 @@ th {
   color: var(--muted);
 }
 
-.fehler h1 {
-  font-size: var(--step-2);
-  overflow-wrap: anywhere;
-}
-
-.kicker {
-  margin: 0 0 0.5rem;
-  font-size: var(--step--1);
-  color: var(--muted);
-}
-
-.cta {
-  margin-top: 2rem;
-  font-weight: 700;
-}
-
-.offer {
-  padding: 1rem 1.1rem;
-  background: var(--band);
-  border-left: 4px solid var(--accent);
-}
-
 /* Footer */
 
 .foot {

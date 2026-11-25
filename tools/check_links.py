@@ -17,7 +17,7 @@ for page in sorted(ROOT.rglob("*.html")):
     text = page.read_text(encoding="utf-8")
     ids = set(re.findall(r'id="([^"]+)"', text))
     for href in re.findall(r'href="([^"]+)"', text):
-        if href.startswith(("mailto:", "http://", "https://")):
+        if href.startswith(("mailto:", "http://", "https://", "data:")):
             continue
         count += 1
         if href.startswith("#"):
