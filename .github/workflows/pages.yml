@@ -7,6 +7,12 @@
 # ten error pages. Without it, the rest of the site is published, the legal
 # notice has no tax number line and the checker is left out. The run summary
 # says which of the two happened.
+#
+# After a deployment, the list of published pages (sitemap.xml) is sent to
+# IndexNow, which passes it on to the search engines that take part (Bing and
+# others). The IndexNow key is public by design: it is the name and the
+# content of a file at the root of the site. A refusal there never fails the
+# run; the summary shows the HTTP status and the number of pages sent.
 name: Pages
 
 on:
@@ -80,3 +86,41 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Send the list of pages to IndexNow (never fails the run)
+        continue-on-error: true
+        env:
+          SITE_URL: https://evaoffice.github.io/eva-technology/
+          INDEXNOW_HOST: evaoffice.github.io
+          INDEXNOW_KEY: 977e02fa6dbb436198c34b9fcfec81c1
+        run: |
+          # Give the new deployment a minute to reach the servers.
+          sleep 60
+          if ! curl -fsSL --retry 3 --retry-delay 15 --max-time 60 "${SITE_URL}sitemap.xml" -o sitemap.xml; then
+            echo "IndexNow: sitemap.xml could not be downloaded, nothing sent"
+            echo "- IndexNow: \`sitemap.xml\` could not be downloaded. Nothing was sent." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          count=$(python3 - <<'PY'
+          import json, os, re
+          site, host, key = os.environ["SITE_URL"], os.environ["INDEXNOW_HOST"], os.environ["INDEXNOW_KEY"]
+          text = open("sitemap.xml", encoding="utf-8").read()
+          urls = [url.strip() for url in re.findall(r"<loc>([^<]+)</loc>", text)]
+          urls = [url for url in urls if url.startswith(site)]
+          payload = {"host": host, "key": key, "keyLocation": f"{site}{key}.txt", "urlList": urls}
+          with open("indexnow.json", "w", encoding="utf-8") as handle:
+              json.dump(payload, handle)
+          print(len(urls))
+          PY
+          )
+          if [ "${count:-0}" -eq 0 ]; then
+            echo "IndexNow: no pages found in sitemap.xml, nothing sent"
+            echo "- IndexNow: no pages found in \`sitemap.xml\`. Nothing was sent." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          status=$(curl -sS --max-time 60 -o indexnow-answer.txt -w '%{http_code}' \
+            -X POST 'https://api.indexnow.org/indexnow' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data-binary @indexnow.json || true)
+          echo "IndexNow: HTTP ${status:-none}, ${count} URLs sent"
+          echo "- IndexNow: HTTP \`${status:-none}\`, ${count} URLs sent (200 and 202 mean accepted; 202 means the key file is still being checked)." >> "$GITHUB_STEP_SUMMARY"

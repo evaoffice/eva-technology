@@ -72,6 +72,10 @@ and not as a page.
 - `sitemap.xml` and `robots.txt`, listing the pages that were really
   published. (Crawlers read `robots.txt` only at the root of a host, so on a
   project site it is informative; the sitemap can still be submitted.)
+- two small files for search engines at the root, in both cases and not in
+  the sitemap: `googlef94abb039ed3206f.html` (Google Search Console
+  verification) and `977e02fa6dbb436198c34b9fcfec81c1.txt` (the IndexNow
+  key, which is public by design).
 
 `python3 tools/assemble.py --selftest` checks both outcomes with a made-up
 number.
@@ -80,7 +84,11 @@ number.
 
 `.github/workflows/pages.yml` runs on every push to `main`. It runs the
 self-test, assembles `_site`, checks the links, writes a summary of what was
-included and deploys the folder to GitHub Pages.
+included and deploys the folder to GitHub Pages. About a minute after the
+deployment it reads the published `sitemap.xml` and sends the list of pages to
+IndexNow (`api.indexnow.org`), which passes it on to Bing and the other
+search engines that take part. The summary shows the HTTP status and the
+number of pages; a refusal does not fail the run.
 
 - The tax number comes from the repository variable `IMPRESSUM_NIF`
   (Settings, Secrets and variables, Actions, Variables). A secret of the same

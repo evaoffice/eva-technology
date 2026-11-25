@@ -24,6 +24,11 @@ Without the number:
 
 sitemap.xml and robots.txt list the pages that were really published.
 This script never prints the number.
+
+Two small files for search engines are copied to the root of the folder in
+both cases and are not listed in sitemap.xml: the Google Search Console
+verification file and the IndexNow key file. Neither is a secret: both are
+meant to be read by anyone.
 """
 import argparse
 import os
@@ -36,6 +41,15 @@ import tempfile
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES = ["index.html", "404.html", ".nojekyll", "assets", "support", "privacy", "terms", "legal"]
 SITE_URL = "https://evaoffice.github.io/eva-technology/"
+
+# Files that search engines fetch from the root of the site, with the exact
+# content each must have (no line break at the end). The IndexNow key is
+# public by design; the workflow sends the same key with the list of pages.
+INDEXNOW_KEY = "977e02fa6dbb436198c34b9fcfec81c1"
+ROOT_FILES = {
+    "googlef94abb039ed3206f.html": "google-site-verification: googlef94abb039ed3206f.html",
+    f"{INDEXNOW_KEY}.txt": INDEXNOW_KEY,
+}
 
 TOOL_DIR = "e-rechnung-pruefen"
 TOOL_TEMPLATE = ROOT / "tools" / "e-rechnung-pruefen.html.tpl"
@@ -122,6 +136,10 @@ def assemble(out, nif_value):
             shutil.copytree(source, out / name)
         else:
             shutil.copy2(source, out / name)
+    for name, content in ROOT_FILES.items():
+        if (ROOT / name).read_bytes() != content.encode("ascii"):
+            raise SystemExit(f"{name}: the content is not the expected one")
+        shutil.copy2(ROOT / name, out / name)
 
     try:
         nif = checked_nif(nif_value)
@@ -166,6 +184,7 @@ def report(result):
             f"The home page does not link to them. {hint}"
         )
     lines.append(f"- `sitemap.xml` and `robots.txt`: {len(result['urls'])} pages listed.")
+    lines.append("- Google verification file and IndexNow key file: at the root, not in the sitemap.")
     text = "\n".join(lines) + "\n"
     print(text)
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
@@ -231,6 +250,15 @@ def selftest():
         for site in ("with", "without"):
             for path in (folder / site).rglob("*"):
                 assert path.suffix != ".tpl" and "tools" not in path.parts, path
+            # The two files for search engines: at the root, exact content, not in the sitemap.
+            sitemap = (folder / site / "sitemap.xml").read_text(encoding="utf-8")
+            assert len(ROOT_FILES) == 2
+            for name, content in ROOT_FILES.items():
+                assert (folder / site / name).read_bytes() == content.encode("ascii"), name
+                assert name not in sitemap and name.rsplit(".", 1)[0] not in sitemap, name
+            assert (folder / site / f"{INDEXNOW_KEY}.txt").read_text(encoding="ascii") == INDEXNOW_KEY
+            locs = re.findall(r"<loc>([^<]+)</loc>", sitemap)
+            assert locs and all(loc.startswith(SITE_URL) and loc.endswith("/") for loc in locs), site
     print("selftest: ok (without a number: no checker, no error pages, legal notice without the line; with one: all published)")
 
 
