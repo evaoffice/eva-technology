@@ -383,7 +383,7 @@ def render_fehler(pages, meta, text, stil):
   <div class="rahmen kopf__zeile">
     <p class="kopf__name"><a href="../../">E-Rechnung prüfen</a></p>
     <p class="kopf__merkmale">Kostenlos · ohne Anmeldung · ohne Upload</p>
-    <p class="kopf__dienst"><a href="../../#angebot">Korrektur ab 49 € netto</a> · Kontakt: {adresse}</p>
+    <p class="kopf__dienst"><a href="../../#angebot">Fehlerursache beheben: 149 € netto</a> · Kontakt: {adresse}</p>
   </div>
 </header>
 
@@ -395,7 +395,7 @@ def render_fehler(pages, meta, text, stil):
 {body}
 <p class="artikel__pruefen">{esc(link[0])}</p>
 <p class="artikel__knopf"><a class="knopf knopf--haupt" href="../../">{esc(link[1])}</a></p>
-<p class="hinweisfeld">Sie möchten den Fehler nicht selbst beheben? Wir korrigieren bis zu 5 XRechnungen für 49 € netto, Lieferung in 1 Werktag ab Eingang vollständiger Daten (Angebot nur für Unternehmer). <a href="../../#angebot">Korrektur anfragen</a> oder per E-Mail an {adresse}.</p>
+<p class="hinweisfeld">Der Fehler kommt immer wieder? Wir finden heraus, warum Ihre Software oder Ihr Export ihn erzeugt, und liefern die Korrektur: 149 € netto, einmalig, Lieferung in 3 Werktagen ab Eingang vollständiger Daten (Angebot nur für Unternehmer). <a href="../../#angebot">Ursache beheben lassen</a> oder per E-Mail an {adresse}.</p>
 </article>
 
 <section class="abschnitt abschnitt--band weitere" aria-labelledby="weitere-titel">
