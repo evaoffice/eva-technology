@@ -69,7 +69,7 @@ APPS = [
         "Shows how much work each person has in progress across all Jira "
         "projects, measured against a personal limit.",
         "privacy/team-load-radar/",
-        COMING,
+        ON_REQUEST,
     ),
 ]
 

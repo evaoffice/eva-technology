@@ -17,7 +17,7 @@ We reply the same business day (Monday to Friday). Security reports: write "Secu
 - what you did, what you expected and what happened (a screenshot helps);
 - Desk Tools MCP: the matching line of the log on the admin page;
 - E-Invoice Kit: the rule ID shown (for example BR-CO-15);
-- Team Load Radar: the project you selected and the summary line shown on the page.
+- Team Load Radar: the project or team you selected and the summary line shown on the page.
 
 Please do not send passwords, API tokens or real invoices with personal or bank data.
 
@@ -82,4 +82,4 @@ They are folded under "Show N people with no open work" below the table, so the 
 No. Workload is calculated each time you open the page and is not kept. The app stores only its two settings and a short log without names.
 
 ### Why does the page take a while on large projects?
-It counts each person's work across all projects. On a project of about 16 people it can take up to 20 seconds.
+It counts each person's work across all projects. On our test site the page loads in under 9 seconds for a team of 10 people.

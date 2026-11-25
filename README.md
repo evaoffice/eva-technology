@@ -6,6 +6,9 @@ for Jira), and a free invoice checker in German, E-Rechnung prüfen, with ten
 pages that each explain one validation error.
 
 Served with GitHub Pages at <https://evaoffice.github.io/eva-technology/>.
+The checker is published at
+<https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/>, with its ten
+error pages under `e-rechnung-pruefen/fehler/`.
 
 ## Who keeps this
 
@@ -77,3 +80,9 @@ included and deploys the folder to GitHub Pages.
   (Actions, Pages, Run workflow): a variable change does not start it.
 - The workflow deploys only when Pages is set to deploy from GitHub Actions
   (Settings, Pages, Source), which is how this repository is set.
+
+## Licence
+
+The code in this repository is under the MIT licence (see `LICENSE`). The
+licence covers the code, not the legal texts (privacy policies, terms of
+service, legal notice) or the publisher's personal details.
