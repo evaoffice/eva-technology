@@ -293,6 +293,17 @@ KI_HINWEIS = (
 )
 LINK_ZEIGT = ("Unser Prüfwerkzeug zeigt diesen Fehler mit Erklärung an.", "Datei jetzt prüfen")
 LINK_ALLGEMEIN = ("Alle anderen Regeln prüfen Sie kostenlos im Browser.", "Datei kostenlos prüfen")
+# "detects: link-only": the checker does not check the rule, and the page does
+# not say what else it checks. It only links to the checker.
+LINK_NUR = (None, "Datei kostenlos prüfen")
+LINKS = {"yes": LINK_ZEIGT, "no": LINK_ALLGEMEIN, "link-only": LINK_NUR}
+
+# Paragraphs shared by several error pages. A page takes one with {{NAME}}.
+BAUSTEINE = {
+    "PEPPOL-2026-11": (
+        "**Woher die Regel kommt.** " + 'Die Regel gehört zur November-Release 2026 von Peppol BIS Billing 3.0 (in den Release Notes als Version 3.1.0 geführt, verbindlich ab 24. Februar 2027). Sie gilt nur für das UBL-Format, nicht für CII. Sie greift, wenn Ihre Rechnung über das Peppol-Netz als Peppol-BIS-Rechnung geprüft wird. Ob der KoSIT-Validator für XRechnung sie übernimmt, war im November 2026 nicht bekannt. Grundlage dieser Seite ist der Release-Zweig im offiziellen OpenPeppol-Repository (Stand 6. November 2026); maßgeblich sind die veröffentlichten Release Notes von Peppol. Stand: November 2026.'
+    ),
+}
 
 
 def fehler_seiten():
@@ -302,8 +313,12 @@ def fehler_seiten():
         for key in ("slug", "nav", "title", "description", "h1", "meldung", "detects"):
             if not meta.get(key):
                 raise SystemExit(f"{md.name}: '{key}' is missing")
-        if meta["detects"] not in ("yes", "no"):
-            raise SystemExit(f"{md.name}: detects must be yes or no")
+        if meta["detects"] not in LINKS:
+            raise SystemExit(f"{md.name}: detects must be yes, no or link-only")
+        for name, baustein in BAUSTEINE.items():
+            text = text.replace("{{" + name + "}}", baustein)
+        if "{{" in text:
+            raise SystemExit(f"{md.name}: unknown {{{{…}}}} paragraph")
         if not meta["h1"].startswith(meta["nav"].split(" ")[0]) and meta["nav"].split(" ")[0] not in meta["h1"]:
             raise SystemExit(f"{md.name}: the heading must name the rule")
         pages.append((meta, text))
@@ -361,7 +376,8 @@ def fehler_liste(pages, current):
 def render_fehler(pages, meta, text, stil):
     slug_ = meta["slug"]
     body = markdown.markdown(text, extensions=["fenced_code", "tables", "sane_lists"], output_format="html5")
-    link = LINK_ZEIGT if meta["detects"] == "yes" else LINK_ALLGEMEIN
+    link = LINKS[meta["detects"]]
+    pruefen = f'<p class="artikel__pruefen">{esc(link[0])}</p>\n' if link[0] else ""
     adresse = f'<span class="adresse">{esc(EMAIL)}</span>'
     sprache = "de" if slug_.startswith("br-de-") else "en"
     html_ = f"""<!doctype html>
@@ -393,8 +409,7 @@ def render_fehler(pages, meta, text, stil):
 <h1>{esc(meta["h1"])}</h1>
 <p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="{sprache}">{esc(meta["meldung"])}</span></p>
 {body}
-<p class="artikel__pruefen">{esc(link[0])}</p>
-<p class="artikel__knopf"><a class="knopf knopf--haupt" href="../../">{esc(link[1])}</a></p>
+{pruefen}<p class="artikel__knopf"><a class="knopf knopf--haupt" href="../../">{esc(link[1])}</a></p>
 <p class="hinweisfeld">Der Fehler kommt immer wieder? Wir finden heraus, warum Ihre Software oder Ihr Export ihn erzeugt, und liefern die Korrektur: 149 € netto, einmalig, Lieferung in 3 Werktagen ab Eingang vollständiger Daten (Angebot nur für Unternehmer). <a href="../../#angebot">Ursache beheben lassen</a> oder per E-Mail an {adresse}.</p>
 </article>
 

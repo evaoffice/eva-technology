@@ -14,7 +14,7 @@ With the number:
   - the legal notice (legal/) shows it;
   - the German invoice checker is published at e-rechnung-pruefen/, with the
     number in its Impressum, and the home page links to it;
-  - the ten German error pages are published under e-rechnung-pruefen/fehler/.
+  - the German error pages are published under e-rechnung-pruefen/fehler/.
 
 Without the number:
   - the legal notice is published without that line (the site is already
@@ -55,6 +55,10 @@ TOOL_DIR = "e-rechnung-pruefen"
 TOOL_TEMPLATE = ROOT / "tools" / "e-rechnung-pruefen.html.tpl"
 ERROR_DIR = "fehler"
 ERROR_TEMPLATES = ROOT / "tools" / "fehler"
+ERROR_PAGES = 15
+# Pages about rules that the checker does not check. They say so, and they do
+# not carry the sentence that the checker shows the error.
+NOT_CHECKED = ("peppol-r260", "peppol-r257-r258", "peppol-r230-de-r-t02", "peppol-r219-r229", "peppol-r231")
 NIF_MARK = "[NIF]"
 # Same rule as src/nif.js of the checker: letters and digits, with dots,
 # hyphens, slashes or spaces only in between.
@@ -197,7 +201,9 @@ def selftest():
     """Both outcomes, with a made-up number, in a temporary folder."""
     fake = "TEST-00000"
     templates = error_templates()
-    assert len(templates) == 10, f"{len(templates)} error pages; run tools/build.py"
+    assert len(templates) == ERROR_PAGES, f"{len(templates)} error pages; run tools/build.py"
+    sources = sorted((ROOT / "content" / "fehler").glob("*.md"))
+    assert len(sources) == ERROR_PAGES, f"{len(sources)} sources in content/fehler"
     with tempfile.TemporaryDirectory() as folder:
         folder = pathlib.Path(folder)
 
@@ -217,7 +223,7 @@ def selftest():
             assert f"<loc>{SITE_URL}</loc>" in sitemap and "404" not in sitemap
 
         result = assemble(folder / "with", f"  {fake} ")
-        assert result["tool"] and result["reason"] == "" and len(result["errors"]) == 10
+        assert result["tool"] and result["reason"] == "" and len(result["errors"]) == ERROR_PAGES
         page = (folder / "with" / TOOL_DIR / "index.html").read_text(encoding="utf-8")
         assert f'Steuernummer (NIF): <span id="impressum-nif">{fake}</span>' in page
         assert NIF_MARK not in page and '<html lang="de">' in page
@@ -242,6 +248,14 @@ def selftest():
             assert not re.search(r"menschliche[rn]? (Aufsicht|Prüfung|Kontrolle)", error_page), slug
             assert f'href="{ERROR_DIR}/{slug}/"' in page, f"the checker does not link to {slug}"
             assert f"<loc>{SITE_URL}{TOOL_DIR}/{ERROR_DIR}/{slug}/</loc>" in sitemap, slug
+            assert "Ursache beheben lassen</a>" in error_page and "149 € netto, einmalig" in error_page, slug
+            assert error_page.count("Meldung des Validators:") == 1, slug
+            if slug in NOT_CHECKED:
+                assert re.search(r"<p>Hinweis: Unser Prüfwerkzeug prüft diese Regeln? derzeit nicht\.</p>", error_page), slug
+                assert "Unser Prüfwerkzeug zeigt diesen Fehler" not in error_page, slug
+                assert "<strong>Woher die Regel kommt.</strong> Die Regel gehört zur November-Release 2026" in error_page, slug
+                assert "{{" not in error_page and "&lt;cac:" in error_page and "<cac:" not in error_page, slug
+        assert set(NOT_CHECKED) <= set(result["errors"])
         robots = (folder / "with" / "robots.txt").read_text(encoding="utf-8")
         assert f"Sitemap: {SITE_URL}sitemap.xml" in robots
 

@@ -2,7 +2,7 @@
 
 The support page, privacy policies, terms of service and legal notice for
 three Jira apps (Desk Tools MCP, E-Invoice Kit for Jira and Team Load Radar
-for Jira), and a free invoice checker in German, E-Rechnung prüfen, with ten
+for Jira), and a free invoice checker in German, E-Rechnung prüfen, with fifteen
 pages that each explain one validation error.
 
 Served with GitHub Pages at <https://evaoffice.github.io/eva-technology/>.
@@ -33,10 +33,17 @@ Plain HTML and one stylesheet. No cookies, analytics or external requests
 anywhere.
 
 - `content/*.md` holds the text of each English page.
-- `content/fehler/*.md` holds the ten German error pages of the checker
+- `content/fehler/*.md` holds the fifteen German error pages of the checker
   (title, description, a German heading, the validator's literal message and
   the explanation). They take their stylesheet from the checker page, so run
   `tools/build.py` again whenever `tools/e-rechnung-pruefen.html.tpl` changes.
+  The line `detects:` says what the page may claim: `yes` (the checker shows
+  this error), `no`, or `link-only` for a rule the checker does not check,
+  where the page only links to the checker. Files 11 to 15 are of that kind:
+  five rules of the November 2026 release of Peppol BIS Billing (R260,
+  R257/R258, R230/DE-R-T02, R219/R229 and R231). Their shared paragraph on
+  where the rules come from is kept once, in `tools/build.py`
+  (`{{PEPPOL-2026-11}}`).
 - `python3 tools/build.py` turns both into HTML (needs the `markdown`
   package). The English pages are committed where they are served; the error
   pages go to `tools/fehler/*.html.tpl`, because they are published only
@@ -64,7 +71,7 @@ and not as a page.
 
 - the committed pages, copied as they are;
 - with `IMPRESSUM_NIF` set: the number in the legal notice (`legal/`), the
-  checker at `e-rechnung-pruefen/` with the number in its Impressum, its ten
+  checker at `e-rechnung-pruefen/` with the number in its Impressum, its fifteen
   error pages under `e-rechnung-pruefen/fehler/`, and a link to the checker
   on the home page;
 - without it: the legal notice without that line, no checker, no error pages

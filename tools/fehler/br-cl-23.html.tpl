@@ -399,6 +399,11 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <li><a href="../br-cl-23/" aria-current="page"><span class="regel">BR-CL-23</span> Ungültige Mengeneinheit („Std“, „Stk“)</a></li>
 <li><a href="../br-de-18/"><span class="regel">BR-DE-18</span> Skonto im falschen Format</a></li>
 <li><a href="../br-27/"><span class="regel">BR-27</span> Negativer Artikelpreis</a></li>
+<li><a href="../peppol-r260/"><span class="regel">R260</span> Zahlungsbedingungen brauchen genau ein cbc:Note</a></li>
+<li><a href="../peppol-r257-r258/"><span class="regel">R257 / R258</span> BIC oder IBAN im Zahlungskonto fehlt</a></li>
+<li><a href="../peppol-r230-de-r-t02/"><span class="regel">R230 / DE-R-T02</span> Link zum Anhang (BT-124) fehlt oder falsch</a></li>
+<li><a href="../peppol-r219-r229/"><span class="regel">R219 / R229</span> Genau eine elektronische Adresse (EndpointID)</a></li>
+<li><a href="../peppol-r231/"><span class="regel">R231</span> Nachlass oder Zuschlag ohne genau eine Steuerkategorie</a></li>
 </ul>
   </div>
 </section>
