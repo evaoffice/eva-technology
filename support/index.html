@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support | EVA Technology</title>
+<meta name="description" content="How to get help with Desk Tools MCP, E-Invoice Kit for Jira and Team Load Radar for Jira: contact, what to include and answers to common questions.">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<div class="frame">
+<nav class="rail" aria-label="Site">
+<p class="name"><a href="../">EVA Technology</a></p>
+<ul>
+<li><a href="../">Apps</a></li>
+<li><a href="../support/" aria-current="page">Support</a></li>
+<li class="group">Privacy policies</li>
+<li><a href="../privacy/desk-tools-mcp/">Desk Tools MCP</a></li>
+<li><a href="../privacy/e-invoice-kit/">E-Invoice Kit for Jira</a></li>
+<li><a href="../privacy/team-load-radar/">Team Load Radar for Jira</a></li>
+<li class="group" aria-hidden="true"></li>
+<li><a href="../terms/">Terms of service</a></li>
+</ul>
+</nav>
+<div>
+<main id="content">
+<h1>Support</h1>
+<p class="lead">For Desk Tools MCP, E-Invoice Kit for Jira and Team Load Radar for Jira.</p>
+<nav class="onpage" aria-labelledby="onpage-title">
+<h2 id="onpage-title">On this page</h2>
+<ul>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#what-to-include">What to include</a></li>
+<li><a href="#price-and-service-level">Price and service level</a></li>
+<li><a href="#questions-about-desk-tools-mcp">Questions about Desk Tools MCP</a></li>
+<li><a href="#questions-about-e-invoice-kit">Questions about E-Invoice Kit</a></li>
+<li><a href="#questions-about-team-load-radar">Questions about Team Load Radar</a></li>
+</ul>
+</nav>
+<p>Support is provided by an AI (Claude by Anthropic). The legally responsible party is the publisher named on this page: Lucas Acosta, Avenida José Miguel Galván Bello 29, 38612 El Médano (Santa Cruz de Tenerife), Spain.</p>
+<h2 id="contact">Contact</h2>
+<p>Email: <a href="mailto:eva.office.app@gmail.com">eva.office.app@gmail.com</a> (support is by email only)</p>
+<p>We reply the same business day (Monday to Friday). Security reports: write &ldquo;Security&rdquo; in the subject line.</p>
+<h2 id="what-to-include">What to include</h2>
+<ul>
+<li>your Atlassian site URL and the app name;</li>
+<li>the request or issue key;</li>
+<li>what you did, what you expected and what happened (a screenshot helps);</li>
+<li>Desk Tools MCP: the matching line of the log on the admin page;</li>
+<li>E-Invoice Kit: the rule ID shown (for example BR-CO-15);</li>
+<li>Team Load Radar: the project you selected and the summary line shown on the page.</li>
+</ul>
+<p>Please do not send passwords, API tokens or real invoices with personal or bank data.</p>
+<h2 id="price-and-service-level">Price and service level</h2>
+<p>All three apps are free. Support is provided on a best-effort basis, without a guaranteed service level.</p>
+<h2 id="questions-about-desk-tools-mcp">Questions about Desk Tools MCP</h2>
+<h3 id="can-the-ai-agent-write-to-my-customers-by-mistake">Can the AI agent write to my customers by mistake?</h3>
+<p>Customer replies are off by default. While they are off, the reply tool refuses, records the blocked attempt and tells you where an admin can switch it on (Jira settings → Apps → Desk Tools MCP). Internal notes are read back from Jira after writing to confirm they are internal.</p>
+<h3 id="where-can-i-see-what-the-app-did">Where can I see what the app did?</h3>
+<p>On the admin page (Jira settings → Apps → Desk Tools MCP): each write or blocked attempt with time, tool, request, comment and confirmed visibility. &ldquo;Clear log&rdquo; deletes it.</p>
+<h3 id="does-the-app-store-my-comments-or-my-users">Does the app store my comments or my users?</h3>
+<p>No. The log has no names, account IDs or comment text. It keeps at most 500 entries for up to 90 days.</p>
+<h3 id="can-it-read-forms">Can it read forms?</h3>
+<p>Yes. It lists the forms on a request with their answers and says whether each form is internal or visible to the customer.</p>
+<h3 id="do-i-need-rovo">Do I need Rovo?</h3>
+<p>The agent and the tools run through Rovo. Without Rovo you can still open the admin page and see the setting and the log.</p>
+<h2 id="questions-about-e-invoice-kit">Questions about E-Invoice Kit</h2>
+<h3 id="which-formats-does-it-produce">Which formats does it produce?</h3>
+<p>UBL 2.1 invoices following EN 16931 / XRechnung. The invoices it generates pass the official KoSIT validator 1.6.3 (XRechnung 3.0.2). ZUGFeRD, CII and credit notes are not supported.</p>
+<h3 id="where-do-the-invoice-lines-come-from">Where do the invoice lines come from?</h3>
+<p>From the time logged on the issue, multiplied by the hourly rate in the project&rsquo;s billing settings.</p>
+<h3 id="why-does-it-say-my-settings-are-missing">Why does it say my settings are missing?</h3>
+<p>Settings are per project. Open the E-Invoice Kit panel on any issue of the project and fill in the Settings tab (&ldquo;Load sample data&rdquo; shows an example).</p>
+<h3 id="how-can-i-see-what-an-error-looks-like">How can I see what an error looks like?</h3>
+<p>In the Validate tab, &ldquo;Attach sample with errors&rdquo; adds a broken example invoice to the issue. Validate it to see each failed rule with its explanation.</p>
+<h3 id="does-no-errors-found-mean-my-customer-will-accept-the-invoice">Does &ldquo;No errors found&rdquo; mean my customer will accept the invoice?</h3>
+<p>It means the file meets the EN 16931 / XRechnung rules the app checks. A receiver can still apply its own requirements.</p>
+<h3 id="is-my-bank-data-safe">Is my bank data safe?</h3>
+<p>It is stored only in Forge storage on Atlassian&rsquo;s infrastructure and never leaves Atlassian. Anyone who can open the panel in that project can see it.</p>
+<h3 id="is-this-tax-advice">Is this tax advice?</h3>
+<p>No. The app produces and checks files; ask your tax adviser about tax questions.</p>
+<h2 id="questions-about-team-load-radar">Questions about Team Load Radar</h2>
+<h3 id="why-is-someone-s-open-count-marked-as-a-minimum">Why is someone&rsquo;s &ldquo;Open&rdquo; count marked as a minimum?</h3>
+<p>In-progress counts are exact. When a person has more open work items than one search returns, the page shows the number it could count and says it is a minimum.</p>
+<h3 id="why-can-t-i-see-some-people-s-work">Why can&rsquo;t I see some people&rsquo;s work?</h3>
+<p>The page counts work with your Jira permissions. Work items you cannot see in Jira are not counted for you.</p>
+<h3 id="where-are-the-people-with-no-open-work">Where are the people with no open work?</h3>
+<p>They are folded under &ldquo;Show N people with no open work&rdquo; below the table, so the table starts with the people who have work.</p>
+<h3 id="does-the-app-store-who-is-overloaded">Does the app store who is overloaded?</h3>
+<p>No. Workload is calculated each time you open the page and is not kept. The app stores only its two settings and a short log without names.</p>
+<h3 id="why-does-the-page-take-a-while-on-large-projects">Why does the page take a while on large projects?</h3>
+<p>It counts each person&rsquo;s work across all projects. On a project of about 16 people it can take up to 20 seconds.</p>
+</main>
+<footer class="foot">
+<p>Support is provided by an AI (Claude by Anthropic). The legally responsible party is the publisher named on the support page.</p>
+<address>Publisher: Lucas Acosta, Avenida José Miguel Galván Bello 29, 38612 El Médano (Santa Cruz de Tenerife), Spain. <a href="mailto:eva.office.app@gmail.com">eva.office.app@gmail.com</a></address>
+<p><a href="../support/">Support</a>, <a href="../terms/">terms of service</a>. Last updated: 25 November 2026.</p>
+</footer>
+</div>
+</div>
+</body>
+</html>

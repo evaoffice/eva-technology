@@ -1,0 +1,369 @@
+/* EVA Technology public pages. One stylesheet, no external requests. */
+
+:root {
+  color-scheme: light dark;
+  --paper: #f7f9fa;
+  --ink: #172230;
+  --muted: #4b5b6b;
+  --accent: #0a6b5e;
+  --band: #e4ecef;
+  --rule: #c5d0d8;
+  --focus: #0a6b5e;
+  --step--1: 0.889rem;
+  --step-0: 1.125rem;
+  --step-1: 1.266rem;
+  --step-2: 1.602rem;
+  --step-3: 2.027rem;
+  --step-4: 2.887rem;
+  --humanist: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
+    source-sans-pro, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f171e;
+    --ink: #e3e9ed;
+    --muted: #a3b1bd;
+    --accent: #6ccdb9;
+    --band: #18242e;
+    --rule: #2b3a46;
+    --focus: #6ccdb9;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 1.5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--humanist);
+  font-size: var(--step-0);
+  line-height: 1.55;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 0.12em;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.skip:focus {
+  top: 1rem;
+}
+
+/* Frame: a rail with the site name and the page list, then the reading column. */
+
+.frame {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+  gap: 2rem;
+}
+
+.rail .name {
+  margin: 0 0 0.75rem;
+  font-size: var(--step-1);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.rail .name a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.rail ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--step--1);
+}
+
+.rail li.group {
+  flex-basis: 100%;
+  margin-top: 0.5rem;
+  color: var(--muted);
+}
+
+.rail ul a {
+  display: inline-block;
+  padding: 0.3rem 0;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.rail ul a:hover {
+  text-decoration: underline;
+}
+
+.rail ul a[aria-current="page"] {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+@media (min-width: 56rem) {
+  .frame {
+    grid-template-columns: 13rem minmax(0, 39rem);
+    gap: 4.5rem;
+    padding: 4rem 2rem 5rem;
+  }
+
+  .rail {
+    position: sticky;
+    top: 4rem;
+    align-self: start;
+  }
+
+  .rail ul {
+    display: block;
+  }
+
+  .rail li.group {
+    margin-top: 1.1rem;
+  }
+
+  .rail ul a {
+    display: block;
+    padding: 0.25rem 0 0.25rem 0.75rem;
+    border-left: 2px solid var(--rule);
+  }
+
+  .rail ul a[aria-current="page"] {
+    border-left-color: var(--accent);
+  }
+}
+
+/* Reading column */
+
+main > :first-child {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+h1 {
+  margin: 0 0 0.75rem;
+  font-size: var(--step-3);
+  font-weight: 700;
+}
+
+h2 {
+  margin: 2.75rem 0 0.6rem;
+  font-size: var(--step-2);
+  font-weight: 700;
+}
+
+h3 {
+  margin: 1.75rem 0 0.3rem;
+  font-size: var(--step-1);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+
+p,
+ul,
+ol,
+dl {
+  margin: 0 0 1rem;
+}
+
+.lead {
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+}
+
+main ul,
+main ol {
+  padding-left: 1.3rem;
+}
+
+main li {
+  margin-bottom: 0.4rem;
+}
+
+main ol > li {
+  margin-bottom: 0.9rem;
+  padding-left: 0.2rem;
+}
+
+main ol > li > p {
+  margin: 0;
+}
+
+.onpage {
+  margin: 0 0 2rem;
+  padding: 1rem 1.1rem;
+  background: var(--band);
+  font-size: var(--step--1);
+}
+
+.onpage h2 {
+  margin: 0 0 0.4rem;
+  font-size: var(--step--1);
+  letter-spacing: 0;
+}
+
+.onpage ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  columns: 2 12rem;
+  column-gap: 1.5rem;
+}
+
+.onpage li {
+  margin: 0;
+  padding: 0.15rem 0;
+  break-inside: avoid;
+}
+
+/* Home */
+
+.home h1 {
+  font-size: var(--step-4);
+  letter-spacing: -0.03em;
+}
+
+.home .statement {
+  font-size: var(--step-2);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+}
+
+/* Who answers: the one block every page shares. */
+
+.answers {
+  margin: 2rem 0 0;
+  padding: 1.1rem 1.25rem 0.35rem;
+  background: var(--band);
+  border-left: 4px solid var(--accent);
+}
+
+.answers div {
+  margin-bottom: 0.75rem;
+}
+
+.answers dt {
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+
+.answers dd {
+  margin: 0;
+}
+
+@media (min-width: 36rem) {
+  .answers div {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: baseline;
+  }
+}
+
+.apps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.apps li {
+  margin: 0;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.apps li:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.apps h3 {
+  margin: 0 0 0.25rem;
+}
+
+.apps p {
+  margin: 0 0 0.35rem;
+}
+
+.apps .more {
+  font-size: var(--step--1);
+}
+
+/* Footer */
+
+.foot {
+  margin-top: 4rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-size: var(--step--1);
+  color: var(--muted);
+}
+
+.foot p {
+  margin-bottom: 0.6rem;
+}
+
+.foot address {
+  margin-bottom: 0.6rem;
+  font-style: normal;
+}
+
+@media print {
+  .rail,
+  .skip,
+  .onpage {
+    display: none;
+  }
+
+  .frame {
+    display: block;
+    padding: 0;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
