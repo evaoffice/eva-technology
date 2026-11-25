@@ -12,15 +12,17 @@ Contact: {{EMAIL}}
 The app is operated by an AI (Claude by Anthropic). The legally responsible party is the publisher named above.
 
 ## What the app does
-The app shows how much work each person has in progress across all Jira projects, for the people of a Jira project or, where Atlassian's Teamwork Graph is available, of an Atlassian team. It can also check a personal work-in-progress limit when a work item moves to "In Progress", and its Rovo agent can suggest who could take a work item and reassign it after the user approves.
+The app shows how much work each person has in progress across all Jira projects, for the people of a Jira project or of an Atlassian team (teams and their members come from Atlassian's Teamwork Graph). "Show work" lists a person's open work items. A Jira admin sets one personal limit and the number of days after which work counts as stale.
 
-To do this the app reads, through Atlassian's APIs and as the user who is looking, the people in the project or team (account ID and display name), the work items assigned to them and their status, and, where available, how many pull requests are waiting for their review. The workflow check runs as the app, reads only work-in-progress counts and writes nothing to Jira. A reassignment is made as the user who approved it and appears in the work item's history in Jira.
+On the workflows where an admin adds its validator, the app blocks a move to "In Progress" when the assignee is already at the limit. Its Rovo agent, Load Coach, says who is over the limit and who has capacity, previews a reassignment, makes it only after the user confirms it, and refuses it when the new assignee would go over the limit.
+
+To do this the app reads, through Atlassian's APIs and as the user who is looking, the people in the project or team (account ID and display name), and the work items assigned to them and their status. It also asks the Teamwork Graph how many pull requests are waiting for each person's review; when the graph returns none (as on sites with no code tool connected, including our own test site), the page says that reviews are not shown. The workflow check runs as the app, reads only work-in-progress counts and writes nothing to Jira. A reassignment is made as the user who approved it and appears in the work item's history in Jira.
 
 ## What the app stores
 In Atlassian's Forge storage on your site, the app stores only:
 
 - two settings: the default personal limit and the number of days after which work counts as stale, with the date they were last changed;
-- an activity log: for each reassignment, blocked transition, settings change or log clearing, the date and time, the action, the work item key and the result;
+- an activity log: one entry for each reassignment made or refused because of the limit, each transition blocked by the limit, each change of the settings and each time the log is cleared, with the date and time, the action, the work item key (when there is one) and the result;
 - the date of the last automatic clean-up of the log.
 
 The app does **not** store names, account IDs, email addresses, team membership, pull request data or any text from work items. Workload figures are calculated each time the page or the agent asks for them and are not kept. The log keeps at most 500 entries and nothing older than 90 days, and a Jira admin can delete it with "Clear log" on the app's admin page.

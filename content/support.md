@@ -66,8 +66,11 @@ No. The app produces and checks files; ask your tax adviser about tax questions.
 
 ## Questions about Team Load Radar
 
-### Why is someone's "Open" count marked as a minimum?
-In-progress counts are exact. When a person has more open work items than one search returns, the page shows the number it could count and says it is a minimum.
+### What does the "Open" column count?
+Every work item assigned to the person that is not done, counted by Jira. A dash means Jira did not return the count for that person.
+
+### How do I block work over the limit?
+In the workflow editor, select the transition that leads to an "In Progress" status, add a rule of type "Validate details" and choose "Personal WIP limit (Team Load Radar)". The limit applies only on the workflows where you add it. If the app cannot check, the transition is allowed.
 
 ### Why can't I see some people's work?
 The page counts work with your Jira permissions. Work items you cannot see in Jira are not counted for you.

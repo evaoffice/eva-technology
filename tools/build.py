@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """Builds the static pages from content/*.md. Run: python3 tools/build.py
 
-The output (index.html, support/, privacy/, terms/, 404.html) is committed.
-tools/assemble.py copies it into the folder that GitHub Pages serves and
-fills the slot comment on the home page.
+The output (index.html, support/, privacy/, terms/, legal/, 404.html) is
+committed. tools/assemble.py copies it into the folder that GitHub Pages
+serves and fills two slot comments: the invoice checker on the home page and
+the tax number in the legal notice.
+
+The German error pages of the invoice checker come from content/fehler/*.md.
+They are written to tools/fehler/<rule>.html.tpl, because they are published
+only together with the checker (tools/assemble.py decides).
 """
 import html
 import pathlib
@@ -35,7 +40,12 @@ NAV = [
     ("privacy/team-load-radar/", "Team Load Radar for Jira"),
     (None, None),
     ("terms/", "Terms of service"),
+    ("legal/", "Legal notice"),
 ]
+
+# What a visitor can do today with each app. Changed here when the state changes.
+ON_REQUEST = "Available by installation link on request: write to " + EMAIL + "."
+COMING = "In production; installation link coming."
 
 APPS = [
     (
@@ -44,6 +54,7 @@ APPS = [
         "request and write to it. Customer replies stay switched off until "
         "a Jira admin turns them on.",
         "privacy/desk-tools-mcp/",
+        ON_REQUEST,
     ),
     (
         "E-Invoice Kit for Jira",
@@ -51,12 +62,14 @@ APPS = [
         "Jira issue and checks XML invoice attachments against the rules "
         "it supports.",
         "privacy/e-invoice-kit/",
+        ON_REQUEST,
     ),
     (
         "Team Load Radar for Jira",
         "Shows how much work each person has in progress across all Jira "
         "projects, measured against a personal limit.",
         "privacy/team-load-radar/",
+        COMING,
     ),
 ]
 
@@ -96,7 +109,8 @@ def footer(root):
         f"<p>{esc(NOTICE)}</p>\n"
         f"<address>Publisher: {esc(PUBLISHER)}. {mail()}</address>\n"
         f'<p><a href="{root}support/">Support</a>, '
-        f'<a href="{root}terms/">terms of service</a>. '
+        f'<a href="{root}terms/">terms of service</a>, '
+        f'<a href="{root}legal/">legal notice</a>. '
         f"Last updated: {UPDATED}.</p>\n"
         "</footer>"
     )
@@ -163,6 +177,8 @@ def render(md_path):
         return f'<h{level} id="{ident}">{inner}</h{level}>'
 
     body = re.sub(r"<h([23])>(.*?)</h\1>", add_id, body)
+    # tools/assemble.py puts the tax number here, or removes the line.
+    body = body.replace("<p>[[NIF-LINE]]</p>", "<!-- slot: nif -->")
 
     parts = [f"<h1>{esc(meta['title'])}</h1>"]
     if meta.get("lead"):
@@ -206,8 +222,9 @@ def answers(root):
 def home():
     apps = "\n".join(
         f"<li>\n<h3>{esc(name)}</h3>\n<p>{esc(line)}</p>\n"
+        f'<p class="status">{esc(status).replace(esc(EMAIL), mail())}</p>\n'
         f'<p class="more"><a href="{href}">Privacy policy for {esc(name)}</a></p>\n</li>'
-        for name, line, href in APPS
+        for name, line, href, status in APPS
     )
     body = f"""<h1>{SITE}</h1>
 <p class="statement">A software studio run by an AI. It builds apps for Jira on Atlassian Forge, and one person answers for it.</p>
@@ -249,6 +266,7 @@ def not_found():
 <li><a href="{BASE_PATH}privacy/e-invoice-kit/">Privacy policy for E-Invoice Kit for Jira</a></li>
 <li><a href="{BASE_PATH}privacy/team-load-radar/">Privacy policy for Team Load Radar for Jira</a></li>
 <li><a href="{BASE_PATH}terms/">Terms of service</a></li>
+<li><a href="{BASE_PATH}legal/">Legal notice</a></li>
 </ul>"""
     out = ROOT / "404.html"
     out.write_text(
@@ -264,10 +282,97 @@ def not_found():
     return out
 
 
+# --- German error pages of the invoice checker -------------------------------
+
+FEHLER_OUT = ROOT / "tools" / "fehler"
+SITE_URL = "https://evaoffice.github.io/eva-technology/"
+KI_HINWEIS = (
+    "Diese Seite und der Service werden von einer KI (Claude von Anthropic) "
+    "betrieben. Rechtlich verantwortlich und Ihr Vertragspartner ist die im "
+    "Impressum genannte Person; sie stellt auch die Rechnung."
+)
+LINK_ZEIGT = "Unser Prüfwerkzeug zeigt diesen Fehler mit Erklärung an. Datei jetzt prüfen"
+LINK_ALLGEMEIN = "Prüfen Sie Ihre Datei kostenlos im Browser"
+
+
+def fehler_seiten():
+    pages = []
+    for md in sorted((ROOT / "content" / "fehler").glob("*.md")):
+        meta, text = parse(md)
+        for key in ("slug", "nav", "title", "description", "h1", "detects"):
+            if not meta.get(key):
+                raise SystemExit(f"{md.name}: '{key}' is missing")
+        if meta["detects"] not in ("yes", "no"):
+            raise SystemExit(f"{md.name}: detects must be yes or no")
+        pages.append((meta, text))
+    return pages
+
+
+def fehler_rail(pages, current):
+    items = ['<li><a href="../../">XRechnung kostenlos prüfen</a></li>', '<li class="group">Häufige Fehler</li>']
+    for meta, _ in pages:
+        cur = ' aria-current="page"' if meta["slug"] == current else ""
+        items.append(f'<li><a href="../{meta["slug"]}/"{cur}>{esc(meta["nav"])}</a></li>')
+    items.append('<li class="group" aria-hidden="true"></li>')
+    items.append('<li><a href="../../#angebot">Korrektur anfragen</a></li>')
+    return (
+        '<nav class="rail" aria-label="E-Rechnung prüfen">\n'
+        '<p class="name"><a href="../../">E-Rechnung prüfen</a></p>\n'
+        "<ul>\n" + "\n".join(items) + "\n</ul>\n</nav>"
+    )
+
+
+def render_fehler(pages, meta, text):
+    slug_ = meta["slug"]
+    body = markdown.markdown(text, extensions=["fenced_code", "tables", "sane_lists"], output_format="html5")
+    link = LINK_ZEIGT if meta["detects"] == "yes" else LINK_ALLGEMEIN
+    html_ = f"""<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{esc(meta["title"])}</title>
+<meta name="description" content="{esc(meta["description"])}">
+<link rel="canonical" href="{SITE_URL}e-rechnung-pruefen/fehler/{slug_}/">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body class="fehler">
+<a class="skip" href="#content">Zum Inhalt</a>
+<div class="frame">
+{fehler_rail(pages, slug_)}
+<div>
+<main id="content">
+<p class="kicker">XRechnung · Fehlermeldung erklärt</p>
+<h1>{esc(meta["h1"])}</h1>
+{body}
+<p class="cta"><a href="../../">{esc(link)}</a></p>
+<p class="offer">Sie möchten den Fehler nicht selbst beheben? Wir korrigieren bis zu 5 XRechnungen für 49 € netto (Angebot nur für Unternehmer). <a href="../../#angebot">Korrektur anfragen</a> oder per E-Mail an {mail()}.</p>
+</main>
+<footer class="foot">
+<p>{esc(KI_HINWEIS)}</p>
+<p>Technische Erläuterung, keine Steuer- oder Rechtsberatung. Alle Beispiele sind erfunden.</p>
+<p><a href="../../#impressum">Impressum</a> · <a href="../../#datenschutz">Datenschutz</a> · Kontakt: {mail()}</p>
+</footer>
+</div>
+</div>
+</body>
+</html>
+"""
+    out = FEHLER_OUT / f"{slug_}.html.tpl"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(html_, encoding="utf-8")
+    return out
+
+
 def main():
     written = [home(), not_found()]
     for md in sorted((ROOT / "content").glob("*.md")):
         written.append(render(md))
+    pages = fehler_seiten()
+    for old in FEHLER_OUT.glob("*.html.tpl") if FEHLER_OUT.is_dir() else []:
+        old.unlink()
+    for meta, text in pages:
+        written.append(render_fehler(pages, meta, text))
     (ROOT / ".nojekyll").write_text("", encoding="utf-8")
     for path in written:
         print(path.relative_to(ROOT))

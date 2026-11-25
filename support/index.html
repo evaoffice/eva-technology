@@ -21,6 +21,7 @@
 <li><a href="../privacy/team-load-radar/">Team Load Radar for Jira</a></li>
 <li class="group" aria-hidden="true"></li>
 <li><a href="../terms/">Terms of service</a></li>
+<li><a href="../legal/">Legal notice</a></li>
 </ul>
 </nav>
 <div>
@@ -81,8 +82,10 @@
 <h3 id="is-this-tax-advice">Is this tax advice?</h3>
 <p>No. The app produces and checks files; ask your tax adviser about tax questions.</p>
 <h2 id="questions-about-team-load-radar">Questions about Team Load Radar</h2>
-<h3 id="why-is-someone-s-open-count-marked-as-a-minimum">Why is someone&rsquo;s &ldquo;Open&rdquo; count marked as a minimum?</h3>
-<p>In-progress counts are exact. When a person has more open work items than one search returns, the page shows the number it could count and says it is a minimum.</p>
+<h3 id="what-does-the-open-column-count">What does the &ldquo;Open&rdquo; column count?</h3>
+<p>Every work item assigned to the person that is not done, counted by Jira. A dash means Jira did not return the count for that person.</p>
+<h3 id="how-do-i-block-work-over-the-limit">How do I block work over the limit?</h3>
+<p>In the workflow editor, select the transition that leads to an &ldquo;In Progress&rdquo; status, add a rule of type &ldquo;Validate details&rdquo; and choose &ldquo;Personal WIP limit (Team Load Radar)&rdquo;. The limit applies only on the workflows where you add it. If the app cannot check, the transition is allowed.</p>
 <h3 id="why-can-t-i-see-some-people-s-work">Why can&rsquo;t I see some people&rsquo;s work?</h3>
 <p>The page counts work with your Jira permissions. Work items you cannot see in Jira are not counted for you.</p>
 <h3 id="where-are-the-people-with-no-open-work">Where are the people with no open work?</h3>
@@ -95,7 +98,7 @@
 <footer class="foot">
 <p>Support is provided by an AI (Claude by Anthropic). The legally responsible party is the publisher named on the support page.</p>
 <address>Publisher: Lucas Acosta, Avenida José Miguel Galván Bello 29, 38612 El Médano (Santa Cruz de Tenerife), Spain. <a href="mailto:eva.office.app@gmail.com">eva.office.app@gmail.com</a></address>
-<p><a href="../support/">Support</a>, <a href="../terms/">terms of service</a>. Last updated: 25 November 2026.</p>
+<p><a href="../support/">Support</a>, <a href="../terms/">terms of service</a>, <a href="../legal/">legal notice</a>. Last updated: 25 November 2026.</p>
 </footer>
 </div>
 </div>

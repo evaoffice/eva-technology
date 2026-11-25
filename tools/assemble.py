@@ -4,16 +4,26 @@
     python3 tools/assemble.py --out _site
     python3 tools/assemble.py --selftest
 
-The pages committed in this repository are copied as they are. One page is
-added on the way: the German invoice checker at e-rechnung-pruefen/. Spanish
-law requires its legal notice (Impressum) to show the publisher's tax number.
-That number is not stored in this repository. It comes from the environment
-variable IMPRESSUM_NIF, which the workflow fills from the repository variable
-of the same name.
+The pages committed in this repository are copied as they are. Three things
+are decided on the way, all by one environment variable, IMPRESSUM_NIF, which
+the workflow fills from the repository variable (or secret) of the same name.
+It holds the publisher's tax number, which Spanish law (LSSI, Article 10)
+requires in a legal notice and which is not stored in this repository.
 
-Without the number the checker is left out and the home page does not link to
-it, so an incomplete legal notice is never published. This script never
-prints the number.
+With the number:
+  - the legal notice (legal/) shows it;
+  - the German invoice checker is published at e-rechnung-pruefen/, with the
+    number in its Impressum, and the home page links to it;
+  - the ten German error pages are published under e-rechnung-pruefen/fehler/.
+
+Without the number:
+  - the legal notice is published without that line (the site is already
+    online and is not taken down for it);
+  - the checker and its error pages are left out, and nothing links to them,
+    so an incomplete Impressum is never published.
+
+sitemap.xml and robots.txt list the pages that were really published.
+This script never prints the number.
 """
 import argparse
 import os
@@ -24,17 +34,19 @@ import sys
 import tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-PAGES = ["index.html", "404.html", ".nojekyll", "assets", "support", "privacy", "terms"]
+PAGES = ["index.html", "404.html", ".nojekyll", "assets", "support", "privacy", "terms", "legal"]
+SITE_URL = "https://evaoffice.github.io/eva-technology/"
 
 TOOL_DIR = "e-rechnung-pruefen"
 TOOL_TEMPLATE = ROOT / "tools" / "e-rechnung-pruefen.html.tpl"
+ERROR_DIR = "fehler"
+ERROR_TEMPLATES = ROOT / "tools" / "fehler"
 NIF_MARK = "[NIF]"
 # Same rule as src/nif.js of the checker: letters and digits, with dots,
 # hyphens, slashes or spaces only in between.
 NIF_FORM = re.compile(r"[A-Za-z0-9][A-Za-z0-9 ./-]{3,22}[A-Za-z0-9]")
 
-# tools/build.py writes this comment into the home page. It is replaced by the
-# block below when the checker is published, and removed when it is not.
+# tools/build.py writes these comments. They are replaced or removed here.
 HOME_SLOT = "<!-- slot: e-rechnung-pruefen -->\n"
 HOME_BLOCK = """<h2 id="tools">Free tool</h2>
 <ul class="apps">
@@ -45,6 +57,8 @@ HOME_BLOCK = """<h2 id="tools">Free tool</h2>
 </li>
 </ul>
 """
+LEGAL_SLOT = "<!-- slot: nif -->\n"
+LEGAL_LINE = '<p>Tax identification number (NIF): <span id="legal-nif">{nif}</span></p>\n'
 
 
 class NifError(ValueError):
@@ -71,8 +85,33 @@ def tool_page(nif):
     return text.replace(NIF_MARK, nif)
 
 
+def error_templates():
+    return sorted(ERROR_TEMPLATES.glob("*.html.tpl"))
+
+
+def fill(path, slot, block, name):
+    text = path.read_text(encoding="utf-8")
+    if text.count(slot) != 1:
+        raise SystemExit(f"{name}: the slot {slot.strip()} is missing. Run tools/build.py.")
+    path.write_text(text.replace(slot, block), encoding="utf-8")
+
+
+def write_index_files(out):
+    """sitemap.xml and robots.txt, from the pages that are in the folder."""
+    urls = []
+    for page in sorted(out.rglob("index.html")):
+        rel = page.parent.relative_to(out).as_posix()
+        urls.append(SITE_URL if rel == "." else f"{SITE_URL}{rel}/")
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    lines += [f"  <url><loc>{url}</loc></url>" for url in urls]
+    lines.append("</urlset>")
+    (out / "sitemap.xml").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}sitemap.xml\n", encoding="utf-8")
+    return urls
+
+
 def assemble(out, nif_value):
-    """Writes the site to `out`. Returns (tool_published, reason)."""
+    """Writes the site to `out`. Returns a dict that says what was published."""
     out = pathlib.Path(out)
     if out.exists():
         shutil.rmtree(out)
@@ -90,30 +129,43 @@ def assemble(out, nif_value):
     except NifError as error:
         nif, reason = None, str(error)
 
-    home = out / "index.html"
-    text = home.read_text(encoding="utf-8")
-    if text.count(HOME_SLOT) != 1:
-        raise SystemExit("index.html: the slot for the tool is missing. Run tools/build.py.")
-    home.write_text(text.replace(HOME_SLOT, HOME_BLOCK if nif else ""), encoding="utf-8")
+    fill(out / "index.html", HOME_SLOT, HOME_BLOCK if nif else "", "index.html")
+    fill(out / "legal" / "index.html", LEGAL_SLOT, LEGAL_LINE.format(nif=nif) if nif else "", "legal/index.html")
 
+    errors = []
     if nif:
         target = out / TOOL_DIR / "index.html"
         target.parent.mkdir()
         target.write_text(tool_page(nif), encoding="utf-8")
-    return bool(nif), reason
+        for template in error_templates():
+            slug = template.name[: -len(".html.tpl")]
+            page = out / TOOL_DIR / ERROR_DIR / slug / "index.html"
+            page.parent.mkdir(parents=True)
+            shutil.copy2(template, page)
+            errors.append(slug)
+
+    urls = write_index_files(out)
+    return {"tool": bool(nif), "reason": reason, "errors": errors, "urls": urls}
 
 
-def report(published, reason):
+def report(result):
     lines = ["## EVA Technology site", ""]
-    lines.append("- Apps, support, privacy and terms pages: included.")
-    if published:
+    lines.append("- Apps, support, privacy, terms and legal notice pages: included.")
+    if result["tool"]:
+        lines.append("- Legal notice: **with** the tax number.")
         lines.append(f"- `{TOOL_DIR}/`: **included**, with the tax number in its legal notice, and linked from the home page.")
+        lines.append(f"- `{TOOL_DIR}/{ERROR_DIR}/`: **{len(result['errors'])} error pages included**.")
     else:
-        lines.append(
-            f"- `{TOOL_DIR}/`: **not published** ({reason}). The home page does not link to it. "
-            "To publish it, add the repository variable `IMPRESSUM_NIF` under Settings, "
+        hint = (
+            "To change that, add the repository variable `IMPRESSUM_NIF` under Settings, "
             "Secrets and variables, Actions, Variables, and run this workflow again."
         )
+        lines.append(f"- Legal notice: published **without the tax number** ({result['reason']}).")
+        lines.append(
+            f"- `{TOOL_DIR}/` and its error pages: **not published** ({result['reason']}). "
+            f"The home page does not link to them. {hint}"
+        )
+    lines.append(f"- `sitemap.xml` and `robots.txt`: {len(result['urls'])} pages listed.")
     text = "\n".join(lines) + "\n"
     print(text)
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
@@ -125,33 +177,61 @@ def report(published, reason):
 def selftest():
     """Both outcomes, with a made-up number, in a temporary folder."""
     fake = "TEST-00000"
+    templates = error_templates()
+    assert len(templates) == 10, f"{len(templates)} error pages; run tools/build.py"
     with tempfile.TemporaryDirectory() as folder:
         folder = pathlib.Path(folder)
 
         for bad in ("", "   ", "abc", "<b>1234567</b>", '1234567"8', "x" * 40, NIF_MARK):
-            published, reason = assemble(folder / "without", bad)
-            assert not published and reason.startswith("IMPRESSUM_NIF"), bad
-            assert bad.strip() == "" or bad not in reason
+            result = assemble(folder / "without", bad)
+            assert not result["tool"] and result["reason"].startswith("IMPRESSUM_NIF"), bad
+            assert bad.strip() == "" or bad not in result["reason"]
+            assert result["errors"] == []
             assert not (folder / "without" / TOOL_DIR).exists()
             home = (folder / "without" / "index.html").read_text(encoding="utf-8")
             assert TOOL_DIR not in home and "slot:" not in home
             assert home == (ROOT / "index.html").read_text(encoding="utf-8").replace(HOME_SLOT, "")
+            legal = (folder / "without" / "legal" / "index.html").read_text(encoding="utf-8")
+            assert "slot:" not in legal and "NIF" not in legal and "Lucas Acosta" in legal
+            sitemap = (folder / "without" / "sitemap.xml").read_text(encoding="utf-8")
+            assert TOOL_DIR not in sitemap and f"<loc>{SITE_URL}legal/</loc>" in sitemap
+            assert f"<loc>{SITE_URL}</loc>" in sitemap and "404" not in sitemap
 
-        published, reason = assemble(folder / "with", f"  {fake} ")
-        assert published and reason == ""
+        result = assemble(folder / "with", f"  {fake} ")
+        assert result["tool"] and result["reason"] == "" and len(result["errors"]) == 10
         page = (folder / "with" / TOOL_DIR / "index.html").read_text(encoding="utf-8")
         assert f'Steuernummer (NIF): <span id="impressum-nif">{fake}</span>' in page
         assert NIF_MARK not in page and '<html lang="de">' in page
         assert page == TOOL_TEMPLATE.read_text(encoding="utf-8").replace(NIF_MARK, fake)
         home = (folder / "with" / "index.html").read_text(encoding="utf-8")
         assert home.count(f'href="{TOOL_DIR}/"') == 1 and "slot:" not in home
+        legal = (folder / "with" / "legal" / "index.html").read_text(encoding="utf-8")
+        assert f'Tax identification number (NIF): <span id="legal-nif">{fake}</span>' in legal and "slot:" not in legal
 
-        for name in ("support", "privacy", "terms", "assets"):
+        notice = (
+            "Diese Seite und der Service werden von einer KI (Claude von Anthropic) betrieben. "
+            "Rechtlich verantwortlich und Ihr Vertragspartner ist die im Impressum genannte Person; "
+            "sie stellt auch die Rechnung."
+        )
+        sitemap = (folder / "with" / "sitemap.xml").read_text(encoding="utf-8")
+        assert f"<loc>{SITE_URL}{TOOL_DIR}/</loc>" in sitemap
+        for slug in result["errors"]:
+            error_page = (folder / "with" / TOOL_DIR / ERROR_DIR / slug / "index.html").read_text(encoding="utf-8")
+            assert '<html lang="de">' in error_page and notice in error_page, slug
+            assert 'href="../../#impressum"' in error_page and 'href="../../"' in error_page, slug
+            assert fake not in error_page and NIF_MARK not in error_page, slug
+            assert not re.search(r"menschliche[rn]? (Aufsicht|Prüfung|Kontrolle)", error_page), slug
+            assert f'href="{ERROR_DIR}/{slug}/"' in page, f"the checker does not link to {slug}"
+            assert f"<loc>{SITE_URL}{TOOL_DIR}/{ERROR_DIR}/{slug}/</loc>" in sitemap, slug
+        robots = (folder / "with" / "robots.txt").read_text(encoding="utf-8")
+        assert f"Sitemap: {SITE_URL}sitemap.xml" in robots
+
+        for name in ("support", "privacy", "terms", "legal", "assets"):
             assert (folder / "with" / name).is_dir(), name
         for site in ("with", "without"):
             for path in (folder / site).rglob("*"):
                 assert path.suffix != ".tpl" and "tools" not in path.parts, path
-    print("selftest: ok (the tool is left out without a number and published with one)")
+    print("selftest: ok (without a number: no checker, no error pages, legal notice without the line; with one: all published)")
 
 
 def main():
@@ -162,8 +242,7 @@ def main():
     if args.selftest:
         selftest()
         return 0
-    published, reason = assemble(args.out, os.environ.get("IMPRESSUM_NIF", ""))
-    report(published, reason)
+    report(assemble(args.out, os.environ.get("IMPRESSUM_NIF", "")))
     return 0
 
 

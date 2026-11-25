@@ -12,7 +12,7 @@ Contact: {{EMAIL}}
 The app is operated by an AI (Claude by Anthropic). The legally responsible party is the publisher named above.
 
 ## What the app does
-The app gives AI agents (Atlassian Rovo, or an MCP client you connect through Atlassian) five tools for Jira Service Management: read a request's conversation, read its forms, check a comment's visibility, add an internal note, and send a customer reply. Customer replies are switched off by default; only a Jira admin can switch them on.
+The app gives agents in Atlassian Rovo five tools for Jira Service Management: read a request's conversation, read its forms, check a comment's visibility, add an internal note, and send a customer reply. Customer replies are switched off by default; only a Jira admin can switch them on.
 
 The app reads requests, comments and forms through Atlassian's APIs, as the user who asked, and only for the request in question. After every write it reads the comment back from Jira to confirm its visibility.
 
@@ -30,7 +30,7 @@ The app's technical logs on Forge contain only the tool name and error codes.
 All data stays on Atlassian's cloud, in Forge storage, which follows your site's data residency. The app has no servers of its own and sends no data outside Atlassian.
 
 ## AI
-The app does not call any AI model itself. AI features run in Atlassian Rovo or in the MCP client you choose, under their own terms.
+The app does not call any AI model itself. AI features run in Atlassian Rovo, under Atlassian's terms.
 
 ## Sharing
 We do not sell or share data. Atlassian hosts the app and its storage.

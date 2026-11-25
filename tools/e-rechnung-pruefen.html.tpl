@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-DNtKxVz6MF0z4wj7VhZlUmCtknENkUQ7ONglYc+dt34='; style-src 'sha256-8F3Px/Uh6yskVBzs2yEwrFyR9IuvvQSZg39z64GmZ1c='; img-src 'none'; connect-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-DNtKxVz6MF0z4wj7VhZlUmCtknENkUQ7ONglYc+dt34='; style-src 'sha256-dQQ8/y+/Hdh6LXv+LlLujdQn+7FU+27S9m7ls5+zWwM='; img-src 'none'; connect-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Prüfen Sie Ihre XRechnung (UBL) kostenlos im Browser. Die Datei wird nicht hochgeladen. Jeder Fehler mit Erklärung und Lösung in verständlichem Deutsch.">
@@ -19,15 +19,15 @@
       "id": "korrektur",
       "name": "Prüfen und korrigieren",
       "preis": "49 €",
-      "umfang": "Bis zu 5 XRechnungen: Wir prüfen sie, erklären jeden Fehler in klarem Deutsch und liefern jede Rechnung korrigiert zurück, mit Prüfbericht.",
-      "frist": "1 Werktag",
+      "umfang": "Bis zu 5 XRechnungen: Wir prüfen sie, erklären jeden Fehler in klarem Deutsch und liefern jede Rechnung korrigiert zurück, mit dem Prüfbericht dieser Seite.",
+      "frist": "1 Werktag ab Eingang vollständiger Daten",
       "knopf": "Korrektur anfragen"
     },
     {
       "id": "konverter",
       "name": "Konverter",
       "preis": "290 €",
-      "umfang": "Ein Programm, das Ihren CSV- oder Excel-Export in XRechnung (UBL) umwandelt. 10 Ihrer Rechnungen umgewandelt und geprüft, Anleitung und eine Änderungsrunde.",
+      "umfang": "Ein Programm, das Ihren CSV- oder Excel-Export in XRechnung (UBL) umwandelt. Als Vorlage genügt ein anonymisierter Export oder Testdaten. 10 Testrechnungen umgewandelt und geprüft, Anleitung und eine Änderungsrunde.",
       "frist": "3 Werktage ab Eingang vollständiger Daten",
       "knopf": "Konverter anfragen"
     },
@@ -116,6 +116,8 @@ a:hover { color: var(--gruen-dunkel); }
 .kopf__zeile { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; align-items: baseline; justify-content: space-between; padding-block: 0.9rem; }
 .kopf__name { font-family: var(--titel); font-weight: 600; font-size: 1.15rem; }
 .kopf__merkmale { font-size: 0.875rem; color: var(--grau); }
+.kopf__dienst { flex-basis: 100%; font-size: 0.9rem; }
+.kopf__dienst .adresse, .auftakt__dienst .adresse { overflow-wrap: anywhere; }
 
 /* Auftakt ---------------------------------------------------------------- */
 .auftakt { padding-block: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 3vw, 2rem); }
@@ -124,6 +126,7 @@ a:hover { color: var(--gruen-dunkel); }
   border: 1px solid var(--tinte); font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
 }
 .auftakt__text { margin-top: 1.1rem; max-width: 60ch; font-size: 1.15rem; color: #2d3532; }
+.auftakt__dienst { margin-top: 0.9rem; max-width: 60ch; font-size: 0.975rem; color: var(--grau); }
 
 /* Werkzeug --------------------------------------------------------------- */
 .werkzeug { padding-bottom: clamp(2rem, 5vw, 3.5rem); }
@@ -237,6 +240,9 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 .aufklappen h3 { margin: 1.1rem 0 0.5rem; }
 .regelliste { columns: 22rem; column-gap: 2.5rem; font-size: 0.9rem; }
 .regelliste li { break-inside: avoid; padding: 0.2rem 0; }
+.fehlerliste { list-style: none; padding: 0; margin-top: 1.25rem; columns: 24rem; column-gap: 2.5rem; }
+.fehlerliste li { break-inside: avoid; padding: 0.3rem 0; }
+.fehlerliste .regel { margin-right: 0.4rem; }
 
 .befundkasten { padding: clamp(1.1rem, 3vw, 1.6rem); border: 1px solid var(--tinte); background: var(--papier); }
 
@@ -319,6 +325,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   <div class="rahmen kopf__zeile">
     <p class="kopf__name">E-Rechnung prüfen</p>
     <p class="kopf__merkmale">Kostenlos · ohne Anmeldung · ohne Upload</p>
+    <p class="kopf__dienst"><a href="#angebot">Korrektur ab 49 € netto</a> · Kontakt: <span class="adresse">eva.office.app@gmail.com</span></p>
   </div>
 </header>
 
@@ -327,6 +334,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
     <p class="vorzeile">Versandpflicht für E-Rechnungen ab 2027</p>
     <h1 id="seitentitel">Ist Ihre XRechnung in Ordnung? Hier sehen Sie es in klarem Deutsch.</h1>
     <p class="auftakt__text">Legen Sie die XML-Datei Ihrer Rechnung unten ab. Sie erfahren sofort, welche Regel verletzt ist, was das bedeutet und wie Sie es beheben. <strong>Ihre Datei verlässt Ihren Browser nicht.</strong></p>
+    <p class="auftakt__dienst">Sie möchten den Fehler nicht selbst beheben? Wir korrigieren bis zu 5 XRechnungen für 49 € netto, Lieferung in 1 Werktag. <a href="#angebot">Zum Angebot</a> oder per E-Mail an <span class="adresse">eva.office.app@gmail.com</span>.</p>
   </section>
 
   <section id="werkzeug" class="werkzeug rahmen" aria-labelledby="werkzeug-titel">
@@ -380,6 +388,23 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
     </details>
   </section>
 
+  <section id="haeufige-fehler" class="abschnitt rahmen" aria-labelledby="fehler-titel">
+    <h2 id="fehler-titel">Häufige Fehler, einzeln erklärt</h2>
+    <p class="abschnitt__einleitung">Zu jeder Meldung eine eigene Seite: was die Regel prüft, typische Ursachen und ein Beispiel vorher und nachher.</p>
+    <ul class="fehlerliste">
+      <li><a href="fehler/br-de-15/"><span class="regel">BR-DE-15</span> Käuferreferenz (BT-10) fehlt</a></li>
+      <li><a href="fehler/br-co-14/"><span class="regel">BR-CO-14</span> Umsatzsteuer-Summe weicht ab</a></li>
+      <li><a href="fehler/br-co-17/"><span class="regel">BR-CO-17</span> Steuerbetrag passt nicht zur Bemessungsgrundlage</a></li>
+      <li><a href="fehler/br-ae-10/"><span class="regel">BR-AE-10</span> Reverse Charge ohne Befreiungsgrund</a></li>
+      <li><a href="fehler/br-e-10/"><span class="regel">BR-E-10</span> Steuerbefreiung ohne Grund (auch Kleinunternehmer)</a></li>
+      <li><a href="fehler/br-co-26/"><span class="regel">BR-CO-26</span> Verkäuferkennung fehlt</a></li>
+      <li><a href="fehler/peppol-r020-r010/"><span class="regel">R020 / R010</span> Elektronische Adresse fehlt</a></li>
+      <li><a href="fehler/br-cl-23/"><span class="regel">BR-CL-23</span> Ungültige Mengeneinheit („Std“, „Stk“)</a></li>
+      <li><a href="fehler/br-de-18/"><span class="regel">BR-DE-18</span> Skonto im falschen Format</a></li>
+      <li><a href="fehler/br-27/"><span class="regel">BR-27</span> Negativer Artikelpreis</a></li>
+    </ul>
+  </section>
+
   <section class="abschnitt abschnitt--band" aria-labelledby="pflicht-titel">
     <div class="rahmen spalten spalten--breit">
       <div>
@@ -402,11 +427,11 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 
   <section id="angebot" class="abschnitt rahmen" aria-labelledby="angebot-titel">
     <h2 id="angebot-titel">Wenn Sie es nicht selbst beheben möchten</h2>
-    <p class="abschnitt__einleitung">Wir prüfen Ihre Rechnungsdateien, erklären jeden Fehler verständlich und liefern die korrigierte Rechnung. Oder wir bauen Ihnen einen Konverter für Ihren Export. Zu jeder Lieferung erhalten Sie den Prüfbericht des offiziellen KoSIT-Validators.</p>
+    <p class="abschnitt__einleitung">Wir prüfen Ihre Rechnungsdateien, erklären jeden Fehler verständlich und liefern die korrigierte Rechnung. Oder wir bauen Ihnen einen Konverter für Ihren Export. Jede Lieferung prüfen wir vor dem Versand mit dem Prüfprogramm dieser Seite und legen den Prüfbericht bei. Den offiziellen KoSIT-Validator führen wir für Kundendateien nicht aus.</p>
     <ol class="schritte">
-      <li>Sie senden uns eine Beispielrechnung oder Ihren Export (CSV oder Excel).</li>
+      <li>Sie senden uns eine Testrechnung oder einen anonymisierten Export (CSV oder Excel; Namen von Personen und Bankdaten geschwärzt).</li>
       <li>Wir prüfen, erklären und korrigieren, oder wir liefern einen Konverter.</li>
-      <li>Sie erhalten jede Rechnung korrigiert zurück, mit dem Prüfbericht.</li>
+      <li>Sie erhalten jede Rechnung korrigiert zurück, mit dem Prüfbericht dieser Seite.</li>
     </ol>
     <ul id="angebot-liste" class="angebote"></ul>
     <p id="demnaechst" class="klein"></p>

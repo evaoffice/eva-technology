@@ -1,11 +1,12 @@
 # Builds the folder that GitHub Pages serves and, when Pages is set to deploy
 # from GitHub Actions, publishes it.
 #
-# The German invoice checker (e-rechnung-pruefen/) is published only when the
-# repository variable IMPRESSUM_NIF exists: its legal notice must show the
-# publisher's tax number, and that number is not stored in this repository.
-# Without the variable the rest of the site is published and the checker is
-# left out. The run summary says which of the two happened.
+# The repository variable IMPRESSUM_NIF holds the publisher's tax number, which
+# is not stored in this repository. With it, the legal notice shows the number
+# and the German invoice checker (e-rechnung-pruefen/) is published with its
+# ten error pages. Without it, the rest of the site is published, the legal
+# notice has no tax number line and the checker is left out. The run summary
+# says which of the two happened.
 name: Pages
 
 on:
