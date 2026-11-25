@@ -307,7 +307,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   <div class="rahmen kopf__zeile">
     <p class="kopf__name"><a href="../../">E-Rechnung prüfen</a></p>
     <p class="kopf__merkmale">Kostenlos · ohne Anmeldung · ohne Upload</p>
-    <p class="kopf__dienst"><a href="../../#angebot">Fehlerursache beheben: 149 € netto</a> · Kontakt: <span class="adresse">eva.office.app@gmail.com</span></p>
+    <p class="kopf__dienst"><a href="../../#angebot">Fehlerursache beheben: 149 € netto, in 3 Werktagen</a> · Kontakt: <span class="adresse">eva.office.app@gmail.com</span></p>
   </div>
 </header>
 
@@ -374,6 +374,16 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <li><a href="../peppol-r230-de-r-t02/"><span class="regel">R230 / DE-R-T02</span> Link zum Anhang (BT-124) fehlt oder falsch</a></li>
 <li><a href="../peppol-r219-r229/"><span class="regel">R219 / R229</span> Genau eine elektronische Adresse (EndpointID)</a></li>
 <li><a href="../peppol-r231/"><span class="regel">R231</span> Nachlass oder Zuschlag ohne genau eine Steuerkategorie</a></li>
+<li><a href="../br-de-1/"><span class="regel">BR-DE-1</span> Zahlungsangaben (BG-16) fehlen</a></li>
+<li><a href="../br-de-17/"><span class="regel">BR-DE-17</span> Rechnungsart (BT-3) nicht vorgesehen</a></li>
+<li><a href="../br-de-21/"><span class="regel">BR-DE-21</span> Spezifikationskennung (BT-24) passt nicht</a></li>
+<li><a href="../br-de-23-a/"><span class="regel">BR-DE-23-a</span> Überweisung ohne Kontoangaben</a></li>
+<li><a href="../br-co-10/"><span class="regel">BR-CO-10</span> Summe der Positionen stimmt nicht</a></li>
+<li><a href="../br-co-13/"><span class="regel">BR-CO-13</span> Nettosumme stimmt nicht</a></li>
+<li><a href="../br-co-15/"><span class="regel">BR-CO-15</span> Bruttobetrag weicht ab</a></li>
+<li><a href="../br-co-16/"><span class="regel">BR-CO-16</span> Zahlbetrag weicht ab</a></li>
+<li><a href="../br-s-08/"><span class="regel">BR-S-08</span> Bemessungsgrundlage je Steuersatz falsch</a></li>
+<li><a href="../br-06-br-08/"><span class="regel">BR-06 / BR-08</span> Name oder Anschrift des Verkäufers fehlt</a></li>
 </ul>
   </div>
 </section>

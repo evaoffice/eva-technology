@@ -55,7 +55,7 @@ TOOL_DIR = "e-rechnung-pruefen"
 TOOL_TEMPLATE = ROOT / "tools" / "e-rechnung-pruefen.html.tpl"
 ERROR_DIR = "fehler"
 ERROR_TEMPLATES = ROOT / "tools" / "fehler"
-ERROR_PAGES = 15
+ERROR_PAGES = 25
 # Pages about rules that the checker does not check. They say so, and they do
 # not carry the sentence that the checker shows the error.
 NOT_CHECKED = ("peppol-r260", "peppol-r257-r258", "peppol-r230-de-r-t02", "peppol-r219-r229", "peppol-r231")
@@ -265,6 +265,11 @@ def selftest():
                 assert '<p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>' in error_page, slug
                 assert "docs.peppol.eu" not in error_page, slug
             assert "Alle anderen Regeln" not in error_page, slug
+            assert '">Fehlerursache beheben: 149 € netto, in 3 Werktagen</a> · Kontakt:' in error_page, slug
+        assert ">Fehlerursache beheben: 149 € netto, in 3 Werktagen</a> · Kontakt:" in page
+        # The checker reports BR-S-08 at one cent, the official rule only from 1.00 on: the page must say whose report counts.
+        s08 = (folder / "with" / TOOL_DIR / ERROR_DIR / "br-s-08" / "index.html").read_text(encoding="utf-8")
+        assert "Maßgeblich ist der Bericht des Validators, den Sie oder Ihr Empfänger verwenden." in s08
         assert set(NOT_CHECKED) <= set(result["errors"])
         robots = (folder / "with" / "robots.txt").read_text(encoding="utf-8")
         assert f"Sitemap: {SITE_URL}sitemap.xml" in robots

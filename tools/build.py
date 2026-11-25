@@ -401,7 +401,7 @@ def render_fehler(pages, meta, text, stil):
   <div class="rahmen kopf__zeile">
     <p class="kopf__name"><a href="../../">E-Rechnung prüfen</a></p>
     <p class="kopf__merkmale">Kostenlos · ohne Anmeldung · ohne Upload</p>
-    <p class="kopf__dienst"><a href="../../#angebot">Fehlerursache beheben: 149 € netto</a> · Kontakt: {adresse}</p>
+    <p class="kopf__dienst"><a href="../../#angebot">Fehlerursache beheben: 149 € netto, in 3 Werktagen</a> · Kontakt: {adresse}</p>
   </div>
 </header>
 

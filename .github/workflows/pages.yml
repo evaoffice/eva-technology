@@ -4,7 +4,7 @@
 # The repository variable IMPRESSUM_NIF holds the publisher's tax number, which
 # is not stored in this repository. With it, the legal notice shows the number
 # and the German invoice checker (e-rechnung-pruefen/) is published with its
-# fifteen error pages. Without it, the rest of the site is published, the legal
+# twenty-five error pages. Without it, the rest of the site is published, the legal
 # notice has no tax number line and the checker is left out. The run summary
 # says which of the two happened.
 #
