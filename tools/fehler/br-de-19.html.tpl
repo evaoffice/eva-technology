@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BR-DE-19 (Warnung): IBAN in der XRechnung ungültig</title>
-<meta name="description" content="BR-DE-19 ist eine Warnung: Die IBAN bei SEPA-Überweisung (Code 58) ist keine gültige IBAN. Meist ein Tippfehler oder Leerzeichen. So prüfen Sie es.">
+<meta name="description" content="BR-DE-19 ist eine Warnung: Die IBAN bei SEPA-Überweisung (Code 58) ist keine gültige IBAN. Meist ein Tippfehler. So prüfen Sie es.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-19/">
 <link rel="icon" href="data:,">
 <style>:root {
@@ -317,11 +317,11 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <h1>BR-DE-19 (Warnung): IBAN ist ungültig</h1>
 <p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="de">[BR-DE-19] &quot;Payment account identifier&quot; (BT-84) soll eine korrekte IBAN enthalten, wenn in &quot;Payment means type code&quot; (BT-81) mit dem Code 58 SEPA als Zahlungsmittel gefordert wird.</span></p>
 <p><strong>Kurz erklärt.</strong> Diese Meldung ist eine <strong>Warnung</strong>, kein Fehler. Ihre Rechnung gibt als Zahlungsart SEPA-Überweisung an (Code <code>58</code>), aber die Kontonummer in BT-84 ist keine gültige IBAN. Meist stimmt die Prüfziffer nicht, weil sich beim Eintippen eine Ziffer verschoben hat. Der Empfänger kann dann nicht sicher überweisen.</p>
-<p><strong>Was die Regel genau prüft.</strong> Für jedes <code>cac:PaymentMeans</code> mit <code>cbc:PaymentMeansCode</code> = <code>58</code> prüft das XRechnung-Regelwerk <code>cac:PayeeFinancialAccount/cbc:ID</code>: Ländercode, Prüfziffer und Länge müssen eine gültige IBAN ergeben. Bei Code <code>30</code> (Überweisung ohne SEPA) prüft die Regel nichts. Fehlt das Konto ganz, meldet der Validator zusätzlich BR-DE-23-a.</p>
+<p><strong>Was die Regel genau prüft.</strong> Für jedes <code>cac:PaymentMeans</code> mit <code>cbc:PaymentMeansCode</code> = <code>58</code> prüft das XRechnung-Regelwerk <code>cac:PayeeFinancialAccount/cbc:ID</code>: Ländercode, Prüfziffer und Länge müssen eine gültige IBAN ergeben. Bei Code <code>30</code> (Überweisung ohne SEPA) prüft die Regel nichts. Fehlt das Konto ganz, meldet der Validator zusätzlich BR-DE-23-a. Leerzeichen in der IBAN stören nicht: Das Regelwerk entfernt sie vor der Prüfung.</p>
 <h2>Typische Ursachen</h2>
 <ul>
 <li>Tippfehler in der IBAN, oft zwei vertauschte Ziffern.</li>
-<li>Die IBAN steht mit Leerzeichen oder mit dem Zusatz „IBAN:“ im Feld.</li>
+<li>Vor der IBAN steht ein Zusatz wie „IBAN:“ im Feld.</li>
 <li>Statt der IBAN steht die alte Kontonummer oder die BIC im Feld.</li>
 <li>Bei mehreren Bankkonten wird ein altes, inzwischen geändertes Konto ausgegeben.</li>
 </ul>

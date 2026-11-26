@@ -348,6 +348,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
     &lt;cbc:EndpointID schemeID=&quot;EM&quot;&gt;rechnung@muster.de&lt;/cbc:EndpointID&gt;
     …
 </code></pre>
+<p>Für XRechnung ist <code>EM</code> (E-Mail) zulässig. Im Peppol-Netz ist <code>EM</code> nicht erlaubt; dort brauchen Sie eine Peppol-Kennung, zum Beispiel <code>schemeID="9930"</code> mit Ihrer USt-IdNr. oder <code>0204</code> mit der Leitweg-ID. Mehr dazu: <a href="../peppol-r219-r229/">PEPPOL-EN16931-R219 / R229</a>.</p>
 <p>Beim Käufer, zum Beispiel mit Leitweg-ID:</p>
 <pre><code class="language-xml">&lt;cac:AccountingCustomerParty&gt;
   &lt;cac:Party&gt;
