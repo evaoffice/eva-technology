@@ -324,11 +324,11 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <li><strong>BR-DE-28:</strong> <code>cbc:ElectronicMail</code> muss genau ein <code>@</code> enthalten, ohne Leerzeichen. Hinter dem <code>@</code> muss ein Domainname mit mindestens einem Punkt stehen, und der Punkt darf nicht am Ende stehen.</li>
 </ul>
 <p>Die Meldung von BR-DE-28 spricht von „mindestens zwei Zeichen auf beiden Seiten“. Die eigentliche Prüfung im XRechnung-Regelwerk ist großzügiger: Eine Adresse wie <code>a@b.de</code> löst die Warnung nicht aus.</p>
-<p>Fehlt die Telefonnummer oder die E-Mail-Adresse ganz, erscheint stattdessen BR-DE-6 oder BR-DE-7 als Fehler.</p>
+<p>Fehlt die Telefonnummer oder die E-Mail-Adresse ganz, meldet der Validator BR-DE-6 oder BR-DE-7 als Fehler und zusätzlich BR-DE-27 oder BR-DE-28 als Warnung.</p>
 <h2>Typische Ursachen</h2>
 <ul>
 <li>Im Feld für die Telefonnummer steht ein Text wie „siehe Website“ oder nur eine Durchwahl wie „12“.</li>
-<li>Die E-Mail-Adresse enthält ein Leerzeichen, oft am Anfang oder vor dem <code>@</code>.</li>
+<li>Die E-Mail-Adresse enthält ein Leerzeichen, zum Beispiel vor dem <code>@</code>.</li>
 <li>Im Feld stehen zwei Adressen, getrennt durch Komma oder Semikolon.</li>
 <li>Statt einer E-Mail-Adresse steht eine Internetadresse wie <code>www.muster.de</code> im Feld.</li>
 </ul>

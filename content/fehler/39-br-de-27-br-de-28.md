@@ -17,12 +17,12 @@ Beide Regeln gelten für den Kontakt des Verkäufers, also `cac:AccountingSuppli
 
 Die Meldung von BR-DE-28 spricht von „mindestens zwei Zeichen auf beiden Seiten“. Die eigentliche Prüfung im XRechnung-Regelwerk ist großzügiger: Eine Adresse wie `a@b.de` löst die Warnung nicht aus.
 
-Fehlt die Telefonnummer oder die E-Mail-Adresse ganz, erscheint stattdessen BR-DE-6 oder BR-DE-7 als Fehler.
+Fehlt die Telefonnummer oder die E-Mail-Adresse ganz, meldet der Validator BR-DE-6 oder BR-DE-7 als Fehler und zusätzlich BR-DE-27 oder BR-DE-28 als Warnung.
 
 ## Typische Ursachen
 
 - Im Feld für die Telefonnummer steht ein Text wie „siehe Website“ oder nur eine Durchwahl wie „12“.
-- Die E-Mail-Adresse enthält ein Leerzeichen, oft am Anfang oder vor dem `@`.
+- Die E-Mail-Adresse enthält ein Leerzeichen, zum Beispiel vor dem `@`.
 - Im Feld stehen zwei Adressen, getrennt durch Komma oder Semikolon.
 - Statt einer E-Mail-Adresse steht eine Internetadresse wie `www.muster.de` im Feld.
 
