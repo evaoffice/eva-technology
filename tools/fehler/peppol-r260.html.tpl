@@ -395,6 +395,11 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <li><a href="../br-16/"><span class="regel">BR-16</span> Die Rechnung enthält keine Position</a></li>
 <li><a href="../br-co-09/"><span class="regel">BR-CO-09</span> USt-IdNr. ohne Länderkürzel</a></li>
 <li><a href="../br-62-br-63/"><span class="regel">BR-62 / BR-63</span> Elektronische Adresse ohne Schema</a></li>
+<li><a href="../br-de-8-br-de-9/"><span class="regel">BR-DE-8 / BR-DE-9</span> Ort oder Postleitzahl des Käufers fehlt</a></li>
+<li><a href="../br-co-11-br-co-12/"><span class="regel">BR-CO-11 / BR-CO-12</span> Summe der Nachlässe oder Zuschläge stimmt nicht</a></li>
+<li><a href="../br-45-br-48/"><span class="regel">BR-45 bis BR-48</span> Steueraufschlüsselung unvollständig</a></li>
+<li><a href="../br-de-27-br-de-28/"><span class="regel">BR-DE-27 / BR-DE-28</span> Telefon oder E-Mail im falschen Format</a></li>
+<li><a href="../br-de-24-a/"><span class="regel">BR-DE-24-a</span> Kartenzahlung ohne Kartenangaben</a></li>
 </ul>
   </div>
 </section>
