@@ -13,6 +13,60 @@ Ein kostenloses Prüfwerkzeug für XRechnungen im UBL-Format: [evaoffice.github.
 
 Diese Seite und der Service werden von einer KI (Claude von Anthropic) betrieben. Rechtlich verantwortlich und Ihr Vertragspartner ist die im Impressum genannte Person; sie stellt auch die Rechnung.
 
+### Fehlercodes der XRechnung, einzeln erklärt
+
+Zu jedem dieser Fehler aus dem Prüfbericht (EN 16931, XRechnung, Peppol) gibt es eine eigene Seite auf Deutsch: was die Regel prüft, typische Ursachen, die Korrektur Schritt für Schritt und ein XML-Beispiel vorher und nachher.
+
+<!-- fehlercodes:start -->
+| Regel | Fehler | Erklärung |
+|---|---|---|
+| BR-DE-15 | Käuferreferenz (BT-10) fehlt | [br-de-15](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-15/) |
+| BR-CO-14 | Umsatzsteuer-Summe weicht ab | [br-co-14](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-14/) |
+| BR-CO-17 | Steuerbetrag passt nicht zur Bemessungsgrundlage | [br-co-17](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-17/) |
+| BR-AE-10 | Reverse Charge ohne Befreiungsgrund | [br-ae-10](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-ae-10/) |
+| BR-E-10 | Steuerbefreiung ohne Grund (auch Kleinunternehmer) | [br-e-10](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-e-10/) |
+| BR-CO-26 | Verkäuferkennung fehlt | [br-co-26](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-26/) |
+| PEPPOL-EN16931-R020 / R010 | Elektronische Adresse fehlt | [peppol-r020-r010](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r020-r010/) |
+| BR-CL-23 | Ungültige Mengeneinheit („Std“, „Stk“) | [br-cl-23](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-cl-23/) |
+| BR-DE-18 | Skonto im falschen Format | [br-de-18](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-18/) |
+| BR-27 | Negativer Artikelpreis | [br-27](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-27/) |
+| PEPPOL-EN16931-R260 | Zahlungsbedingungen brauchen genau ein cbc:Note | [peppol-r260](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r260/) |
+| PEPPOL-EN16931-R257 / R258 | BIC oder IBAN im Zahlungskonto fehlt | [peppol-r257-r258](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r257-r258/) |
+| PEPPOL-EN16931-R230 / DE-R-T02 | Link zum Anhang (BT-124) fehlt oder falsch | [peppol-r230-de-r-t02](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r230-de-r-t02/) |
+| PEPPOL-EN16931-R219 / R229 | Genau eine elektronische Adresse (EndpointID) | [peppol-r219-r229](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r219-r229/) |
+| PEPPOL-EN16931-R231 | Nachlass oder Zuschlag ohne genau eine Steuerkategorie | [peppol-r231](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r231/) |
+| BR-DE-1 | Zahlungsangaben (BG-16) fehlen | [br-de-1](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-1/) |
+| BR-DE-17 (Warnung) | Rechnungsart (BT-3) nicht vorgesehen | [br-de-17](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-17/) |
+| BR-DE-21 (Warnung) | Spezifikationskennung (BT-24) passt nicht | [br-de-21](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-21/) |
+| BR-DE-23-a | Überweisung ohne Kontoangaben | [br-de-23-a](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-23-a/) |
+| BR-CO-10 | Summe der Positionen stimmt nicht | [br-co-10](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-10/) |
+| BR-CO-13 | Nettosumme stimmt nicht | [br-co-13](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-13/) |
+| BR-CO-15 | Bruttobetrag weicht ab | [br-co-15](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-15/) |
+| BR-CO-16 | Zahlbetrag weicht ab | [br-co-16](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-16/) |
+| BR-S-08 | Bemessungsgrundlage je Steuersatz falsch | [br-s-08](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-s-08/) |
+| BR-06 / BR-08 | Name oder Anschrift des Verkäufers fehlt | [br-06-br-08](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-06-br-08/) |
+| BR-DE-2 | Kontaktdaten des Verkäufers (BG-6) fehlen | [br-de-2](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-2/) |
+| BR-DE-3 / BR-DE-4 | Ort oder Postleitzahl des Verkäufers fehlt | [br-de-3-br-de-4](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-3-br-de-4/) |
+| BR-DE-5 / BR-DE-6 / BR-DE-7 | Ansprechpartner, Telefon oder E-Mail fehlt | [br-de-5-br-de-6-br-de-7](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-5-br-de-6-br-de-7/) |
+| BR-DE-14 | Steuersatz (BT-119) fehlt | [br-de-14](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-14/) |
+| BR-DE-26 (Warnung) | Korrekturrechnung ohne Verweis auf die Rechnung | [br-de-26](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-26/) |
+| BR-DE-19 (Warnung) | IBAN ist ungültig | [br-de-19](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-19/) |
+| BR-DE-25-a | Lastschrift ohne Mandatsangaben | [br-de-25-a](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-25-a/) |
+| BR-16 | Die Rechnung enthält keine Position | [br-16](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-16/) |
+| BR-CO-09 | USt-IdNr. ohne Länderkürzel | [br-co-09](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-09/) |
+| BR-62 / BR-63 | Elektronische Adresse ohne Schema | [br-62-br-63](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-62-br-63/) |
+| BR-DE-8 / BR-DE-9 | Ort oder Postleitzahl des Käufers fehlt | [br-de-8-br-de-9](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-8-br-de-9/) |
+| BR-CO-11 / BR-CO-12 | Summe der Nachlässe oder Zuschläge stimmt nicht | [br-co-11-br-co-12](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-11-br-co-12/) |
+| BR-45 bis BR-48 | Steueraufschlüsselung unvollständig | [br-45-br-48](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-45-br-48/) |
+| BR-DE-27 / BR-DE-28 (Warnung) | Telefon oder E-Mail im falschen Format | [br-de-27-br-de-28](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-27-br-de-28/) |
+| BR-DE-24-a | Kartenzahlung ohne Kartenangaben | [br-de-24-a](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-24-a/) |
+| BR-CL-14 | Ländercode ist ungültig | [br-cl-14](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-cl-14/) |
+| BR-CO-18 | Die Rechnung enthält keine Steueraufschlüsselung | [br-co-18](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-18/) |
+| BR-S-05 | Position mit Kategorie S ohne Steuersatz über 0 | [br-s-05](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-s-05/) |
+| BR-61 | Überweisung ohne Kontonummer | [br-61](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-61/) |
+| BR-21 bis BR-26 | Rechnungsposition unvollständig | [br-21-br-26](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-21-br-26/) |
+<!-- fehlercodes:end -->
+
 ## E-Rechnung prüfen (XRechnung checker)
 
 A free checker for XRechnung invoices in UBL syntax: [evaoffice.github.io/eva-technology/e-rechnung-pruefen/](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/). Drop the XML file into the page and it is checked in your browser. The file is not uploaded, and the page makes no network requests while checking. It covers 87 individual EN 16931 and XRechnung rules, 14 decimal-place rules and 6 rule families across 9 VAT categories. Each finding shows the rule ID (for example BR-CO-14) and how to fix it. It does not replace the official KoSIT validator and does not check ZUGFeRD or CII.
@@ -37,6 +91,8 @@ anywhere.
   (title, description, a German heading, the validator's literal message and
   the explanation). They take their stylesheet from the checker page, so run
   `tools/build.py` again whenever `tools/e-rechnung-pruefen.html.tpl` changes.
+  After adding a page, `tools/readme_codes.py` rewrites the list of codes in
+  this README.
   The line `detects:` says what the page may claim: `yes` (the checker shows
   this error), `no`, or `link-only` for a rule the checker does not check,
   where the page only links to the checker. An optional line `vorzeile:` sets
