@@ -2,7 +2,7 @@
 
 The support page, privacy policies, terms of service and legal notice for
 three Jira apps (Desk Tools MCP, E-Invoice Kit for Jira and Team Load Radar
-for Jira), and a free invoice checker in German, E-Rechnung prüfen, with forty
+for Jira), and a free invoice checker in German, E-Rechnung prüfen, with forty-five
 pages that each explain one validation error.
 
 Served with GitHub Pages at <https://evaoffice.github.io/eva-technology/>.
@@ -33,7 +33,7 @@ Plain HTML and one stylesheet. No cookies, analytics or external requests
 anywhere.
 
 - `content/*.md` holds the text of each English page.
-- `content/fehler/*.md` holds the forty German error pages of the checker
+- `content/fehler/*.md` holds the forty-five German error pages of the checker
   (title, description, a German heading, the validator's literal message and
   the explanation). They take their stylesheet from the checker page, so run
   `tools/build.py` again whenever `tools/e-rechnung-pruefen.html.tpl` changes.
@@ -73,7 +73,7 @@ and not as a page.
 - the committed pages, copied as they are;
 - with `IMPRESSUM_NIF` set: the number in the legal notice (`legal/`), the
   checker at `e-rechnung-pruefen/` with the number in its Impressum, its
-  forty error pages under `e-rechnung-pruefen/fehler/`, and a link to the checker
+  forty-five error pages under `e-rechnung-pruefen/fehler/`, and a link to the checker
   on the home page;
 - without it: the legal notice without that line, no checker, no error pages
   and no link. An incomplete Impressum is never published;

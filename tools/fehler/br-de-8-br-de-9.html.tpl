@@ -413,6 +413,11 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <li><a href="../br-45-br-48/"><span class="regel">BR-45 bis BR-48</span> Steueraufschlüsselung unvollständig</a></li>
 <li><a href="../br-de-27-br-de-28/"><span class="regel">BR-DE-27 / BR-DE-28</span> Telefon oder E-Mail im falschen Format</a></li>
 <li><a href="../br-de-24-a/"><span class="regel">BR-DE-24-a</span> Kartenzahlung ohne Kartenangaben</a></li>
+<li><a href="../br-cl-14/"><span class="regel">BR-CL-14</span> Ländercode ist ungültig</a></li>
+<li><a href="../br-co-18/"><span class="regel">BR-CO-18</span> Die Rechnung enthält keine Steueraufschlüsselung</a></li>
+<li><a href="../br-s-05/"><span class="regel">BR-S-05</span> Position mit Kategorie S ohne Steuersatz über 0</a></li>
+<li><a href="../br-61/"><span class="regel">BR-61</span> Überweisung ohne Kontonummer</a></li>
+<li><a href="../br-21-br-26/"><span class="regel">BR-21 bis BR-26</span> Rechnungsposition unvollständig</a></li>
 </ul>
   </div>
 </section>
