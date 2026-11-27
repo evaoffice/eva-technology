@@ -352,7 +352,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <li><em>Muss ich die Warnung beheben?</em> Die Rechnung scheitert an dieser Regel nicht. Viele Empfänger verbuchen eine Korrektur ohne Verweis aber nicht und schicken sie zurück.</li>
 <li><em>Korrekturrechnung oder Gutschrift?</em> Für eine Gutschrift gibt es den Code <code>381</code>. Was in Ihrem Fall richtig ist, klären Sie bitte mit Ihrer Steuerberatung oder Ihrem Empfänger.</li>
 </ul>
-<p class="artikel__pruefen">Unser Prüfwerkzeug zeigt diesen Fehler mit Erklärung an.</p>
+<p class="artikel__pruefen">Unser Prüfwerkzeug zeigt diese Warnung mit Erklärung an.</p>
 <p class="artikel__knopf"><a class="knopf knopf--haupt" href="../../">Datei jetzt prüfen</a></p>
 <p class="hinweisfeld">Der Fehler kommt immer wieder? Wir finden heraus, warum Ihre Software oder Ihr Export ihn erzeugt, und liefern die Korrektur: 149 € netto, einmalig, Lieferung in 3 Werktagen ab Eingang vollständiger Daten (Angebot nur für Unternehmer). <a href="../../#angebot">Ursache beheben lassen</a> oder per E-Mail an <span class="adresse">eva.office.app@gmail.com</span>.</p>
 </article>

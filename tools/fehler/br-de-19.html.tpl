@@ -355,7 +355,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <li><em>Muss ich die Warnung beheben?</em> Die Rechnung scheitert an dieser Regel nicht. Mit einer falschen IBAN kann Ihr Kunde aber nicht überweisen, und viele Empfänger fragen nach.</li>
 <li><em>Gilt das auch für Lastschriften?</em> Dort prüft BR-DE-20 die IBAN des Zahlers (BT-91), ebenfalls als Warnung. Unser Prüfwerkzeug prüft bei Lastschriften, ob das Mandat vorhanden ist (BR-DE-25-a), aber nicht die Prüfziffer dieser IBAN.</li>
 </ul>
-<p class="artikel__pruefen">Unser Prüfwerkzeug zeigt diesen Fehler mit Erklärung an.</p>
+<p class="artikel__pruefen">Unser Prüfwerkzeug zeigt diese Warnung mit Erklärung an.</p>
 <p class="artikel__knopf"><a class="knopf knopf--haupt" href="../../">Datei jetzt prüfen</a></p>
 <p class="hinweisfeld">Der Fehler kommt immer wieder? Wir finden heraus, warum Ihre Software oder Ihr Export ihn erzeugt, und liefern die Korrektur: 149 € netto, einmalig, Lieferung in 3 Werktagen ab Eingang vollständiger Daten (Angebot nur für Unternehmer). <a href="../../#angebot">Ursache beheben lassen</a> oder per E-Mail an <span class="adresse">eva.office.app@gmail.com</span>.</p>
 </article>

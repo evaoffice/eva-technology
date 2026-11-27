@@ -292,6 +292,8 @@ KI_HINWEIS = (
     "Impressum genannte Person; sie stellt auch die Rechnung."
 )
 LINK_ZEIGT = ("Unser Prüfwerkzeug zeigt diesen Fehler mit Erklärung an.", "Datei jetzt prüfen")
+# A page whose heading says "(Warnung)" is about a warning, not an error.
+LINK_ZEIGT_WARNUNG = ("Unser Prüfwerkzeug zeigt diese Warnung mit Erklärung an.", "Datei jetzt prüfen")
 LINK_ALLGEMEIN = ("Viele andere Regeln prüfen Sie kostenlos im Browser.", "Datei kostenlos prüfen")
 # "detects: link-only": the checker does not check the rule, and the page does
 # not say what else it checks. It only links to the checker.
@@ -379,6 +381,8 @@ def render_fehler(pages, meta, text, stil):
     slug_ = meta["slug"]
     body = markdown.markdown(text, extensions=["fenced_code", "tables", "sane_lists"], output_format="html5")
     link = LINKS[meta["detects"]]
+    if meta["detects"] == "yes" and "(Warnung)" in meta["h1"]:
+        link = LINK_ZEIGT_WARNUNG
     pruefen = f'<p class="artikel__pruefen">{esc(link[0])}</p>\n' if link[0] else ""
     adresse = f'<span class="adresse">{esc(EMAIL)}</span>'
     sprache = "de" if slug_.startswith("br-de-") else "en"
