@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-CO-18: Die Rechnung enthält keine Steueraufschlüsselung</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-18] An Invoice shall at least have one VAT breakdown group (BG-23).</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-18]-An Invoice shall at least have one VAT breakdown group (BG-23).</span></p>
 <p><strong>Kurz erklärt.</strong> Jede E-Rechnung braucht mindestens einen Abschnitt in der Steueraufschlüsselung: für jede Steuerkategorie und jeden Satz die Bemessungsgrundlage und den Steuerbetrag. Fehlt die Aufschlüsselung ganz, lehnt der Validator die Rechnung ab, auch wenn der Gesamtsteuerbetrag stimmt.</p>
 <p><strong>Was die Regel genau prüft.</strong> Im UBL-Format muss mindestens ein <code>cac:TaxTotal/cac:TaxSubtotal</code> vorhanden sein. Ein <code>cac:TaxTotal</code>, das nur den Gesamtbetrag <code>cbc:TaxAmount</code> enthält, reicht nicht. Was in jedem Abschnitt stehen muss, prüfen BR-45 bis BR-48.</p>
 <h2>Typische Ursachen</h2>

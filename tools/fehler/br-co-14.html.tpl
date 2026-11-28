@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-CO-14: Umsatzsteuer-Summe weicht ab</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-14] Invoice total VAT amount (BT-110) = Σ VAT category tax amount (BT-117).</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-14]-Invoice total VAT amount (BT-110) = Σ VAT category tax amount (BT-117).</span></p>
 <p><strong>Kurz erklärt.</strong> Der Umsatzsteuer-Gesamtbetrag der Rechnung (BT-110) muss genau der Summe der Steuerbeträge je Steuersatz (BT-117) entsprechen. Der offizielle KoSIT-Validator (1.6.3, XRechnung 3.0.2) hat in unserem Test eine Rechnung mit einem Cent Abweichung abgelehnt.</p>
 <p><strong>Was die Regel genau prüft.</strong> Im UBL-Format vergleicht die Regel <code>cac:TaxTotal/cbc:TaxAmount</code> mit der Summe aller <code>cac:TaxSubtotal/cbc:TaxAmount</code>, auf zwei Nachkommastellen gerundet. Eine Toleranz gibt es hier nicht: Ein Cent genügt für die Ablehnung.</p>
 <h2>Typische Ursachen</h2>

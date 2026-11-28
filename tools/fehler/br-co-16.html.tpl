@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-CO-16: Zahlbetrag weicht ab</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-16] Amount due for payment (BT-115) = Invoice total amount with VAT (BT-112) -Paid amount (BT-113) +Rounding amount (BT-114).</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-16]-Amount due for payment (BT-115) = Invoice total amount with VAT (BT-112) -Paid amount (BT-113) +Rounding amount (BT-114).</span></p>
 <p><strong>Kurz erklärt.</strong> Der fällige Betrag (BT-115) ist der Bruttobetrag (BT-112) abzüglich bereits gezahlter Beträge (BT-113) und zuzüglich eines Rundungsbetrags (BT-114), falls Sie runden. Die Meldung kommt oft bei Abschlags- und Schlussrechnungen oder wenn ein Fehler in den Summen davor bis zum Zahlbetrag durchschlägt.</p>
 <p><strong>Was die Regel genau prüft.</strong> Im UBL-Format vergleicht die Regel <code>cbc:PayableAmount</code> mit <code>cbc:TaxInclusiveAmount</code> − <code>cbc:PrepaidAmount</code> + <code>cbc:PayableRoundingAmount</code>, auf zwei Nachkommastellen gerundet. Fehlen Anzahlung und Rundung, muss der Zahlbetrag genau dem Bruttobetrag entsprechen.</p>
 <h2>Typische Ursachen</h2>

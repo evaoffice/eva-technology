@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-AE-10: Reverse Charge ohne Befreiungsgrund</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-AE-10] A VAT breakdown (BG-23) with VAT Category code (BT-118) &quot;Reverse charge&quot; shall have a VAT exemption reason code (BT-121), meaning &quot;Reverse charge&quot; or the VAT exemption reason text (BT-120) &quot;Reverse charge&quot; (or the equivalent standard text in another language).</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-AE-10]-A VAT breakdown (BG-23) with VAT Category code (BT-118) &quot;Reverse charge&quot; shall have a VAT exemption reason code (BT-121), meaning &quot;Reverse charge&quot; or the VAT exemption reason text (BT-120) &quot;Reverse charge&quot; (or the equivalent standard text in another language).</span></p>
 <p><strong>Kurz erklärt.</strong> Wenn Sie eine Rechnung mit Steuerschuldnerschaft des Leistungsempfängers (Reverse Charge, Kategorie „AE“) ausstellen, muss die Steueraufschlüsselung einen Befreiungsgrund enthalten: einen Code (BT-121) oder einen Text (BT-120). Der offizielle KoSIT-Validator (1.6.3, XRechnung 3.0.2) hat eine solche Rechnung ohne Begründung in unserem Test abgelehnt.</p>
 <p><strong>Was die Regel genau prüft.</strong> Jede Steueraufschlüsselung mit Kategorie <code>AE</code> braucht <code>cbc:TaxExemptionReasonCode</code> oder <code>cbc:TaxExemptionReason</code>. Ein Hinweis im Freitext der Rechnung (BT-22) zählt nicht.</p>
 <h2>Typische Ursachen</h2>

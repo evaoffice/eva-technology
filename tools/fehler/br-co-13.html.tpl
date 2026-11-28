@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-CO-13: Nettosumme stimmt nicht</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-13] Invoice total amount without VAT (BT-109) = Σ Invoice line net amount (BT-131) - Sum of allowances on document level (BT-107) + Sum of charges on document level (BT-108).</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-13]-Invoice total amount without VAT (BT-109) = Σ Invoice line net amount (BT-131) - Sum of allowances on document level (BT-107) + Sum of charges on document level (BT-108).</span></p>
 <p><strong>Kurz erklärt.</strong> Der Rechnungsbetrag ohne Umsatzsteuer (BT-109) muss genau so hoch sein wie die Summe der Positionen, abzüglich der Nachlässe und zuzüglich der Zuschläge auf Belegebene. Meist fehlt ein Rabatt oder eine Versandkostenpauschale in einer der beiden Rechnungen.</p>
 <p><strong>Was die Regel genau prüft.</strong> Im UBL-Format rechnet das offizielle Regelwerk mit den Summen in <code>cac:LegalMonetaryTotal</code>: <code>cbc:TaxExclusiveAmount</code> muss gleich <code>cbc:LineExtensionAmount</code> (BT-106) − <code>cbc:AllowanceTotalAmount</code> (BT-107) + <code>cbc:ChargeTotalAmount</code> (BT-108) sein, auf zwei Nachkommastellen gerundet. Eine Toleranz gibt es nicht. Ob BT-106 wirklich die Summe der Positionen ist, prüft eine andere Regel: BR-CO-10.</p>
 <h2>Typische Ursachen</h2>

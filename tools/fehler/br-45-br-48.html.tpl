@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-45 bis BR-48: Steueraufschlüsselung unvollständig</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-45] Each VAT breakdown (BG-23) shall have a VAT category taxable amount (BT-116). · [BR-46] Each VAT breakdown (BG-23) shall have a VAT category tax amount (BT-117). · [BR-47] Each VAT breakdown (BG-23) shall be defined through a VAT category code (BT-118). · [BR-48] Each VAT breakdown (BG-23) shall have a VAT category rate (BT-119), except if the Invoice is not subject to VAT.</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-45]-Each VAT breakdown (BG-23) shall have a VAT category taxable amount (BT-116).<br>[BR-46]-Each VAT breakdown (BG-23) shall have a VAT category tax amount (BT-117).<br>[BR-47]-Each VAT breakdown (BG-23) shall be defined through a VAT category code (BT-118).<br>[BR-48]-Each VAT breakdown (BG-23) shall have a VAT category rate (BT-119), except if the Invoice is not subject to VAT.</span></p>
 <p><strong>Kurz erklärt.</strong> Jede E-Rechnung enthält eine Steueraufschlüsselung mit einem Abschnitt je Steuerkategorie und Steuersatz. Jeder Abschnitt braucht vier Angaben: Bemessungsgrundlage, Steuerbetrag, Kategorie und Satz. Fehlt eine davon, lehnt der Validator die Rechnung ab.</p>
 <h2>Was die Regeln genau prüfen</h2>
 <p>Für jedes <code>cac:TaxTotal/cac:TaxSubtotal</code>:</p>

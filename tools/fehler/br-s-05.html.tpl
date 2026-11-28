@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-S-05: Position mit Kategorie S ohne Steuersatz über 0</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-S-05] In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is &quot;Standard rated&quot; the Invoiced item VAT rate (BT-152) shall be greater than zero.</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-S-05]-In an Invoice line (BG-25) where the Invoiced item VAT category code (BT-151) is &quot;Standard rated&quot; the Invoiced item VAT rate (BT-152) shall be greater than zero.</span></p>
 <p><strong>Kurz erklärt.</strong> Die Kategorie <code>S</code> bedeutet „Regelsteuersatz“: Auf diese Position fällt Umsatzsteuer an, in Deutschland 19 % oder 7 %. Steht bei einer solchen Position ein Satz von 0 oder gar kein Satz, passt das nicht zusammen, und der Validator lehnt die Rechnung ab.</p>
 <p><strong>Was die Regel genau prüft.</strong> Für jede Position mit <code>cac:Item/cac:ClassifiedTaxCategory/cbc:ID</code> = <code>S</code> muss <code>cbc:Percent</code> im selben Block größer als 0 sein. Ein fehlender Satz zählt dabei wie 0.</p>
 <h2>Typische Ursachen</h2>

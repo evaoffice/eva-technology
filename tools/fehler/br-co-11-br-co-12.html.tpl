@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-CO-11 / BR-CO-12: Summe der Nachlässe oder Zuschläge stimmt nicht</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-11] Sum of allowances on document level (BT-107) = Σ Document level allowance amount (BT-92). · [BR-CO-12] Sum of charges on document level (BT-108) = Σ Document level charge amount (BT-99).</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-11]-Sum of allowances on document level (BT-107) = Σ Document level allowance amount (BT-92).<br>[BR-CO-12]-Sum of charges on document level (BT-108) = Σ Document level charge amount (BT-99).</span></p>
 <p><strong>Kurz erklärt.</strong> Nachlässe und Zuschläge auf die ganze Rechnung (zum Beispiel ein Rabatt oder Versandkosten) stehen einzeln in der Datei und noch einmal als Summe im Rechnungsabschluss. Beide Angaben müssen übereinstimmen. Weicht die Summe ab oder fehlt sie, lehnt der Validator die Rechnung ab.</p>
 <h2>Was die Regeln genau prüfen</h2>
 <ul>

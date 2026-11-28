@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-E-10: Steuerbefreiung ohne Grund (auch Kleinunternehmer)</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-E-10] A VAT breakdown (BG-23) with VAT Category code (BT-118) &quot;Exempt from VAT&quot; shall have a VAT exemption reason code (BT-121) or a VAT exemption reason text (BT-120).</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-E-10]-A VAT breakdown (BG-23) with VAT Category code (BT-118) &quot;Exempt from VAT&quot; shall have a VAT exemption reason code (BT-121) or a VAT exemption reason text (BT-120).</span></p>
 <p><strong>Kurz erklärt.</strong> Enthält Ihre Rechnung steuerbefreite Umsätze (Kategorie „E“), muss die Steueraufschlüsselung angeben, warum keine Umsatzsteuer berechnet wird: als Code (BT-121) oder als Text (BT-120). Ohne diese Angabe besteht die Rechnung die Prüfung nicht.</p>
 <p><strong>Was die Regel genau prüft.</strong> Jede Steueraufschlüsselung mit Kategorie <code>E</code> braucht <code>cbc:TaxExemptionReasonCode</code> oder <code>cbc:TaxExemptionReason</code>. Ein Satz im PDF oder im Freitext zählt nicht.</p>
 <h2>Sonderfall Kleinunternehmer (§ 19 UStG)</h2>

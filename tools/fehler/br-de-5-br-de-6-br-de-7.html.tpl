@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-DE-5 / BR-DE-6 / BR-DE-7: Ansprechpartner, Telefon oder E-Mail fehlt</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="de">[BR-DE-5] Das Element &quot;Seller contact point&quot; (BT-41) muss übermittelt werden. · [BR-DE-6] Das Element &quot;Seller contact telephone number&quot; (BT-42) muss übermittelt werden. · [BR-DE-7] Das Element &quot;Seller contact email address&quot; (BT-43) muss übermittelt werden.</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="de">[BR-DE-5] Das Element &quot;Seller contact point&quot; (BT-41) muss übermittelt werden.<br>[BR-DE-6] Das Element &quot;Seller contact telephone number&quot; (BT-42) muss übermittelt werden.<br>[BR-DE-7] Das Element &quot;Seller contact email address&quot; (BT-43) muss übermittelt werden.</span></p>
 <p><strong>Kurz erklärt.</strong> Steht der Kontakt des Verkäufers in der Rechnung, muss er bei XRechnung vollständig sein: ein Name oder eine Abteilung, eine Telefonnummer und eine E-Mail-Adresse. Fehlt eine der drei Angaben, lehnt der Validator die Rechnung ab.</p>
 <h2>Was die Regeln genau prüfen</h2>
 <ul>

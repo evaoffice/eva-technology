@@ -3,7 +3,7 @@ nav: BR-CO-11 / BR-CO-12
 title: BR-CO-11 / BR-CO-12: Summe der Nachlässe oder Zuschläge stimmt nicht
 description: BR-CO-11 und BR-CO-12: Die Summe der Nachlässe (BT-107) oder Zuschläge (BT-108) auf Belegebene passt nicht zu den einzelnen Beträgen. Ursachen und Lösung.
 h1: BR-CO-11 / BR-CO-12: Summe der Nachlässe oder Zuschläge stimmt nicht
-meldung: [BR-CO-11] Sum of allowances on document level (BT-107) = Σ Document level allowance amount (BT-92). · [BR-CO-12] Sum of charges on document level (BT-108) = Σ Document level charge amount (BT-99).
+meldung: [BR-CO-11]-Sum of allowances on document level (BT-107) = Σ Document level allowance amount (BT-92). · [BR-CO-12]-Sum of charges on document level (BT-108) = Σ Document level charge amount (BT-99).
 detects: yes
 
 **Kurz erklärt.** Nachlässe und Zuschläge auf die ganze Rechnung (zum Beispiel ein Rabatt oder Versandkosten) stehen einzeln in der Datei und noch einmal als Summe im Rechnungsabschluss. Beide Angaben müssen übereinstimmen. Weicht die Summe ab oder fehlt sie, lehnt der Validator die Rechnung ab.

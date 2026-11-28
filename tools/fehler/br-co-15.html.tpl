@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-CO-15: Bruttobetrag weicht ab</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-15] Invoice total amount with VAT (BT-112) = Invoice total amount without VAT (BT-109) + Invoice total VAT amount (BT-110).</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-15]-Invoice total amount with VAT (BT-112) = Invoice total amount without VAT (BT-109) + Invoice total VAT amount (BT-110).</span></p>
 <p><strong>Kurz erklärt.</strong> Der Rechnungsbetrag mit Umsatzsteuer (BT-112) muss die Summe aus Nettobetrag (BT-109) und Umsatzsteuer-Gesamtbetrag (BT-110) sein. Häufig weicht er um einen oder wenige Cent ab, weil das Programm den Bruttobetrag aus Bruttopreisen addiert statt aus den Summen zu bilden.</p>
 <p><strong>Was die Regel genau prüft.</strong> Im UBL-Format muss <code>cbc:TaxInclusiveAmount</code> gleich <code>cbc:TaxExclusiveAmount</code> plus <code>cac:TaxTotal/cbc:TaxAmount</code> sein, auf zwei Nachkommastellen gerundet, ohne Toleranz. Dabei zählt nur der Steuerbetrag in der Rechnungswährung, und davon darf es <strong>genau einen</strong> geben. Stehen zwei <code>cac:TaxTotal</code> mit einem Steuerbetrag in derselben Währung in der Datei, schlägt die Regel ebenfalls fehl.</p>
 <h2>Typische Ursachen</h2>

@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-61: Überweisung ohne Kontonummer</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-61] If the Payment means type code (BT-81) means SEPA credit transfer, Local credit transfer or Non-SEPA international credit transfer, the Payment account identifier (BT-84) shall be present.</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-61]-If the Payment means type code (BT-81) means SEPA credit transfer, Local credit transfer or Non-SEPA international credit transfer, the Payment account identifier (BT-84) shall be present.</span></p>
 <p><strong>Kurz erklärt.</strong> Wer als Zahlungsart Überweisung angibt, muss auch die Kontonummer nennen, auf die überwiesen werden soll. Fehlt sie, lehnt der Validator die Rechnung ab. Die Regel stammt aus der europäischen Norm EN 16931 und gilt damit für XRechnung, ZUGFeRD im Profil EN 16931 und Peppol.</p>
 <p><strong>Was die Regel genau prüft.</strong> Im UBL-Format gilt die Regel für jedes <code>cac:PaymentMeans</code> mit <code>cbc:PaymentMeansCode</code> = <code>30</code> (Überweisung) oder <code>58</code> (SEPA-Überweisung). Darin muss <code>cac:PayeeFinancialAccount/cbc:ID</code> vorhanden sein. Bei anderen Codes, etwa <code>48</code> (Karte) oder <code>59</code> (Lastschrift), prüft BR-61 nichts.</p>
 <h2>Typische Ursachen</h2>

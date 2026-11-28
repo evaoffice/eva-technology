@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-62 / BR-63: Elektronische Adresse ohne Schema</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-62] The Seller electronic address (BT-34) shall have a Scheme identifier. · [BR-63] The Buyer electronic address (BT-49) shall have a Scheme identifier.</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-62]-The Seller electronic address (BT-34) shall have a Scheme identifier.<br>[BR-63]-The Buyer electronic address (BT-49) shall have a Scheme identifier.</span></p>
 <p><strong>Kurz erklärt.</strong> Seit XRechnung 3.0 müssen Verkäufer und Käufer eine elektronische Adresse haben (BT-34 und BT-49). Zu jeder Adresse gehört die Angabe, welche Art Adresse es ist, zum Beispiel eine E-Mail-Adresse oder eine Leitweg-ID. Fehlt diese Angabe, lehnt der Validator die Rechnung ab.</p>
 <h2>Was die Regeln genau prüfen</h2>
 <ul>

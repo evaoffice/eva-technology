@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-CO-17: Steuerbetrag passt nicht zur Bemessungsgrundlage</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-17] VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals.</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-17]-VAT category tax amount (BT-117) = VAT category taxable amount (BT-116) x (VAT category rate (BT-119) / 100), rounded to two decimals.</span></p>
 <p><strong>Kurz erklärt.</strong> Für jeden Steuersatz muss der Steuerbetrag (BT-117) zur Bemessungsgrundlage (BT-116) und zum Steuersatz (BT-119) passen. Erscheint diese Meldung, ist der Unterschied meist größer als ein Rundungsfehler.</p>
 <p><strong>Was die Regel genau prüft.</strong> Im offiziellen Regelwerk für UBL (EN 16931, Datei <code>EN16931-UBL-model.sch</code>) gilt der Steuerbetrag als richtig, wenn er <strong>weniger als 1,00</strong> (eine Währungseinheit) vom gerundeten Wert „Bemessungsgrundlage × Steuersatz / 100“ abweicht. Bei Steuersatz 0 muss der Steuerbetrag 0 sein. Eine Abweichung von einem Cent löst diese Regel nach dem Regelwerk also nicht aus; sie kann aber BR-CO-14 auslösen. Unser Prüfwerkzeug meldet einen Fehler, wenn die Abweichung 1,00 oder mehr beträgt. Liegt sie darunter, zeigt es einen Hinweis und empfiehlt, den Betrag zu korrigieren. Maßgeblich ist der Bericht des Validators, den Sie oder Ihr Empfänger verwenden.</p>
 <h2>Typische Ursachen</h2>

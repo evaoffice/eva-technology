@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-16: Die Rechnung enthält keine Position</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-16] An Invoice shall have at least one Invoice line (BG-25)</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-16]-An Invoice shall have at least one Invoice line (BG-25)</span></p>
 <p><strong>Kurz erklärt.</strong> Jede E-Rechnung braucht mindestens eine Rechnungsposition. Eine Rechnung, die nur Summen und Steuerbeträge enthält, lehnt der Validator ab, auch wenn die Beträge stimmen.</p>
 <p><strong>Was die Regel genau prüft.</strong> Im UBL-Format muss mindestens ein <code>cac:InvoiceLine</code> vorhanden sein, bei einer Gutschrift (<code>CreditNote</code>) mindestens ein <code>cac:CreditNoteLine</code>. Was in jeder Position stehen muss, prüfen weitere Regeln: Positionsnummer (BR-21), Menge (BR-22), Einheit (BR-23), Nettobetrag (BR-24) und Bezeichnung (BR-25).</p>
 <h2>Typische Ursachen</h2>

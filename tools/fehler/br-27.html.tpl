@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-27: Negativer Artikelpreis</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-27] The Item net price (BT-146) shall NOT be negative.</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-27]-The Item net price (BT-146) shall NOT be negative.</span></p>
 <p><strong>Kurz erklärt.</strong> Der Nettopreis einer Position (BT-146) darf nicht negativ sein. Wer Rabatte, Rücknahmen oder Gutschriften mit einem Minuspreis abbildet, erhält diese Meldung. Oft folgt BR-CO-16, weil der Zahlbetrag dann nicht mehr aufgeht.</p>
 <p><strong>Was die Regel genau prüft.</strong> <code>cac:Price/cbc:PriceAmount</code> jeder Position muss 0 oder größer sein. Eine negative <strong>Menge</strong> ist dagegen erlaubt.</p>
 <h2>Typische Ursachen</h2>

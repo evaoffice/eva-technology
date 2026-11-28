@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-CO-26: Verkäuferkennung fehlt</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-26] In order for the buyer to automatically identify a supplier, the Seller identifier (BT-29), the Seller legal registration identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present.</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-26]-In order for the buyer to automatically identify a supplier, the Seller identifier (BT-29), the Seller legal registration identifier (BT-30) and/or the Seller VAT identifier (BT-31) shall be present.</span></p>
 <p><strong>Kurz erklärt.</strong> Damit der Empfänger Sie automatisch erkennen kann, muss die Rechnung mindestens eine von drei Kennungen enthalten: eine Verkäuferkennung (BT-29), eine Registernummer wie die Handelsregisternummer (BT-30) oder Ihre Umsatzsteuer-Identifikationsnummer (BT-31). <strong>Die Steuernummer (BT-32) zählt für diese Regel nicht.</strong></p>
 <p><strong>Was die Regel genau prüft.</strong> Im UBL-Format besteht die Rechnung die Prüfung, wenn mindestens eines vorhanden ist: <code>cac:PartyTaxScheme/cbc:CompanyID</code> mit Steuerschema <code>VAT</code> (BT-31), <code>cac:PartyLegalEntity/cbc:CompanyID</code> (BT-30) oder <code>cac:PartyIdentification/cbc:ID</code>, das keine SEPA-Gläubiger-ID ist (BT-29). Die Steuernummer steht in einem <code>PartyTaxScheme</code> mit anderem Schema und wird nicht mitgezählt.</p>
 <h2>Warum die Steuernummer hier nicht hilft</h2>

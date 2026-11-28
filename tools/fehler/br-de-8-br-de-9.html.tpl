@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-DE-8 / BR-DE-9: Ort oder Postleitzahl des Käufers fehlt</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="de">[BR-DE-8] Das Element &quot;Buyer city&quot; (BT-52) muss übermittelt werden. · [BR-DE-9] Das Element &quot;Buyer post code&quot; (BT-53) muss übermittelt werden.</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="de">[BR-DE-8] Das Element &quot;Buyer city&quot; (BT-52) muss übermittelt werden.<br>[BR-DE-9] Das Element &quot;Buyer post code&quot; (BT-53) muss übermittelt werden.</span></p>
 <p><strong>Kurz erklärt.</strong> In der europäischen Norm EN 16931 muss die Anschrift des Käufers nur das Land enthalten. XRechnung verlangt zusätzlich Ort und Postleitzahl. Fehlt eines von beiden, lehnt der Validator die Rechnung ab. Es sind dieselben Regeln wie BR-DE-3 und BR-DE-4, nur für den Käufer statt für den Verkäufer.</p>
 <h2>Was die Regeln genau prüfen</h2>
 <ul>

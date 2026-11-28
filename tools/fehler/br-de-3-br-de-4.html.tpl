@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-DE-3 / BR-DE-4: Ort oder Postleitzahl des Verkäufers fehlt</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="de">[BR-DE-3] Das Element &quot;Seller city&quot; (BT-37) muss übermittelt werden. · [BR-DE-4] Das Element &quot;Seller post code&quot; (BT-38) muss übermittelt werden.</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="de">[BR-DE-3] Das Element &quot;Seller city&quot; (BT-37) muss übermittelt werden.<br>[BR-DE-4] Das Element &quot;Seller post code&quot; (BT-38) muss übermittelt werden.</span></p>
 <p><strong>Kurz erklärt.</strong> In der europäischen Norm EN 16931 muss die Anschrift des Verkäufers nur das Land enthalten. XRechnung verlangt zusätzlich Ort und Postleitzahl. Fehlt eines von beiden, lehnt der Validator die Rechnung ab.</p>
 <h2>Was die Regeln genau prüfen</h2>
 <ul>

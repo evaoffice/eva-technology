@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>PEPPOL-EN16931-R020 / R010: Elektronische Adresse fehlt</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[PEPPOL-EN16931-R020] Seller electronic address MUST be provided · [PEPPOL-EN16931-R010] Buyer electronic address MUST be provided</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[PEPPOL-EN16931-R020] Seller electronic address MUST be provided<br>[PEPPOL-EN16931-R010] Buyer electronic address MUST be provided</span></p>
 <p><em>Deutsch (unsere Übersetzung, kein Originaltext):</em> Die elektronische Adresse des Verkäufers (BT-34) bzw. des Käufers (BT-49) fehlt.</p>
 <p><strong>Kurz erklärt.</strong> Seit XRechnung 3.0 müssen Verkäufer (BT-34) und Käufer (BT-49) eine elektronische Adresse haben. Die Regeln stammen aus dem Peppol-Regelwerk und wurden in XRechnung übernommen; deshalb ist die Meldung auch im KoSIT-Bericht englisch.</p>
 <p><strong>Was die Regel genau prüft.</strong> Im UBL-Format muss <code>cbc:EndpointID</code> beim Verkäufer und beim Käufer vorhanden sein. Zusätzlich braucht jede Adresse ein Schema (<code>schemeID</code>), sonst folgen BR-62 oder BR-63.</p>

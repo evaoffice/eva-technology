@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-DE-27 / BR-DE-28 (Warnung): Telefon oder E-Mail im falschen Format</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="de">[BR-DE-27] In BT-42 sollen mindestens drei Ziffern enthalten sein. · [BR-DE-28] In BT-43 soll genau ein @-Zeichen enthalten sein, welches nicht von einem Leerzeichen, einem Punkt, aber mindestens zwei Zeichen auf beiden Seiten flankiert werden soll. Ein Punkt sollte nicht am Anfang oder am Ende stehen.</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="de">[BR-DE-27] In BT-42 sollen mindestens drei Ziffern enthalten sein.<br>[BR-DE-28] In BT-43 soll genau ein @-Zeichen enthalten sein, welches nicht von einem Leerzeichen, einem Punkt, aber mindestens zwei Zeichen auf beiden Seiten flankiert werden soll. Ein Punkt sollte nicht am Anfang oder am Ende stehen.</span></p>
 <p><strong>Kurz erklärt.</strong> Diese Meldungen sind <strong>Warnungen</strong>, keine Fehler. Die Kontaktdaten des Verkäufers sind vorhanden, aber die Telefonnummer oder die E-Mail-Adresse sieht nicht so aus, als könnte man darüber jemanden erreichen. Die Rechnung scheitert daran nicht; der Empfänger sieht die Warnung aber im Prüfbericht.</p>
 <h2>Was die Regeln genau prüfen</h2>
 <p>Beide Regeln gelten für den Kontakt des Verkäufers, also <code>cac:AccountingSupplierParty/cac:Party/cac:Contact</code>.</p>

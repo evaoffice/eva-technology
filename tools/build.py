@@ -476,7 +476,7 @@ def render_fehler(pages, meta, text, stil):
 <article class="artikel rahmen">
 <p class="vorzeile">{esc(meta.get("vorzeile") or VORZEILE)}</p>
 <h1>{esc(meta["h1"])}</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="{sprache}">{esc(meta["meldung"])}</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="{sprache}">{"<br>".join(esc(part) for part in meta["meldung"].split(" · "))}</span></p>
 {body}
 {pruefen}<p class="artikel__knopf"><a class="knopf knopf--haupt" href="../../">{esc(link[1])}</a></p>
 <p class="hinweisfeld">Der Fehler kommt immer wieder? Wir finden heraus, warum Ihre Software oder Ihr Export ihn erzeugt, und liefern die Korrektur: 149 € netto, einmalig, Lieferung in 3 Werktagen ab Eingang vollständiger Daten (Angebot nur für Unternehmer). <a href="../../#angebot">Ursache beheben lassen</a> oder per E-Mail an {adresse}.</p>

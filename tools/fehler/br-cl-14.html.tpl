@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-CL-14: Ländercode ist ungültig</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CL-14] Country codes in an invoice MUST be coded using ISO code list 3166-1</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CL-14]-Country codes in an invoice MUST be coded using ISO code list 3166-1</span></p>
 <p><strong>Kurz erklärt.</strong> Jedes Land wird in der E-Rechnung als zweistelliger Code angegeben, zum Beispiel <code>DE</code> für Deutschland oder <code>AT</code> für Österreich. Steht dort ein Name, eine dreistellige Abkürzung oder ein erfundener Code, lehnt der Validator die Rechnung ab.</p>
 <p><strong>Was die Regel genau prüft.</strong> Im UBL-Format prüft die Regel jedes Element <code>cac:Country/cbc:IdentificationCode</code> in der Datei: beim Verkäufer, beim Käufer, beim Steuervertreter, bei der Lieferadresse und beim Herkunftsland eines Artikels. Der Wert muss genau einer der zweistelligen Codes der Liste ISO 3166-1 sein, in Großbuchstaben. Für Griechenland gilt hier <code>GR</code>, nicht <code>EL</code>.</p>
 <h2>Typische Ursachen</h2>

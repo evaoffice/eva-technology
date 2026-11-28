@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-CL-23: Ungültige Mengeneinheit („Std“, „Stk“)</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CL-23] Unit code MUST be coded according to the UN/ECE Recommendation 20 with Rec 21 extension</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CL-23]-Unit code MUST be coded according to the UN/ECE Recommendation 20 with Rec 21 extension</span></p>
 <p><strong>Kurz erklärt.</strong> Mengeneinheiten müssen als genormter Code angegeben werden, nicht als Abkürzung. „Std“, „Stk“ oder „Pauschal“ sind keine gültigen Codes. In unserem Test hat der offizielle KoSIT-Validator (1.6.3, XRechnung 3.0.2) eine solche Rechnung angenommen, den Fehler aber gemeldet. Das Programm Ihres Empfängers kann strenger sein.</p>
 <p><strong>Was die Regel genau prüft.</strong> Das Attribut <code>unitCode</code> an <code>cbc:InvoicedQuantity</code>, <code>cbc:CreditedQuantity</code> und <code>cbc:BaseQuantity</code> muss in der Codeliste UN/ECE Recommendation 20 (mit Rec 21) stehen. Groß- und Kleinschreibung zählt, Leerzeichen sind nicht erlaubt.</p>
 <h2>Häufige Codes</h2>

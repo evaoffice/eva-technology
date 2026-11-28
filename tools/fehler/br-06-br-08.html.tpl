@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-06 / BR-08: Name oder Anschrift des Verkäufers fehlt</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-06] An Invoice shall contain the Seller name (BT-27). · [BR-08] An Invoice shall contain the Seller postal address.</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-06]-An Invoice shall contain the Seller name (BT-27).<br>[BR-08]-An Invoice shall contain the Seller postal address.</span></p>
 <p><strong>Kurz erklärt.</strong> Jede Rechnung muss den Namen des Verkäufers (BT-27) und seine Postanschrift (BG-5) enthalten. Erscheint die Meldung, obwohl Ihr Firmenname auf der Rechnung steht, liegt das fast immer daran, dass er im falschen Feld der XML-Datei steht.</p>
 <h2>Was die Regeln genau prüfen</h2>
 <ul>

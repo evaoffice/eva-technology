@@ -317,7 +317,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <article class="artikel rahmen">
 <p class="vorzeile">XRechnung · Fehlermeldung erklärt</p>
 <h1>BR-CO-10: Summe der Positionen stimmt nicht</h1>
-<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-10] Sum of Invoice line net amount (BT-106) = Σ Invoice line net amount (BT-131).</span></p>
+<p class="validator"><span class="validator__name">Meldung des Validators:</span> <span class="validator__text" lang="en">[BR-CO-10]-Sum of Invoice line net amount (BT-106) = Σ Invoice line net amount (BT-131).</span></p>
 <p><strong>Kurz erklärt.</strong> Die Summe der Positionen im Rechnungsabschluss (BT-106) muss genau der Summe der Nettobeträge aller Positionen (BT-131) entsprechen. Weicht sie ab, auch um einen Cent, lehnt der Validator die Rechnung ab.</p>
 <p><strong>Was die Regel genau prüft.</strong> Im UBL-Format vergleicht die Regel <code>cac:LegalMonetaryTotal/cbc:LineExtensionAmount</code> mit der Summe aller <code>cac:InvoiceLine/cbc:LineExtensionAmount</code>. Die Summe wird auf zwei Nachkommastellen gerundet, dann muss sie gleich sein. Eine Toleranz gibt es nach dem offiziellen UBL-Regelwerk nicht.</p>
 <h2>Typische Ursachen</h2>
