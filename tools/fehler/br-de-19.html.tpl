@@ -415,6 +415,11 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <li><a href="../br-s-05/"><span class="regel">BR-S-05</span> Position mit Kategorie S ohne Steuersatz über 0</a></li>
 <li><a href="../br-61/"><span class="regel">BR-61</span> Überweisung ohne Kontonummer</a></li>
 <li><a href="../br-21-br-26/"><span class="regel">BR-21 bis BR-26</span> Rechnungsposition unvollständig</a></li>
+<li><a href="../br-cl-04/"><span class="regel">BR-CL-04</span> Der Währungscode der Rechnung ist ungültig</a></li>
+<li><a href="../br-co-04/"><span class="regel">BR-CO-04</span> Position ohne Umsatzsteuerkategorie</a></li>
+<li><a href="../br-49/"><span class="regel">BR-49</span> Zahlungsangaben ohne Code der Zahlungsart</a></li>
+<li><a href="../br-29-br-30/"><span class="regel">BR-29 / BR-30</span> Der Leistungszeitraum endet vor seinem Beginn</a></li>
+<li><a href="../br-s-02/"><span class="regel">BR-S-02</span> Umsatzsteuer berechnet, aber keine Steuernummer des Verkäufers</a></li>
 </ul>
   </div>
 </section>

@@ -55,7 +55,7 @@ TOOL_DIR = "e-rechnung-pruefen"
 TOOL_TEMPLATE = ROOT / "tools" / "e-rechnung-pruefen.html.tpl"
 ERROR_DIR = "fehler"
 ERROR_TEMPLATES = ROOT / "tools" / "fehler"
-ERROR_PAGES = 45
+ERROR_PAGES = 50
 # Pages about rules that the checker does not check. They say so, and they do
 # not carry the sentence that the checker shows the error.
 NOT_CHECKED = ("peppol-r260", "peppol-r257-r258", "peppol-r230-de-r-t02", "peppol-r219-r229", "peppol-r231")

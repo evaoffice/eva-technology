@@ -2,7 +2,7 @@
 
 The support page, privacy policies, terms of service and legal notice for
 three Jira apps (Desk Tools MCP, E-Invoice Kit for Jira and Team Load Radar
-for Jira), and a free invoice checker in German, E-Rechnung prüfen, with forty-five
+for Jira), and a free invoice checker in German, E-Rechnung prüfen, with fifty
 pages that each explain one validation error.
 
 Served with GitHub Pages at <https://evaoffice.github.io/eva-technology/>.
@@ -65,6 +65,11 @@ Zu jedem dieser Fehler aus dem Prüfbericht (EN 16931, XRechnung, Peppol) gibt e
 | BR-S-05 | Position mit Kategorie S ohne Steuersatz über 0 | [br-s-05](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-s-05/) |
 | BR-61 | Überweisung ohne Kontonummer | [br-61](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-61/) |
 | BR-21 bis BR-26 | Rechnungsposition unvollständig | [br-21-br-26](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-21-br-26/) |
+| BR-CL-04 | Der Währungscode der Rechnung ist ungültig | [br-cl-04](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-cl-04/) |
+| BR-CO-04 | Position ohne Umsatzsteuerkategorie | [br-co-04](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-04/) |
+| BR-49 | Zahlungsangaben ohne Code der Zahlungsart | [br-49](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-49/) |
+| BR-29 / BR-30 | Der Leistungszeitraum endet vor seinem Beginn | [br-29-br-30](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-29-br-30/) |
+| BR-S-02 | Umsatzsteuer berechnet, aber keine Steuernummer des Verkäufers | [br-s-02](https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-s-02/) |
 <!-- fehlercodes:end -->
 
 ## E-Rechnung prüfen (XRechnung checker)
@@ -87,7 +92,7 @@ Plain HTML and one stylesheet. No cookies, analytics or external requests
 anywhere.
 
 - `content/*.md` holds the text of each English page.
-- `content/fehler/*.md` holds the forty-five German error pages of the checker
+- `content/fehler/*.md` holds the fifty German error pages of the checker
   (title, description, a German heading, the validator's literal message and
   the explanation). They take their stylesheet from the checker page, so run
   `tools/build.py` again whenever `tools/e-rechnung-pruefen.html.tpl` changes.
@@ -132,7 +137,7 @@ and not as a page.
 - the committed pages, copied as they are;
 - with `IMPRESSUM_NIF` set: the number in the legal notice (`legal/`), the
   checker at `e-rechnung-pruefen/` with the number in its Impressum, its
-  forty-five error pages under `e-rechnung-pruefen/fehler/`, and a link to the checker
+  fifty error pages under `e-rechnung-pruefen/fehler/`, and a link to the checker
   on the home page;
 - without it: the legal notice without that line, no checker, no error pages
   and no link. An incomplete Impressum is never published;
