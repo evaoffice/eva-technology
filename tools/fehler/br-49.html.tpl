@@ -334,7 +334,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <ol>
 <li>Stellen Sie im Programm die Zahlungsart ein, mit der Ihre Kunden zahlen sollen.</li>
 <li>Bei Überweisung auf ein Konto im SEPA-Raum ist das meist <code>58</code>, außerhalb von SEPA <code>30</code>.</li>
-<li>Prüfen Sie, dass <code>cbc:PaymentMeansCode</code> am Anfang von <code>cac:PaymentMeans</code> steht.</li>
+<li>Prüfen Sie, dass <code>cbc:PaymentMeansCode</code> in <code>cac:PaymentMeans</code> steht: direkt nach einer eventuellen <code>cbc:ID</code>, vor <code>cbc:PaymentID</code>.</li>
 <li>Erzeugen Sie die Rechnung neu.</li>
 </ol>
 <p><strong>Vorher (abgelehnt):</strong> Bankverbindung ohne Zahlungsart.</p>

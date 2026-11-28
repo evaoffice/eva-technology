@@ -333,7 +333,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <h2>So beheben Sie es</h2>
 <ol>
 <li>Geben Sie jeder Position eine Steuerkategorie, auch steuerfreien und nicht steuerbaren Positionen.</li>
-<li>Schreiben Sie bei jeder Position einen Block <code>cac:ClassifiedTaxCategory</code> mit Kategorie, Satz und <code>VAT</code> als Steuerart.</li>
+<li>Schreiben Sie bei jeder Position einen Block <code>cac:ClassifiedTaxCategory</code> mit Kategorie, Satz und <code>VAT</code> als Steuerart; bei Kategorie <code>O</code> (nicht steuerbar) entfällt der Satz.</li>
 <li>Welche Kategorie für eine steuerfreie Position gilt, klären Sie bitte mit Ihrer Steuerberatung.</li>
 <li>Erzeugen Sie die Rechnung neu.</li>
 </ol>
