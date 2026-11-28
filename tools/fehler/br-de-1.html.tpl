@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-1: Ihrer XRechnung fehlen die Zahlungsangaben (BG-16). Auch bei bereits bezahlten Rechnungen Pflicht. So ergänzen Sie sie richtig.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-1/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-1", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-1/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Die Rechnung ist schon bezahlt. Warum brauche ich trotzdem Zahlungsangaben?", "acceptedAnswer": {"@type": "Answer", "text": "XRechnung verlangt den Block in jeder Rechnung. Geben Sie an, wie bezahlt wurde, und tragen Sie den Betrag als bereits gezahlt ein."}}, {"@type": "Question", "name": "Reichen die Zahlungsbedingungen (BT-20)?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. BT-20 ist ein Textfeld; BR-DE-1 verlangt den Block mit der Zahlungsart."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -353,7 +355,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cac:PaymentTerms&gt;
 </code></pre>
 <p>Die IBAN im Beispiel ist eine öffentlich verwendete Beispiel-IBAN, kein echtes Konto.</p>
-<p><strong>Häufig zusammen mit:</strong> BR-DE-23-a (Überweisung ohne IBAN) und BR-CL-16 (ungültiger Code für die Zahlungsart).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-de-23-a/">BR-DE-23-a</a> (Überweisung ohne IBAN) und BR-CL-16 (ungültiger Code für die Zahlungsart).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Die Rechnung ist schon bezahlt. Warum brauche ich trotzdem Zahlungsangaben?</em> XRechnung verlangt den Block in jeder Rechnung. Geben Sie an, wie bezahlt wurde, und tragen Sie den Betrag als bereits gezahlt ein.</li>

@@ -7,6 +7,8 @@
 <meta name="description" content="BR-CO-10: Die Summe der Positionen (BT-106) passt nicht zu den Positionsbeträgen. Häufig Rundung, Versandkosten oder Rabatte am falschen Ort. Lösung.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-10/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-CO-10", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-10/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Warum lehnt der Validator schon bei einem Cent ab?", "acceptedAnswer": {"@type": "Answer", "text": "Die Regel verlangt Gleichheit nach dem Runden auf zwei Stellen. Ein Cent Unterschied genügt."}}, {"@type": "Question", "name": "Gehören Versandkosten in die Summe der Positionen?", "acceptedAnswer": {"@type": "Answer", "text": "Nur, wenn sie als eigene Position auf der Rechnung stehen. Als Zuschlag auf Belegebene zählen sie zu BT-108."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -357,7 +359,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   …
 &lt;/cac:LegalMonetaryTotal&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-CO-13 (Nettosumme), BR-CO-15 und BR-CO-16, weil sich der Fehler in alle Endsummen fortsetzt; BR-CO-14, wenn auch die Steuer betroffen ist.</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-co-13/">BR-CO-13</a> (Nettosumme), <a href="../br-co-15/">BR-CO-15</a> und <a href="../br-co-16/">BR-CO-16</a>, weil sich der Fehler in alle Endsummen fortsetzt; <a href="../br-co-14/">BR-CO-14</a>, wenn auch die Steuer betroffen ist.</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Warum lehnt der Validator schon bei einem Cent ab?</em> Die Regel verlangt Gleichheit nach dem Runden auf zwei Stellen. Ein Cent Unterschied genügt.</li>

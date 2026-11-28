@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-19 ist eine Warnung: Die IBAN bei SEPA-Überweisung (Code 58) ist keine gültige IBAN. Meist ein Tippfehler. So prüfen Sie es.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-19/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-19", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-19/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Muss ich die Warnung beheben?", "acceptedAnswer": {"@type": "Answer", "text": "Die Rechnung scheitert an dieser Regel nicht. Mit einer falschen IBAN kann Ihr Kunde aber nicht überweisen, und viele Empfänger fragen nach."}}, {"@type": "Question", "name": "Gilt das auch für Lastschriften?", "acceptedAnswer": {"@type": "Answer", "text": "Dort prüft BR-DE-20 die IBAN des Zahlers (BT-91), ebenfalls als Warnung. Unser Prüfwerkzeug prüft bei Lastschriften, ob das Mandat vorhanden ist (BR-DE-25-a), aber nicht die Prüfziffer dieser IBAN."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -349,7 +351,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cac:PaymentMeans&gt;
 </code></pre>
 <p>Die IBAN im Beispiel ist eine öffentlich verwendete Beispiel-IBAN, kein echtes Konto.</p>
-<p><strong>Häufig zusammen mit:</strong> BR-DE-23-a (Überweisung ohne Kontoangaben) und BR-DE-20, die gleiche Prüfung für das Konto des Zahlers bei SEPA-Lastschrift (Code <code>59</code>).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-de-23-a/">BR-DE-23-a</a> (Überweisung ohne Kontoangaben) und BR-DE-20, die gleiche Prüfung für das Konto des Zahlers bei SEPA-Lastschrift (Code <code>59</code>).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Muss ich die Warnung beheben?</em> Die Rechnung scheitert an dieser Regel nicht. Mit einer falschen IBAN kann Ihr Kunde aber nicht überweisen, und viele Empfänger fragen nach.</li>

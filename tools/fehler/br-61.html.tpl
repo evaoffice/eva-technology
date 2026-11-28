@@ -7,6 +7,8 @@
 <meta name="description" content="BR-61: Ihre E-Rechnung gibt Überweisung an (Code 30 oder 58), nennt aber keine Kontonummer (BT-84). Was die Regel prüft und wie Sie die IBAN richtig eintragen.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-61/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-61", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-61/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Was ist der Unterschied zu BR-DE-23-a?", "acceptedAnswer": {"@type": "Answer", "text": "BR-DE-23-a ist die deutsche Regel und verlangt den ganzen Block cac:PayeeFinancialAccount. BR-61 kommt aus der europäischen Norm und verlangt die Kontonummer darin. Fehlt der Block ganz, erscheinen oft beide Meldungen."}}, {"@type": "Question", "name": "Muss es eine IBAN sein?", "acceptedAnswer": {"@type": "Answer", "text": "BR-61 verlangt nur eine Kontonummer. Bei Code 58 (SEPA) erwartet XRechnung eine gültige IBAN und meldet sonst BR-DE-19."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -348,7 +350,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cac:PaymentMeans&gt;
 </code></pre>
 <p>Die IBAN im Beispiel ist eine öffentlich verwendete Beispiel-IBAN, kein echtes Konto. Im UBL-Format steht <code>cbc:ID</code> vor <code>cbc:Name</code>.</p>
-<p><strong>Häufig zusammen mit:</strong> BR-DE-23-a (XRechnung: Überweisung ohne Kontoblock), BR-DE-19 (IBAN ungültig, als Warnung) und BR-DE-1 (Zahlungsangaben fehlen ganz).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-de-23-a/">BR-DE-23-a</a> (XRechnung: Überweisung ohne Kontoblock), <a href="../br-de-19/">BR-DE-19</a> (IBAN ungültig, als Warnung) und <a href="../br-de-1/">BR-DE-1</a> (Zahlungsangaben fehlen ganz).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Was ist der Unterschied zu BR-DE-23-a?</em> BR-DE-23-a ist die deutsche Regel und verlangt den ganzen Block <code>cac:PayeeFinancialAccount</code>. BR-61 kommt aus der europäischen Norm und verlangt die Kontonummer darin. Fehlt der Block ganz, erscheinen oft beide Meldungen.</li>

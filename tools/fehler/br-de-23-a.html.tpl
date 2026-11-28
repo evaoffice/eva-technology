@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-23-a: Ihre XRechnung gibt Überweisung (Code 30 oder 58) an, aber kein Konto. So ergänzen Sie IBAN und Kontoinhaber im richtigen Block.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-23-a/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-23-a", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-23-a/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ich habe die IBAN im Freitext. Reicht das?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Die Regel verlangt den Block cac:PayeeFinancialAccount."}}, {"@type": "Question", "name": "Der Kunde zahlt per Lastschrift. Was nehme ich?", "acceptedAnswer": {"@type": "Answer", "text": "Code 59 statt 58, mit Mandatsreferenz und Gläubiger-ID; dann gilt BR-DE-25 statt BR-DE-23."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -348,7 +350,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cac:PaymentMeans&gt;
 </code></pre>
 <p>IBAN und BIC im Beispiel sind öffentlich verwendete Beispielwerte, kein echtes Konto. Die BIC ist freiwillig.</p>
-<p><strong>Häufig zusammen mit:</strong> BR-DE-19 (IBAN ungültig), BR-DE-23-b und BR-DE-1 (Zahlungsangaben fehlen ganz).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-de-19/">BR-DE-19</a> (IBAN ungültig), BR-DE-23-b und <a href="../br-de-1/">BR-DE-1</a> (Zahlungsangaben fehlen ganz).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Ich habe die IBAN im Freitext. Reicht das?</em> Nein. Die Regel verlangt den Block <code>cac:PayeeFinancialAccount</code>.</li>

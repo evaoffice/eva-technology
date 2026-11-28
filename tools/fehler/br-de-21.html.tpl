@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-21: Die Spezifikationskennung (BT-24) Ihrer XRechnung passt nicht, oft eine alte Version 2.x oder ein Peppol-Wert. Die richtige Kennung für 3.0.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-21/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-21", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-21/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Reicht es, nur die Kennung zu ändern?", "acceptedAnswer": {"@type": "Answer", "text": "Nein, wenn Ihr Programm noch nach 2.x erzeugt: Dann fehlen meist auch Angaben, die 3.0 verlangt. Prüfen Sie die Datei nach der Umstellung erneut."}}, {"@type": "Question", "name": "Warum nur eine Warnung?", "acceptedAnswer": {"@type": "Answer", "text": "So ist die Regel im XRechnung-Regelwerk eingestuft. Viele Empfänger erwarten trotzdem genau diese Kennung."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -344,7 +346,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <p><strong>Nachher</strong></p>
 <pre><code class="language-xml">&lt;cbc:CustomizationID&gt;urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0&lt;/cbc:CustomizationID&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> PEPPOL-EN16931-R010 / R020 (elektronische Adresse fehlt): Programme, die noch XRechnung 2.x schreiben, lassen oft auch BT-34 und BT-49 weg, die seit 3.0 Pflicht sind.</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../peppol-r020-r010/">PEPPOL-EN16931-R010</a> / R020 (elektronische Adresse fehlt): Programme, die noch XRechnung 2.x schreiben, lassen oft auch BT-34 und BT-49 weg, die seit 3.0 Pflicht sind.</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Reicht es, nur die Kennung zu ändern?</em> Nein, wenn Ihr Programm noch nach 2.x erzeugt: Dann fehlen meist auch Angaben, die 3.0 verlangt. Prüfen Sie die Datei nach der Umstellung erneut.</li>

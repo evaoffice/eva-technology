@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-5 bis BR-DE-7: Im Kontakt des Verkäufers fehlen Name, Telefonnummer oder E-Mail-Adresse. Welche Felder XRechnung verlangt und wie Sie sie füllen.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-5-br-de-6-br-de-7/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-5 / BR-DE-6 / BR-DE-7", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-5-br-de-6-br-de-7/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Darf ich eine allgemeine Telefonnummer angeben?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. XRechnung verlangt eine Nummer, unter der Rechnungsfragen ankommen; eine Durchwahl ist nicht nötig."}}, {"@type": "Question", "name": "Gilt das auch für den Käufer?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Die Kontaktdaten des Käufers sind in XRechnung freiwillig."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -349,7 +351,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   &lt;cbc:ElectronicMail&gt;buchhaltung@muster.de&lt;/cbc:ElectronicMail&gt;
 &lt;/cac:Contact&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-DE-2 (Kontaktblock fehlt ganz), BR-DE-27 und BR-DE-28 (Format von Telefon und E-Mail, als Warnung).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-de-2/">BR-DE-2</a> (Kontaktblock fehlt ganz), <a href="../br-de-27-br-de-28/">BR-DE-27</a> und <a href="../br-de-27-br-de-28/">BR-DE-28</a> (Format von Telefon und E-Mail, als Warnung).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Darf ich eine allgemeine Telefonnummer angeben?</em> Ja. XRechnung verlangt eine Nummer, unter der Rechnungsfragen ankommen; eine Durchwahl ist nicht nötig.</li>

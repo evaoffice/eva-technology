@@ -7,6 +7,8 @@
 <meta name="description" content="BR-CO-16: Der Zahlbetrag Ihrer XRechnung passt nicht zu Bruttobetrag, Anzahlung und Rundung. So rechnen Sie BT-115 richtig aus.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-16/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-CO-16", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-16/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wie gebe ich bei einer Schlussrechnung die Abschläge an?", "acceptedAnswer": {"@type": "Answer", "text": "Die Summe der bereits gezahlten Abschläge gehört in BT-113. Die Positionen zeigen die gesamte Leistung."}}, {"@type": "Question", "name": "Darf der Zahlbetrag 0 sein?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, wenn alles bereits bezahlt ist und die Rechnung trotzdem ausgestellt wird. Die Rechnung muss aber aufgehen."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -348,7 +350,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   &lt;cbc:PayableAmount currencyID=&quot;EUR&quot;&gt;121.22&lt;/cbc:PayableAmount&gt;
 &lt;/cac:LegalMonetaryTotal&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-CO-15 (Bruttobetrag), BR-27 (negativer Artikelpreis) und BR-CO-14.</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-co-15/">BR-CO-15</a> (Bruttobetrag), <a href="../br-27/">BR-27</a> (negativer Artikelpreis) und <a href="../br-co-14/">BR-CO-14</a>.</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Wie gebe ich bei einer Schlussrechnung die Abschläge an?</em> Die Summe der bereits gezahlten Abschläge gehört in BT-113. Die Positionen zeigen die gesamte Leistung.</li>

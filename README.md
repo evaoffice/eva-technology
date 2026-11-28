@@ -93,6 +93,9 @@ anywhere.
   `tools/build.py` again whenever `tools/e-rechnung-pruefen.html.tpl` changes.
   After adding a page, `tools/readme_codes.py` rewrites the list of codes in
   this README.
+  In the paragraph "Häufig zusammen mit" a rule that has its own page is linked
+  to it by `tools/build.py`, which also writes the JSON-LD of each page
+  (breadcrumb and its questions).
   The line `detects:` says what the page may claim: `yes` (the checker shows
   this error), `no`, or `link-only` for a rule the checker does not check,
   where the page only links to the checker. An optional line `vorzeile:` sets

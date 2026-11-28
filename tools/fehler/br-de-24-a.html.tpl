@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-24-a: Ihre XRechnung gibt Kartenzahlung an (Code 48, 54 oder 55), aber keine Kartenangaben (BG-18). Was in den Block gehört und was nicht.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-24-a/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-24-a", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-24-a/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Darf ich die volle Kartennummer angeben?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. In BT-87 gehören nur die letzten vier bis sechs Ziffern."}}, {"@type": "Question", "name": "Die Rechnung ist schon bezahlt. Brauche ich trotzdem Kartenangaben?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, wenn Sie Code 48, 54 oder 55 angeben. Den gezahlten Betrag tragen Sie zusätzlich als cbc:PrepaidAmount (BT-113) ein."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -353,7 +355,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cac:PaymentMeans&gt;
 </code></pre>
 <p>Die Werte im Beispiel sind Beispielwerte.</p>
-<p><strong>Häufig zusammen mit:</strong> BR-DE-24-b (Überweisungskonto oder Mandat bei Kartenzahlung), BR-DE-1 (Zahlungsangaben fehlen ganz) und BR-DE-23-a (Überweisung ohne Konto).</p>
+<p><strong>Häufig zusammen mit:</strong> BR-DE-24-b (Überweisungskonto oder Mandat bei Kartenzahlung), <a href="../br-de-1/">BR-DE-1</a> (Zahlungsangaben fehlen ganz) und <a href="../br-de-23-a/">BR-DE-23-a</a> (Überweisung ohne Konto).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Darf ich die volle Kartennummer angeben?</em> Nein. In BT-87 gehören nur die letzten vier bis sechs Ziffern.</li>

@@ -7,6 +7,8 @@
 <meta name="description" content="BR-S-08: Die Bemessungsgrundlage je Steuersatz passt nicht zu Positionen, Rabatten und Zuschlägen. Mit Beispiel für 7 % und 19 %.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-s-08/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-S-08", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-s-08/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wie verteile ich einen Rabatt auf zwei Steuersätze?", "acceptedAnswer": {"@type": "Answer", "text": "Meist im Verhältnis der Nettobeträge, als ein Nachlass je Steuersatz. Die Aufteilung klären Sie bitte mit Ihrer Steuerberatung."}}, {"@type": "Question", "name": "Gilt das auch für steuerfreie Positionen?", "acceptedAnswer": {"@type": "Answer", "text": "Für andere Kategorien gibt es eigene Regeln mit derselben Logik, zum Beispiel BR-E-08 für die Kategorie „E“ und BR-AE-08 für Reverse Charge."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -355,7 +357,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   &lt;/cac:TaxCategory&gt;
 &lt;/cac:TaxSubtotal&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-CO-17 (Steuerbetrag zur Bemessungsgrundlage), BR-CO-14 (Umsatzsteuer-Summe) und BR-CO-13 (Nettobetrag).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-co-17/">BR-CO-17</a> (Steuerbetrag zur Bemessungsgrundlage), <a href="../br-co-14/">BR-CO-14</a> (Umsatzsteuer-Summe) und <a href="../br-co-13/">BR-CO-13</a> (Nettobetrag).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Wie verteile ich einen Rabatt auf zwei Steuersätze?</em> Meist im Verhältnis der Nettobeträge, als ein Nachlass je Steuersatz. Die Aufteilung klären Sie bitte mit Ihrer Steuerberatung.</li>

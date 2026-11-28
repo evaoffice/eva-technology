@@ -7,6 +7,8 @@
 <meta name="description" content="BR-06 und BR-08: Name oder Anschrift des Verkäufers fehlen in der XRechnung. Warum der Firmenname im Kopf nicht genügt und was fehlt.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-06-br-08/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-06 / BR-08", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-06-br-08/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ich habe meinen Namen doch eingetragen. Warum die Meldung?", "acceptedAnswer": {"@type": "Answer", "text": "Wahrscheinlich steht er nur als Handelsname in cac:PartyName. BR-06 prüft den Namen in cac:PartyLegalEntity."}}, {"@type": "Question", "name": "Gilt das auch für den Käufer?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, mit eigenen Regeln: BR-07 (Name des Käufers) und BR-10 (Anschrift des Käufers)."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -367,7 +369,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cac:AccountingSupplierParty&gt;
 </code></pre>
 <p>Die Reihenfolge der Elemente ist im UBL-Format fest: Anschrift vor Steuerangaben, Steuerangaben vor <code>cac:PartyLegalEntity</code>.</p>
-<p><strong>Häufig zusammen mit:</strong> BR-09 (Ländercode fehlt), BR-DE-3 und BR-DE-4 (Ort bzw. Postleitzahl fehlen), BR-DE-2 (Kontaktdaten des Verkäufers fehlen) und beim Käufer BR-07 / BR-10.</p>
+<p><strong>Häufig zusammen mit:</strong> BR-09 (Ländercode fehlt), <a href="../br-de-3-br-de-4/">BR-DE-3</a> und <a href="../br-de-3-br-de-4/">BR-DE-4</a> (Ort bzw. Postleitzahl fehlen), <a href="../br-de-2/">BR-DE-2</a> (Kontaktdaten des Verkäufers fehlen) und beim Käufer BR-07 / BR-10.</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Ich habe meinen Namen doch eingetragen. Warum die Meldung?</em> Wahrscheinlich steht er nur als Handelsname in <code>cac:PartyName</code>. BR-06 prüft den Namen in <code>cac:PartyLegalEntity</code>.</li>

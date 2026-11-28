@@ -7,6 +7,8 @@
 <meta name="description" content="Fehler BR-DE-15 in der XRechnung: Die Käuferreferenz (BT-10) fehlt. Was Behörden (Leitweg-ID) und Firmen dort erwarten und wie Sie das Feld füllen.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-15/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-15", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-15/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Reicht die Bestellnummer im Feld „Order reference“ (BT-13)?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. BT-13 ist ein anderes Feld; BR-DE-15 verlangt BT-10."}}, {"@type": "Question", "name": "Muss die Leitweg-ID auch bei Firmenkunden stehen?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Die Leitweg-ID ist für öffentliche Auftraggeber. Bei Firmen genügt eine abgestimmte Referenz."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -342,7 +344,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 <p><strong>Nachher</strong></p>
 <pre><code class="language-xml">&lt;cbc:BuyerReference&gt;04011000-12345-34&lt;/cbc:BuyerReference&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> PEPPOL-EN16931-R010 (elektronische Adresse des Käufers fehlt), weil beide Angaben im Kundenstamm fehlen.</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../peppol-r020-r010/">PEPPOL-EN16931-R010</a> (elektronische Adresse des Käufers fehlt), weil beide Angaben im Kundenstamm fehlen.</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Reicht die Bestellnummer im Feld „Order reference“ (BT-13)?</em> Nein. BT-13 ist ein anderes Feld; BR-DE-15 verlangt BT-10.</li>

@@ -7,6 +7,8 @@
 <meta name="description" content="BR-21 bis BR-26: Einer Position Ihrer E-Rechnung fehlen Nummer, Menge, Einheit, Nettobetrag, Bezeichnung oder Preis. Was jede Regel prüft und wie Sie es beheben.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-21-br-26/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-21 bis BR-26", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-21-br-26/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Fehlt die Menge, warum erscheint auch BR-23?", "acceptedAnswer": {"@type": "Answer", "text": "Ohne Menge gibt es auch kein Attribut unitCode. Beide Meldungen verschwinden, wenn Sie die Menge mit Einheit eintragen."}}, {"@type": "Question", "name": "Kann ich eine Textzeile ohne Preis ausgeben?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Jede Position braucht alle sechs Angaben. Texte gehören in cbc:Note der Rechnung."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -366,7 +368,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cac:InvoiceLine&gt;
 </code></pre>
 <p>Die Reihenfolge ist im UBL-Format fest: <code>cbc:ID</code>, Menge, Nettobetrag, dann <code>cac:Item</code> und zuletzt <code>cac:Price</code>.</p>
-<p><strong>Häufig zusammen mit:</strong> BR-CL-23 (ungültiger Einheitencode), BR-16 (Rechnung ohne Position), BR-CO-10 (Summe der Positionen) und BR-27 (negativer Preis).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-cl-23/">BR-CL-23</a> (ungültiger Einheitencode), <a href="../br-16/">BR-16</a> (Rechnung ohne Position), <a href="../br-co-10/">BR-CO-10</a> (Summe der Positionen) und <a href="../br-27/">BR-27</a> (negativer Preis).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Fehlt die Menge, warum erscheint auch BR-23?</em> Ohne Menge gibt es auch kein Attribut <code>unitCode</code>. Beide Meldungen verschwinden, wenn Sie die Menge mit Einheit eintragen.</li>

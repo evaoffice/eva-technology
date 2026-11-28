@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-18: Skonto steht in der XRechnung im falschen Format. Wie die Zeile #SKONTO#TAGE=…#PROZENT=…# aussehen muss, mit Beispiel zum Kopieren.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-18/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-18", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-18/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kann ich Skonto auch nur als Text schreiben?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, wenn keine Zeile mit # beginnt. Dann kann der Empfänger das Skonto aber nicht automatisch berechnen."}}, {"@type": "Question", "name": "Wofür ist BASISBETRAG?", "acceptedAnswer": {"@type": "Answer", "text": "Nur wenn Skonto nicht auf den ganzen Zahlbetrag gilt."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;

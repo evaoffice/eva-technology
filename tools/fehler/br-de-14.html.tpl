@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-14: In einem Abschnitt der Steueraufschlüsselung Ihrer XRechnung fehlt der Steuersatz (BT-119). Warum XRechnung ihn immer verlangt und wie Sie ihn ergänzen.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-14/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-14", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-14/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Warum soll ich einen Satz von 0 angeben?", "acceptedAnswer": {"@type": "Answer", "text": "Weil XRechnung den Satz in jedem Abschnitt der Aufschlüsselung verlangt. Ein fehlender Satz und ein Satz von 0 sind für den Validator nicht dasselbe."}}, {"@type": "Question", "name": "Reicht der Satz in den Positionen?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Die Aufschlüsselung (BG-23) braucht ihn noch einmal."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -354,7 +356,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cac:TaxSubtotal&gt;
 </code></pre>
 <p>Die Reihenfolge ist im UBL-Format fest: <code>cbc:Percent</code> steht nach <code>cbc:ID</code> und vor dem Befreiungsgrund.</p>
-<p><strong>Häufig zusammen mit:</strong> BR-48 (Steuersatz fehlt nach EN 16931), BR-AE-10 (Befreiungsgrund bei Reverse Charge) und BR-CO-17 (Steuerbetrag passt nicht zum Satz).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-45-br-48/">BR-48</a> (Steuersatz fehlt nach EN 16931), <a href="../br-ae-10/">BR-AE-10</a> (Befreiungsgrund bei Reverse Charge) und <a href="../br-co-17/">BR-CO-17</a> (Steuerbetrag passt nicht zum Satz).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Warum soll ich einen Satz von 0 angeben?</em> Weil XRechnung den Satz in jedem Abschnitt der Aufschlüsselung verlangt. Ein fehlender Satz und ein Satz von 0 sind für den Validator nicht dasselbe.</li>

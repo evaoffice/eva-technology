@@ -7,6 +7,8 @@
 <meta name="description" content="R230/DE-R-T02: Ein externer Anhang braucht genau eine URI; bei Rechnungen zwischen deutschen Firmen eine absolute URL wie https://…">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r230-de-r-t02/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "R230 / DE-R-T02", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r230-de-r-t02/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Gilt DE-R-T02 auch für Rechnungen ins Ausland?", "acceptedAnswer": {"@type": "Answer", "text": "Nein, nur wenn Verkäufer und Käufer in Deutschland sitzen. R230 gilt immer."}}, {"@type": "Question", "name": "Reicht ein Link auf einen internen Server?", "acceptedAnswer": {"@type": "Answer", "text": "Für die Regel ja, solange er ein Schema hat. Ob Ihr Empfänger ihn öffnen kann, prüft die Regel nicht."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;

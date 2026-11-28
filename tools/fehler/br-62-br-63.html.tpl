@@ -7,6 +7,8 @@
 <meta name="description" content="BR-62 und BR-63: Die elektronische Adresse von Verkäufer oder Käufer hat kein schemeID. Welches Schema für E-Mail und Leitweg-ID gilt und wie Sie es eintragen.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-62-br-63/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-62 / BR-63", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-62-br-63/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Welche Adresse nehme ich für meinen Kunden, wenn er keine Leitweg-ID hat?", "acceptedAnswer": {"@type": "Answer", "text": "Meist die E-Mail-Adresse, an die er Rechnungen erhalten möchte, mit schemeID=\"EM\". Fragen Sie ihn danach."}}, {"@type": "Question", "name": "Gilt EM auch im Peppol-Netz?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Peppol lässt EM nicht zu; dort gilt zum Beispiel 9930 oder 0204. Für den Versand per E-Mail oder über ein Portal ist EM in XRechnung erlaubt."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -356,7 +358,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
     …
 </code></pre>
 <p>Die Adressen im Beispiel sind Beispielwerte.</p>
-<p><strong>Häufig zusammen mit:</strong> PEPPOL-EN16931-R010 / R020 (elektronische Adresse fehlt) und BR-CL-25 (Schema nicht in der Codeliste).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../peppol-r020-r010/">PEPPOL-EN16931-R010</a> / R020 (elektronische Adresse fehlt) und BR-CL-25 (Schema nicht in der Codeliste).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Welche Adresse nehme ich für meinen Kunden, wenn er keine Leitweg-ID hat?</em> Meist die E-Mail-Adresse, an die er Rechnungen erhalten möchte, mit <code>schemeID="EM"</code>. Fragen Sie ihn danach.</li>

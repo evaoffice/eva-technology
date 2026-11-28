@@ -7,6 +7,8 @@
 <meta name="description" content="BR-CO-13: Die Nettosumme Ihrer XRechnung passt nicht zu Positionen, Nachlässen und Zuschlägen. Was die Regel prüft und wie Sie es beheben.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-13/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-CO-13", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-13/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Gehört ein Rabatt auf eine einzelne Position hierher?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Er mindert schon den Positionsbetrag (BT-131) und taucht in BT-107 nicht noch einmal auf."}}, {"@type": "Question", "name": "Müssen die Summenfelder auch dann stehen, wenn es nur einen Rabatt gibt?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Sobald es Nachlässe auf Belegebene gibt, gehört ihre Summe in cbc:AllowanceTotalAmount."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -351,7 +353,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   &lt;cbc:ChargeTotalAmount currencyID=&quot;EUR&quot;&gt;5.90&lt;/cbc:ChargeTotalAmount&gt;
   …
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-CO-10 (Summe der Positionen), BR-CO-11 / BR-CO-12 (Summe der Nachlässe bzw. Zuschläge) und BR-CO-15.</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-co-10/">BR-CO-10</a> (Summe der Positionen), <a href="../br-co-11-br-co-12/">BR-CO-11</a> / <a href="../br-co-11-br-co-12/">BR-CO-12</a> (Summe der Nachlässe bzw. Zuschläge) und <a href="../br-co-15/">BR-CO-15</a>.</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Gehört ein Rabatt auf eine einzelne Position hierher?</em> Nein. Er mindert schon den Positionsbetrag (BT-131) und taucht in BT-107 nicht noch einmal auf.</li>

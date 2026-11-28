@@ -7,6 +7,8 @@
 <meta name="description" content="R219/R229 sind neu in Peppol BIS (ab 24.02.2027): Käufer und Verkäufer brauchen genau eine EndpointID. Oft zusammen mit R010/R020. So beheben Sie es.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r219-r229/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "R219 / R229", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r219-r229/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Was ist der Unterschied zu R010/R020?", "acceptedAnswer": {"@type": "Answer", "text": "Inhaltlich keiner, wenn die Adresse fehlt. R219/R229 gehören zu einer neuen Gruppe von Regeln, die für Pflichtelemente „genau eins“ verlangen."}}, {"@type": "Question", "name": "Welche Adresse nehme ich bei Behörden?", "acceptedAnswer": {"@type": "Answer", "text": "Die Leitweg-ID, die Ihnen die Behörde nennt."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -345,7 +347,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
     &lt;cac:PartyName&gt;&lt;cbc:Name&gt;Kunde AG&lt;/cbc:Name&gt;&lt;/cac:PartyName&gt;
     …
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> PEPPOL-EN16931-R010 / R020 (elektronische Adresse fehlt), BR-62 / BR-63 (Schema fehlt) und PEPPOL-EN16931-CL008 (Schema <code>EM</code> im Peppol-Netz nicht zulässig).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../peppol-r020-r010/">PEPPOL-EN16931-R010</a> / R020 (elektronische Adresse fehlt), <a href="../br-62-br-63/">BR-62</a> / <a href="../br-62-br-63/">BR-63</a> (Schema fehlt) und PEPPOL-EN16931-CL008 (Schema <code>EM</code> im Peppol-Netz nicht zulässig).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Was ist der Unterschied zu R010/R020?</em> Inhaltlich keiner, wenn die Adresse fehlt. R219/R229 gehören zu einer neuen Gruppe von Regeln, die für Pflichtelemente „genau eins“ verlangen.</li>

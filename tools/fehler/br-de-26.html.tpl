@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-26 ist eine Warnung: Ihre Korrekturrechnung (Typ 384) nennt die ursprüngliche Rechnung nicht (BG-3). So ergänzen Sie den Verweis im XML.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-26/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-26", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-26/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Muss ich die Warnung beheben?", "acceptedAnswer": {"@type": "Answer", "text": "Die Rechnung scheitert an dieser Regel nicht. Viele Empfänger verbuchen eine Korrektur ohne Verweis aber nicht und schicken sie zurück."}}, {"@type": "Question", "name": "Korrekturrechnung oder Gutschrift?", "acceptedAnswer": {"@type": "Answer", "text": "Für eine Gutschrift gibt es den Code 381. Was in Ihrem Fall richtig ist, klären Sie bitte mit Ihrer Steuerberatung oder Ihrem Empfänger."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -346,7 +348,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cac:BillingReference&gt;
 </code></pre>
 <p>Die Reihenfolge ist im UBL-Format fest: <code>cac:BillingReference</code> steht nach <code>cac:OrderReference</code> und vor den Vertragsangaben und Anhängen.</p>
-<p><strong>Häufig zusammen mit:</strong> BR-DE-17 (Rechnungsart nicht vorgesehen, als Warnung) und BR-55 (Verweis auf eine frühere Rechnung ohne deren Nummer).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-de-17/">BR-DE-17</a> (Rechnungsart nicht vorgesehen, als Warnung) und BR-55 (Verweis auf eine frühere Rechnung ohne deren Nummer).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Muss ich die Warnung beheben?</em> Die Rechnung scheitert an dieser Regel nicht. Viele Empfänger verbuchen eine Korrektur ohne Verweis aber nicht und schicken sie zurück.</li>

@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-3 und BR-DE-4: In der Anschrift des Verkäufers fehlen Ort (BT-37) oder Postleitzahl (BT-38). Häufige Ursachen und die richtigen XML-Felder.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-3-br-de-4/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-3 / BR-DE-4", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-3-br-de-4/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ich habe nur ein Postfach. Was trage ich ein?", "acceptedAnswer": {"@type": "Answer", "text": "Die Postleitzahl des Postfachs und den Ort. Das Postfach selbst kann in cbc:StreetName stehen."}}, {"@type": "Question", "name": "Gilt das auch für ausländische Verkäufer?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Die Regeln gelten für jede XRechnung, unabhängig vom Land des Verkäufers."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -349,7 +351,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   &lt;cac:Country&gt;&lt;cbc:IdentificationCode&gt;DE&lt;/cbc:IdentificationCode&gt;&lt;/cac:Country&gt;
 &lt;/cac:PostalAddress&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-08 (Anschrift des Verkäufers fehlt ganz), BR-DE-8 / BR-DE-9 (Ort oder Postleitzahl des Käufers) und BR-DE-2 (Kontaktdaten des Verkäufers).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-06-br-08/">BR-08</a> (Anschrift des Verkäufers fehlt ganz), <a href="../br-de-8-br-de-9/">BR-DE-8</a> / <a href="../br-de-8-br-de-9/">BR-DE-9</a> (Ort oder Postleitzahl des Käufers) und <a href="../br-de-2/">BR-DE-2</a> (Kontaktdaten des Verkäufers).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Ich habe nur ein Postfach. Was trage ich ein?</em> Die Postleitzahl des Postfachs und den Ort. Das Postfach selbst kann in <code>cbc:StreetName</code> stehen.</li>

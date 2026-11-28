@@ -7,6 +7,8 @@
 <meta name="description" content="BR-CO-15: Der Bruttobetrag Ihrer XRechnung ist nicht Netto plus Umsatzsteuer. Typische Ursachen bei Bruttopreisen und wie Sie es beheben.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-15/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-CO-15", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-15/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Mein Programm rechnet mit Bruttopreisen. Muss ich das ändern?", "acceptedAnswer": {"@type": "Answer", "text": "Nicht im Programm. In der XML-Datei müssen die Summen aber aus Netto und Steuer gebildet sein."}}, {"@type": "Question", "name": "Ich rechne in einer anderen Währung ab und gebe die Steuer zusätzlich in Euro an. Ist das der Fehler?", "acceptedAnswer": {"@type": "Answer", "text": "Nur wenn beide Steuerbeträge dieselbe Währung tragen. Der Betrag in der Buchungswährung (BT-111) braucht die andere Währung."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -354,7 +356,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   &lt;cbc:TaxInclusiveAmount currencyID=&quot;EUR&quot;&gt;221.22&lt;/cbc:TaxInclusiveAmount&gt;
   …
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-CO-14 (Umsatzsteuer-Summe), BR-CO-13 (Nettobetrag) und BR-CO-16 (Zahlbetrag).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-co-14/">BR-CO-14</a> (Umsatzsteuer-Summe), <a href="../br-co-13/">BR-CO-13</a> (Nettobetrag) und <a href="../br-co-16/">BR-CO-16</a> (Zahlbetrag).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Mein Programm rechnet mit Bruttopreisen. Muss ich das ändern?</em> Nicht im Programm. In der XML-Datei müssen die Summen aber aus Netto und Steuer gebildet sein.</li>

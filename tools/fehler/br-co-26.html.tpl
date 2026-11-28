@@ -7,6 +7,8 @@
 <meta name="description" content="Fehlercode BR-CO-26: Die XRechnung braucht USt-IdNr. (BT-31), Kennung (BT-29) oder Registernummer (BT-30). Warum die Steuernummer allein nicht genügt.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-26/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-CO-26", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-26/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ich habe nur eine Steuernummer. Was nun?", "acceptedAnswer": {"@type": "Answer", "text": "Ergänzen Sie BT-30 oder BT-29. Die Steuernummer bleibt zusätzlich in der Rechnung, für BR-DE-16."}}, {"@type": "Question", "name": "Ist die Handelsregisternummer Pflicht?", "acceptedAnswer": {"@type": "Answer", "text": "Nein, eine der drei Kennungen genügt."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;

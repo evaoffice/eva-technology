@@ -7,6 +7,8 @@
 <meta name="description" content="BR-CL-23: Die Mengeneinheit der XRechnung ist ungültig. Welche Codes stattdessen gelten (HUR für Stunde, C62 für Stück) und wo Sie sie ändern.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-cl-23/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-CL-23", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-cl-23/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Der Validator hat die Rechnung angenommen. Muss ich das trotzdem ändern?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Der Fehler steht im Bericht, und der Empfänger kann die Rechnung deswegen zurückweisen."}}, {"@type": "Question", "name": "Welcher Code für Lizenzen oder Pakete?", "acceptedAnswer": {"@type": "Answer", "text": "Meist C62 (Einheit) oder LS (Pauschale)."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;

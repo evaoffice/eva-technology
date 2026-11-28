@@ -7,6 +7,8 @@
 <meta name="description" content="BR-AE-10: Bei Reverse Charge (Kategorie AE) fehlt der Befreiungsgrund in der XRechnung. Welche Angabe der Validator erwartet und wo Sie sie eintragen.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-ae-10/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-AE-10", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-ae-10/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Reicht der Text allein?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, die Regel verlangt Code oder Text. Mit beiden sind Sie auf der sicheren Seite."}}, {"@type": "Question", "name": "Gilt Reverse Charge für meinen Umsatz?", "acceptedAnswer": {"@type": "Answer", "text": "Das klären Sie bitte mit Ihrer Steuerberatung."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;

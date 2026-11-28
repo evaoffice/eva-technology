@@ -7,6 +7,8 @@
 <meta name="description" content="BR-CO-17 in der XRechnung: Steuerbetrag je Steuersatz und Bemessungsgrundlage × Satz passen nicht zusammen. Was die Regel prüft und wie Sie es beheben.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-17/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-CO-17", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-17/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Lehnt der Validator schon bei einem Cent ab?", "acceptedAnswer": {"@type": "Answer", "text": "Nach dem offiziellen UBL-Regelwerk nicht bei BR-CO-17. Ein Cent im Gesamtbetrag führt aber zu BR-CO-14."}}, {"@type": "Question", "name": "Muss ich mein Programm auf Nettopreise umstellen?", "acceptedAnswer": {"@type": "Answer", "text": "Nicht unbedingt. Wichtig ist, dass die XML-Datei die Werte netto und je Steuersatz richtig ausweist."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -345,7 +347,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   &lt;cbc:TaxAmount currencyID=&quot;EUR&quot;&gt;15.87&lt;/cbc:TaxAmount&gt;
   …
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-CO-14 und BR-S-08 (Bemessungsgrundlage je Steuersatz).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-co-14/">BR-CO-14</a> und <a href="../br-s-08/">BR-S-08</a> (Bemessungsgrundlage je Steuersatz).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Lehnt der Validator schon bei einem Cent ab?</em> Nach dem offiziellen UBL-Regelwerk nicht bei BR-CO-17. Ein Cent im Gesamtbetrag führt aber zu BR-CO-14.</li>

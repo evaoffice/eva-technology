@@ -7,6 +7,8 @@
 <meta name="description" content="BR-CO-14: Die Steuersumme der XRechnung passt nicht zur Summe je Steuersatz, oft um einen Cent. Ursache, Rundung, Lösung. Kostenlos im Browser prüfen.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-14/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-CO-14", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-14/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Darf ich je Position runden?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, für Ihre interne Rechnung. Die Summe in BT-110 muss aber genau der Summe der Beträge je Steuersatz entsprechen."}}, {"@type": "Question", "name": "Warum akzeptiert mein Programm die Rechnung, der Empfänger aber nicht?", "acceptedAnswer": {"@type": "Answer", "text": "Viele Programme prüfen beim Erstellen nicht alle Regeln. Prüfen Sie die fertige Datei."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -348,7 +350,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
     &lt;cbc:TaxAmount currencyID=&quot;EUR&quot;&gt;25.37&lt;/cbc:TaxAmount&gt;
     …
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-CO-15 (Bruttobetrag) und BR-CO-16 (Zahlbetrag), weil sich der Fehler in die Endsummen fortsetzt.</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-co-15/">BR-CO-15</a> (Bruttobetrag) und <a href="../br-co-16/">BR-CO-16</a> (Zahlbetrag), weil sich der Fehler in die Endsummen fortsetzt.</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Darf ich je Position runden?</em> Ja, für Ihre interne Rechnung. Die Summe in BT-110 muss aber genau der Summe der Beträge je Steuersatz entsprechen.</li>

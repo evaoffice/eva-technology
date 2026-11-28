@@ -7,6 +7,8 @@
 <meta name="description" content="BR-CO-18: Ihre E-Rechnung enthält keine Aufschlüsselung der Umsatzsteuer (BG-23). Warum sie auch bei steuerfreien Rechnungen Pflicht ist und wie sie aussieht.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-18/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-CO-18", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-18/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Die Rechnung ist komplett steuerfrei. Brauche ich trotzdem eine Aufschlüsselung?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Auch dann steht ein Abschnitt mit der Kategorie (zum Beispiel E oder AE), der Bemessungsgrundlage und dem Steuerbetrag 0.00 in der Datei."}}, {"@type": "Question", "name": "Ich habe 7 % und 19 %. Wie viele Abschnitte?", "acceptedAnswer": {"@type": "Answer", "text": "Zwei: einen je Steuersatz."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -350,7 +352,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   &lt;/cac:TaxSubtotal&gt;
 &lt;/cac:TaxTotal&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-45 bis BR-48 (Abschnitt unvollständig), BR-S-01 (Positionen mit 19 % ohne passenden Abschnitt) und BR-CO-14 (Summe der Umsatzsteuer).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-45-br-48/">BR-45</a> bis <a href="../br-45-br-48/">BR-48</a> (Abschnitt unvollständig), BR-S-01 (Positionen mit 19 % ohne passenden Abschnitt) und <a href="../br-co-14/">BR-CO-14</a> (Summe der Umsatzsteuer).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Die Rechnung ist komplett steuerfrei. Brauche ich trotzdem eine Aufschlüsselung?</em> Ja. Auch dann steht ein Abschnitt mit der Kategorie (zum Beispiel <code>E</code> oder <code>AE</code>), der Bemessungsgrundlage und dem Steuerbetrag <code>0.00</code> in der Datei.</li>

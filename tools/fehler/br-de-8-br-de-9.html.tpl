@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-8 und BR-DE-9: In der Anschrift des Käufers fehlen Ort (BT-52) oder Postleitzahl (BT-53). Häufige Ursachen im Kundenstamm und die richtigen XML-Felder.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-8-br-de-9/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-8 / BR-DE-9", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-8-br-de-9/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Der Käufer ist eine Behörde mit Leitweg-ID. Brauche ich trotzdem die Anschrift?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Die Leitweg-ID ersetzt die Postanschrift nicht."}}, {"@type": "Question", "name": "Gilt das auch für Käufer im Ausland?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Die Regeln gelten für jede XRechnung, unabhängig vom Land des Käufers."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -358,7 +360,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
     &lt;/cac:PostalAddress&gt;
     …
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-10 (Anschrift des Käufers fehlt ganz), BR-11 (Ländercode des Käufers fehlt) und BR-DE-3 / BR-DE-4 (dieselben Angaben beim Verkäufer).</p>
+<p><strong>Häufig zusammen mit:</strong> BR-10 (Anschrift des Käufers fehlt ganz), BR-11 (Ländercode des Käufers fehlt) und <a href="../br-de-3-br-de-4/">BR-DE-3</a> / <a href="../br-de-3-br-de-4/">BR-DE-4</a> (dieselben Angaben beim Verkäufer).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Der Käufer ist eine Behörde mit Leitweg-ID. Brauche ich trotzdem die Anschrift?</em> Ja. Die Leitweg-ID ersetzt die Postanschrift nicht.</li>

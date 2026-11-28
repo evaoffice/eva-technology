@@ -11,6 +11,7 @@ They are written to tools/fehler/<rule>.html.tpl, because they are published
 only together with the checker (tools/assemble.py decides).
 """
 import html
+import json
 import pathlib
 import re
 import sys
@@ -377,9 +378,70 @@ def fehler_liste(pages, current):
     return '<ul class="fehlerliste">\n' + "\n".join(items) + "\n</ul>"
 
 
+RULE_CODE = re.compile(r"\b(?:PEPPOL-EN16931-R\d+|DE-R-T\d+|BR-[A-Z]{1,3}-\d+(?:-[a-z])?|BR-\d+)\b")
+
+
+def rule_codes(meta):
+    """The rule codes a page explains, taken from the validator messages in its header."""
+    return [code.upper() for code in re.findall(r"\[([A-Za-z][A-Za-z0-9-]+)\]", meta["meldung"])]
+
+
+def link_related(body, pages, slug_):
+    """In the paragraph "Häufig zusammen mit", a rule that has its own page links to it."""
+    target = {}
+    for other, _ in pages:
+        if other["slug"] != slug_:
+            for code in rule_codes(other):
+                target.setdefault(code, other["slug"])
+
+    def paragraph(match):
+        if "<a " in match.group(0):
+            return match.group(0)
+        return RULE_CODE.sub(
+            lambda code: f'<a href="../{target[code.group(0).upper()]}/">{code.group(0)}</a>'
+            if code.group(0).upper() in target else code.group(0),
+            match.group(0),
+        )
+
+    return re.sub(r"<p><strong>Häufig zusammen mit:</strong>.*?</p>", paragraph, body, flags=re.S)
+
+
+def plain(text):
+    """Markdown of one FAQ line as plain text."""
+    text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
+    return re.sub(r"[`*]", "", text).strip()
+
+
+def structured_data(meta, text):
+    """JSON-LD for the page: its place in the site and, where the page has them, its questions."""
+    url = f'{SITE_URL}e-rechnung-pruefen/fehler/{meta["slug"]}/'
+    data = [{
+        "@context": "https://schema.org", "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": f"{SITE_URL}e-rechnung-pruefen/"},
+            {"@type": "ListItem", "position": 2, "name": meta["nav"], "item": url},
+        ],
+    }]
+    section = text.split("## Häufige Fragen", 1)[1] if "## Häufige Fragen" in text else ""
+    questions = re.findall(r"^- \*(.+?\?)\* (.+)$", section.split("\n## ", 1)[0], flags=re.M)
+    if questions:
+        data.append({
+            "@context": "https://schema.org", "@type": "FAQPage",
+            "mainEntity": [
+                {"@type": "Question", "name": plain(q), "acceptedAnswer": {"@type": "Answer", "text": plain(a)}}
+                for q, a in questions
+            ],
+        })
+    return "\n".join(
+        '<script type="application/ld+json">' + json.dumps(block, ensure_ascii=False).replace("</", "<\\/") + "</script>"
+        for block in data
+    )
+
+
 def render_fehler(pages, meta, text, stil):
     slug_ = meta["slug"]
     body = markdown.markdown(text, extensions=["fenced_code", "tables", "sane_lists"], output_format="html5")
+    body = link_related(body, pages, slug_)
     link = LINKS[meta["detects"]]
     if meta["detects"] == "yes" and "(Warnung)" in meta["h1"]:
         link = LINK_ZEIGT_WARNUNG
@@ -395,6 +457,7 @@ def render_fehler(pages, meta, text, stil):
 <meta name="description" content="{esc(meta["description"])}">
 <link rel="canonical" href="{SITE_URL}e-rechnung-pruefen/fehler/{slug_}/">
 <link rel="icon" href="data:,">
+{structured_data(meta, text)}
 <style>{stil}
 {FEHLER_STIL}</style>
 </head>

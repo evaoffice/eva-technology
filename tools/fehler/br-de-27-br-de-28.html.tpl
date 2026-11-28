@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-27 und BR-DE-28 sind Warnungen: Telefonnummer (BT-42) oder E-Mail-Adresse (BT-43) des Verkäufers sehen nicht gültig aus. Was geprüft wird und wie Sie es beheben.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-27-br-de-28/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-27 / BR-DE-28", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-27-br-de-28/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Muss ich die Warnung beheben?", "acceptedAnswer": {"@type": "Answer", "text": "Die Rechnung scheitert daran nicht. Eine Telefonnummer oder E-Mail-Adresse, über die niemand erreichbar ist, führt aber oft zu Rückfragen."}}, {"@type": "Question", "name": "Darf ich zwei E-Mail-Adressen angeben?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Das Feld nimmt genau eine Adresse auf; mit zwei Adressen erscheint BR-DE-28."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -352,7 +354,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   &lt;cbc:ElectronicMail&gt;buchhaltung@muster.de&lt;/cbc:ElectronicMail&gt;
 &lt;/cac:Contact&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-DE-5, BR-DE-6 und BR-DE-7 (Name, Telefon oder E-Mail fehlen ganz) und BR-DE-2 (Kontaktblock fehlt).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-de-5-br-de-6-br-de-7/">BR-DE-5</a>, <a href="../br-de-5-br-de-6-br-de-7/">BR-DE-6</a> und <a href="../br-de-5-br-de-6-br-de-7/">BR-DE-7</a> (Name, Telefon oder E-Mail fehlen ganz) und <a href="../br-de-2/">BR-DE-2</a> (Kontaktblock fehlt).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Muss ich die Warnung beheben?</em> Die Rechnung scheitert daran nicht. Eine Telefonnummer oder E-Mail-Adresse, über die niemand erreichbar ist, führt aber oft zu Rückfragen.</li>

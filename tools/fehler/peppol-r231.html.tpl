@@ -7,6 +7,8 @@
 <meta name="description" content="R231 (Peppol BIS, ab 24.02.2027): Jeder Nachlass oder Zuschlag auf Belegebene braucht genau eine Steuerkategorie. Ursachen und Lösung.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r231/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "R231", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r231/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wie verteile ich einen Rabatt auf zwei Steuersätze?", "acceptedAnswer": {"@type": "Answer", "text": "Meist im Verhältnis der Nettobeträge. Klären Sie die Aufteilung mit Ihrer Steuerberatung."}}, {"@type": "Question", "name": "Gilt das auch für Rabatte auf einzelne Positionen?", "acceptedAnswer": {"@type": "Answer", "text": "Diese Regel betrifft nur die Belegebene."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -354,7 +356,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   &lt;cac:TaxCategory&gt;&lt;cbc:ID&gt;S&lt;/cbc:ID&gt;&lt;cbc:Percent&gt;7&lt;/cbc:Percent&gt;&lt;cac:TaxScheme&gt;&lt;cbc:ID&gt;VAT&lt;/cbc:ID&gt;&lt;/cac:TaxScheme&gt;&lt;/cac:TaxCategory&gt;
 &lt;/cac:AllowanceCharge&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-32 / BR-37 (Steuerkategorie des Nachlasses oder Zuschlags fehlt), BR-CO-14 und BR-S-08.</p>
+<p><strong>Häufig zusammen mit:</strong> BR-32 / BR-37 (Steuerkategorie des Nachlasses oder Zuschlags fehlt), <a href="../br-co-14/">BR-CO-14</a> und <a href="../br-s-08/">BR-S-08</a>.</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Wie verteile ich einen Rabatt auf zwei Steuersätze?</em> Meist im Verhältnis der Nettobeträge. Klären Sie die Aufteilung mit Ihrer Steuerberatung.</li>

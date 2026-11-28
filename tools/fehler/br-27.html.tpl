@@ -7,6 +7,8 @@
 <meta name="description" content="BR-27: Der Artikelpreis in der XRechnung darf nicht negativ sein. Wie Sie Rabatte und Abzüge stattdessen als Nachlass oder negative Menge angeben.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-27/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-27", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-27/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Darf der Positionsbetrag negativ sein?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, der Positionsbetrag (BT-131) darf negativ sein, nur der Preis nicht."}}, {"@type": "Question", "name": "Rabatt als Position oder auf Belegebene?", "acceptedAnswer": {"@type": "Answer", "text": "Für einen Rabatt auf die ganze Rechnung ist der Nachlass auf Belegebene sauberer."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -343,7 +345,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 …
 &lt;cac:Price&gt;&lt;cbc:PriceAmount currencyID=&quot;EUR&quot;&gt;50.00&lt;/cbc:PriceAmount&gt;&lt;/cac:Price&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-CO-16 (Zahlbetrag) und BR-CO-10 (Summe der Positionen).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-co-16/">BR-CO-16</a> (Zahlbetrag) und <a href="../br-co-10/">BR-CO-10</a> (Summe der Positionen).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Darf der Positionsbetrag negativ sein?</em> Ja, der Positionsbetrag (BT-131) darf negativ sein, nur der Preis nicht.</li>

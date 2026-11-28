@@ -7,6 +7,8 @@
 <meta name="description" content="R257/R258 (Peppol BIS, ab 24.02.2027): Bankblock ohne BIC oder Zahlungskonto ohne IBAN wird abgelehnt. Typische Ursachen und Lösung.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r257-r258/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "R257 / R258", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r257-r258/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Muss ich jetzt immer eine BIC angeben?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Nur wenn Sie den Bankblock mitsenden, muss die BIC darin stehen."}}, {"@type": "Question", "name": "Wird die IBAN geprüft?", "acceptedAnswer": {"@type": "Answer", "text": "Diese beiden Regeln zählen nur. Andere Regeln, etwa DE-R-019 (Warnung), prüfen das Format."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;

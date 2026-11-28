@@ -7,6 +7,8 @@
 <meta name="description" content="BR-16: Ihre E-Rechnung enthält keine einzige Rechnungsposition (BG-25). Warum das bei Pauschal- und Abschlagsrechnungen passiert und wie Sie es beheben.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-16/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-16", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-16/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Reicht bei einer Abschlagsrechnung der Gesamtbetrag?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Auch eine Abschlagsrechnung braucht mindestens eine Position, etwa „Abschlag 2 laut Vertrag vom …“."}}, {"@type": "Question", "name": "Muss jede Position im PDF auch im XML stehen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Die XML-Datei ist die eigentliche Rechnung; das PDF ist nur eine Ansicht."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -361,7 +363,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cac:InvoiceLine&gt;
 &lt;/Invoice&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-CO-10 (Summe der Positionen) und BR-21 bis BR-25 (Pflichtangaben je Position).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-co-10/">BR-CO-10</a> (Summe der Positionen) und <a href="../br-21-br-26/">BR-21</a> bis <a href="../br-21-br-26/">BR-25</a> (Pflichtangaben je Position).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Reicht bei einer Abschlagsrechnung der Gesamtbetrag?</em> Nein. Auch eine Abschlagsrechnung braucht mindestens eine Position, etwa „Abschlag 2 laut Vertrag vom …“.</li>

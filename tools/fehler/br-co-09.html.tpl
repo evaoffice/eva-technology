@@ -7,6 +7,8 @@
 <meta name="description" content="BR-CO-09: Die Umsatzsteuer-Identifikationsnummer in Ihrer XRechnung beginnt nicht mit dem Länderkürzel, oft steht dort die Steuernummer. So beheben Sie es.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-09/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-CO-09", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-co-09/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ich bin Kleinunternehmer und habe keine USt-IdNr. Was trage ich ein?", "acceptedAnswer": {"@type": "Answer", "text": "Die Steuernummer im Feld für die Steuerregistrierung (Schema FC), nicht als USt-IdNr."}}, {"@type": "Question", "name": "Prüft die Regel, ob die Nummer wirklich vergeben ist?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Sie prüft nur das Länderkürzel. Ob eine USt-IdNr. gültig ist, können Sie beim Bundeszentralamt für Steuern bestätigen lassen."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -348,7 +350,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cac:PartyTaxScheme&gt;
 </code></pre>
 <p>Die Nummern im Beispiel sind Beispielwerte.</p>
-<p><strong>Häufig zusammen mit:</strong> BR-CO-26 (keine Kennung des Verkäufers), wenn die einzige Nummer entfernt wird, ohne eine andere einzutragen.</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-co-26/">BR-CO-26</a> (keine Kennung des Verkäufers), wenn die einzige Nummer entfernt wird, ohne eine andere einzutragen.</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Ich bin Kleinunternehmer und habe keine USt-IdNr. Was trage ich ein?</em> Die Steuernummer im Feld für die Steuerregistrierung (Schema <code>FC</code>), nicht als USt-IdNr.</li>

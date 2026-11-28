@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-17 ist eine Warnung: Der Code für die Rechnungsart (BT-3) ist in XRechnung nicht vorgesehen. Welche Codes erlaubt sind und was Sie tun.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-17/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-17", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-17/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Muss ich die Warnung beheben?", "acceptedAnswer": {"@type": "Answer", "text": "Die Rechnung scheitert an dieser Regel nicht. Der Empfänger sieht die Warnung aber im Prüfbericht und kann nachfragen oder ablehnen."}}, {"@type": "Question", "name": "Welcher Code für eine Anzahlungsrechnung?", "acceptedAnswer": {"@type": "Answer", "text": "XRechnung sieht keinen eigenen Code dafür vor. Üblich ist 326 (Teilrechnung). Stimmen Sie das mit Ihrem Empfänger ab."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;

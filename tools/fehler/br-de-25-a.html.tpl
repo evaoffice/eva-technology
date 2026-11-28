@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-25-a: Ihre XRechnung gibt Lastschrift (Code 59) an, aber keine Angaben zum Mandat. Was in den Block gehört: Mandatsreferenz, IBAN und Gläubiger-ID.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-25-a/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-25-a", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-25-a/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Wo steht die Gläubiger-ID?", "acceptedAnswer": {"@type": "Answer", "text": "Beim Verkäufer (oder beim Zahlungsempfänger) als Kennung mit schemeID=\"SEPA\", nicht im Block cac:PaymentMandate."}}, {"@type": "Question", "name": "Darf ich die Mandatsreferenz weglassen, wenn der Kunde sie kennt?", "acceptedAnswer": {"@type": "Answer", "text": "Die Regel verlangt den Block in der Datei. Ihr Kunde braucht die Angaben, um die Abbuchung zuzuordnen."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;

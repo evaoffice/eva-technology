@@ -7,6 +7,8 @@
 <meta name="description" content="BR-CL-14: Ein Ländercode in Ihrer E-Rechnung ist kein Code nach ISO 3166-1, oft steht dort „Deutschland“ oder „GER“. So tragen Sie den richtigen Code ein.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-cl-14/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-CL-14", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-cl-14/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Welcher Code gilt für Griechenland?", "acceptedAnswer": {"@type": "Answer", "text": "In der Länderangabe GR. Das Kürzel EL ist nur am Anfang der griechischen USt-IdNr. üblich."}}, {"@type": "Question", "name": "Und für Nordirland?", "acceptedAnswer": {"@type": "Answer", "text": "Die Liste der Regel enthält dafür den Code XI."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -348,7 +350,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   &lt;cac:Country&gt;&lt;cbc:IdentificationCode&gt;DE&lt;/cbc:IdentificationCode&gt;&lt;/cac:Country&gt;
 &lt;/cac:PostalAddress&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-09 und BR-11 (Ländercode von Verkäufer oder Käufer fehlt ganz) und BR-CO-09 (USt-IdNr. ohne Länderkürzel).</p>
+<p><strong>Häufig zusammen mit:</strong> BR-09 und BR-11 (Ländercode von Verkäufer oder Käufer fehlt ganz) und <a href="../br-co-09/">BR-CO-09</a> (USt-IdNr. ohne Länderkürzel).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Welcher Code gilt für Griechenland?</em> In der Länderangabe <code>GR</code>. Das Kürzel <code>EL</code> ist nur am Anfang der griechischen USt-IdNr. üblich.</li>

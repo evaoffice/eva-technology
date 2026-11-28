@@ -7,6 +7,8 @@
 <meta name="description" content="BR-S-05: Eine Rechnungsposition hat die Steuerkategorie „S“ (Regelsteuersatz), aber einen Satz von 0 oder keinen Satz. Woran es liegt und welche Kategorie richtig ist.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-s-05/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-S-05", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-s-05/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Bei Reverse Charge steht der Satz auf 0. Ist das falsch?", "acceptedAnswer": {"@type": "Answer", "text": "Der Satz 0 ist dort richtig, aber die Kategorie ist dann AE, nicht S."}}, {"@type": "Question", "name": "Ich habe nur eine Position falsch. Muss ich die ganze Rechnung neu erzeugen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Die XML-Datei wird als Ganzes geprüft; korrigieren Sie die Position im Programm und erzeugen Sie die Datei neu."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -345,7 +347,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
   &lt;cac:TaxScheme&gt;&lt;cbc:ID&gt;VAT&lt;/cbc:ID&gt;&lt;/cac:TaxScheme&gt;
 &lt;/cac:ClassifiedTaxCategory&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-S-08 (Bemessungsgrundlage je Steuersatz) und BR-S-01 (Abschnitt für die Kategorie S fehlt).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-s-08/">BR-S-08</a> (Bemessungsgrundlage je Steuersatz) und BR-S-01 (Abschnitt für die Kategorie S fehlt).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Bei Reverse Charge steht der Satz auf 0. Ist das falsch?</em> Der Satz 0 ist dort richtig, aber die Kategorie ist dann <code>AE</code>, nicht <code>S</code>.</li>

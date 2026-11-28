@@ -7,6 +7,8 @@
 <meta name="description" content="BR-45, BR-46, BR-47 und BR-48: In einem Abschnitt der Steueraufschlüsselung Ihrer E-Rechnung fehlen Bemessungsgrundlage, Steuerbetrag, Kategorie oder Satz.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-45-br-48/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-45 bis BR-48", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-45-br-48/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Muss ich bei 0 % wirklich einen Steuerbetrag angeben?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. BR-46 verlangt das Feld in jedem Abschnitt; der Wert ist dann 0.00."}}, {"@type": "Question", "name": "Und bei Kategorie O?", "acceptedAnswer": {"@type": "Answer", "text": "Nach EN 16931 ist der Satz dort nicht nötig. XRechnung verlangt ihn mit BR-DE-14 aber in jedem Abschnitt, auch bei O: Tragen Sie 0 ein."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -362,7 +364,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cac:TaxSubtotal&gt;
 </code></pre>
 <p>Die Reihenfolge ist im UBL-Format fest: <code>cbc:TaxableAmount</code>, dann <code>cbc:TaxAmount</code>, dann <code>cac:TaxCategory</code>; darin <code>cbc:ID</code>, <code>cbc:Percent</code>, der Befreiungsgrund und zuletzt <code>cac:TaxScheme</code>.</p>
-<p><strong>Häufig zusammen mit:</strong> BR-DE-14 (Steuersatz fehlt, XRechnung), BR-CO-17 (Steuerbetrag passt nicht zum Satz) und BR-CO-18 (keine Steueraufschlüsselung).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-de-14/">BR-DE-14</a> (Steuersatz fehlt, XRechnung), <a href="../br-co-17/">BR-CO-17</a> (Steuerbetrag passt nicht zum Satz) und <a href="../br-co-18/">BR-CO-18</a> (keine Steueraufschlüsselung).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Muss ich bei 0 % wirklich einen Steuerbetrag angeben?</em> Ja. BR-46 verlangt das Feld in jedem Abschnitt; der Wert ist dann <code>0.00</code>.</li>

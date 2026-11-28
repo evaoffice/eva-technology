@@ -7,6 +7,8 @@
 <meta name="description" content="R260 (Peppol BIS, ab 24.02.2027): PaymentTerms braucht genau ein cbc:Note. Mehrere Zeilen und Skonto gehören in dasselbe Element.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r260/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "R260", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r260/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Bisher ging es doch mit zwei Notes?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Die Regel ist neu und gilt ab dem 24. Februar 2027."}}, {"@type": "Question", "name": "Betrifft das auch den Freitext der Rechnung?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Ein cbc:Note direkt unter der Rechnung ist BT-22 und fällt nicht unter diese Regel."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -345,7 +347,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cbc:Note&gt;
 &lt;/cac:PaymentTerms&gt;
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-DE-18 (Skonto im falschen Format), wenn die Skontozeile ohne abschließenden Zeilenumbruch übernommen wird.</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-de-18/">BR-DE-18</a> (Skonto im falschen Format), wenn die Skontozeile ohne abschließenden Zeilenumbruch übernommen wird.</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Bisher ging es doch mit zwei Notes?</em> Ja. Die Regel ist neu und gilt ab dem 24. Februar 2027.</li>

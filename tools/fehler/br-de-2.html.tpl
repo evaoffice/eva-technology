@@ -7,6 +7,8 @@
 <meta name="description" content="BR-DE-2: In Ihrer XRechnung fehlt der Block mit den Kontaktdaten des Verkäufers (BG-6). Was hineingehört und wo er im XML steht.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-2/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-DE-2", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-de-2/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Reicht die E-Mail-Adresse aus cbc:EndpointID?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Das ist die elektronische Adresse für den Versand (BT-34). Der Kontakt (BG-6) ist ein eigener Block."}}, {"@type": "Question", "name": "Muss es eine Person sein?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Eine Abteilung wie „Buchhaltung“ genügt als Name."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -361,7 +363,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 &lt;/cac:AccountingSupplierParty&gt;
 </code></pre>
 <p>Die Reihenfolge ist im UBL-Format fest: <code>cac:Contact</code> steht nach <code>cac:PartyLegalEntity</code>.</p>
-<p><strong>Häufig zusammen mit:</strong> BR-DE-5, BR-DE-6 und BR-DE-7 (einzelne Kontaktangaben fehlen) und BR-DE-3 / BR-DE-4 (Ort oder Postleitzahl des Verkäufers fehlen).</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-de-5-br-de-6-br-de-7/">BR-DE-5</a>, <a href="../br-de-5-br-de-6-br-de-7/">BR-DE-6</a> und <a href="../br-de-5-br-de-6-br-de-7/">BR-DE-7</a> (einzelne Kontaktangaben fehlen) und <a href="../br-de-3-br-de-4/">BR-DE-3</a> / <a href="../br-de-3-br-de-4/">BR-DE-4</a> (Ort oder Postleitzahl des Verkäufers fehlen).</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Reicht die E-Mail-Adresse aus <code>cbc:EndpointID</code>?</em> Nein. Das ist die elektronische Adresse für den Versand (BT-34). Der Kontakt (BG-6) ist ein eigener Block.</li>

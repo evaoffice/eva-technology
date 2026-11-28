@@ -7,6 +7,8 @@
 <meta name="description" content="BR-E-10: Bei steuerfreien Positionen (Kategorie E), etwa nach § 19 UStG, fehlt der Befreiungsgrund. Welche Angabe in die XRechnung gehört und wohin.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-e-10/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "BR-E-10", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/br-e-10/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Muss ich als Kleinunternehmer überhaupt E-Rechnungen schreiben?", "acceptedAnswer": {"@type": "Answer", "text": "Nach § 34a UStDV nicht; empfangen können müssen Sie sie trotzdem. Ob das für Sie gilt, klärt Ihre Steuerberatung."}}, {"@type": "Question", "name": "Welchen VATEX-Code nehme ich?", "acceptedAnswer": {"@type": "Answer", "text": "Das hängt von der Rechtsgrundlage ab. Ein klarer Text in BT-120 genügt für diese Regel."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;

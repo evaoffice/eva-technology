@@ -7,6 +7,8 @@
 <meta name="description" content="PEPPOL-EN16931-R010 oder R020: Käufer- oder Verkäufer-Adresse (BT-49/BT-34) fehlt. Welches Schema (z. B. 0204, EM) gilt und wie Sie das Feld füllen.">
 <link rel="canonical" href="https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r020-r010/">
 <link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "E-Rechnung prüfen", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/"}, {"@type": "ListItem", "position": 2, "name": "R020 / R010", "item": "https://evaoffice.github.io/eva-technology/e-rechnung-pruefen/fehler/peppol-r020-r010/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Warum englisch?", "acceptedAnswer": {"@type": "Answer", "text": "Die Regel kommt aus Peppol; KoSIT übernimmt den Originaltext."}}, {"@type": "Question", "name": "Reicht die E-Mail im Kontakt (BT-43)?", "acceptedAnswer": {"@type": "Answer", "text": "Nein, das ist ein anderes Feld."}}]}</script>
 <style>:root {
   color-scheme: light;
   --papier: #f3f0e8;
@@ -352,7 +354,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
     &lt;cbc:EndpointID schemeID=&quot;0204&quot;&gt;04011000-12345-34&lt;/cbc:EndpointID&gt;
     …
 </code></pre>
-<p><strong>Häufig zusammen mit:</strong> BR-62 / BR-63 (Schema fehlt) und BR-DE-15.</p>
+<p><strong>Häufig zusammen mit:</strong> <a href="../br-62-br-63/">BR-62</a> / <a href="../br-62-br-63/">BR-63</a> (Schema fehlt) und <a href="../br-de-15/">BR-DE-15</a>.</p>
 <h2>Häufige Fragen</h2>
 <ul>
 <li><em>Warum englisch?</em> Die Regel kommt aus Peppol; KoSIT übernimmt den Originaltext.</li>
