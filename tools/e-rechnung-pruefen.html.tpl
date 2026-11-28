@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-SFuuG8uuqrxeivPmdLMj9GgKvXVGxrG1aFA/lTtn7qM='; style-src 'sha256-0iUjDDNgYfuOTYu+VZ4Ek1z9DSBfq0atb/fAhaC7KJM='; img-src 'none'; connect-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-SFuuG8uuqrxeivPmdLMj9GgKvXVGxrG1aFA/lTtn7qM='; style-src 'sha256-mzuAF4yI9H65PlOUMDr5fUmLCLk/HwkNHcKR1xBErqs='; img-src 'none'; connect-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta name="description" content="Prüfen Sie Ihre XRechnung (UBL) kostenlos im Browser. Die Datei wird nicht hochgeladen. Jeder Fehler mit Erklärung und Lösung in verständlichem Deutsch.">
@@ -114,7 +114,11 @@ a:hover { color: var(--gruen-dunkel); }
 /* Kopf ------------------------------------------------------------------- */
 .kopf { border-bottom: 1px solid var(--linie); background: var(--blatt); }
 .kopf__zeile { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; align-items: baseline; justify-content: space-between; padding-block: 0.9rem; }
-.kopf__name { font-family: var(--titel); font-weight: 600; font-size: 1.15rem; }
+.kopf__name { font-family: var(--titel); font-weight: 600; font-size: 1.15rem; display: inline-flex; align-items: center; gap: 0.45rem; }
+.kopf__name a { display: inline-flex; align-items: center; gap: 0.45rem; }
+.kopf__zeichen { flex: none; }
+.kopf__blatt { fill: var(--gruen-hell); stroke: var(--gruen); stroke-width: 1.5; stroke-linejoin: round; }
+.kopf__haken { fill: none; stroke: var(--gruen); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
 .kopf__merkmale { font-size: 0.875rem; color: var(--grau); }
 .kopf__dienst { flex-basis: 100%; font-size: 0.9rem; }
 .kopf__dienst .adresse, .auftakt__dienst .adresse { overflow-wrap: anywhere; }
@@ -324,7 +328,7 @@ p + .liste, .liste + p { margin-top: 0.8rem; }
 
 <header class="kopf">
   <div class="rahmen kopf__zeile">
-    <p class="kopf__name">E-Rechnung prüfen</p>
+    <p class="kopf__name"><svg class="kopf__zeichen" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path class="kopf__blatt" d="M6.5 2.75h8L19 7.25V19.5a1.75 1.75 0 0 1-1.75 1.75H6.75A1.75 1.75 0 0 1 5 19.5v-15a1.75 1.75 0 0 1 1.5-1.75z"/><path class="kopf__haken" d="M8.6 13.4l2.5 2.5 4.4-5.3"/></svg>E-Rechnung prüfen</p>
     <p class="kopf__merkmale">Kostenlos · ohne Anmeldung · ohne Upload</p>
     <p class="kopf__dienst"><a href="#angebot">Fehlerursache beheben: 149 € netto, in 3 Werktagen</a> · Kontakt: <span class="adresse">eva.office.app@gmail.com</span></p>
   </div>

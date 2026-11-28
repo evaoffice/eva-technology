@@ -466,7 +466,7 @@ def render_fehler(pages, meta, text, stil):
 
 <header class="kopf">
   <div class="rahmen kopf__zeile">
-    <p class="kopf__name"><a href="../../">E-Rechnung prüfen</a></p>
+    <p class="kopf__name"><a href="../../"><svg class="kopf__zeichen" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path class="kopf__blatt" d="M6.5 2.75h8L19 7.25V19.5a1.75 1.75 0 0 1-1.75 1.75H6.75A1.75 1.75 0 0 1 5 19.5v-15a1.75 1.75 0 0 1 1.5-1.75z"/><path class="kopf__haken" d="M8.6 13.4l2.5 2.5 4.4-5.3"/></svg>E-Rechnung prüfen</a></p>
     <p class="kopf__merkmale">Kostenlos · ohne Anmeldung · ohne Upload</p>
     <p class="kopf__dienst"><a href="../../#angebot">Fehlerursache beheben: 149 € netto, in 3 Werktagen</a> · Kontakt: {adresse}</p>
   </div>
